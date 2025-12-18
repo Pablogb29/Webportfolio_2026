@@ -1,0 +1,222 @@
+{
+  "lastUpdated": "2025-12-17T10:08:35.546Z",
+  "total": 36,
+  "machines": [
+    {
+      "name": "TwoMillion",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Cap",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Administrator",
+      "os": "Windows",
+      "difficulty": "Medium",
+      "tags": []
+    },
+    {
+      "name": "Chemistry",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Cicada",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Sightless",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Mailing",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Headless",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Keeper",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Photobomb",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Support",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "RedPanda",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Scrambled",
+      "os": "Windows",
+      "difficulty": "Medium",
+      "tags": []
+    },
+    {
+      "name": "StreamIO",
+      "os": "Windows",
+      "difficulty": "Medium",
+      "tags": []
+    },
+    {
+      "name": "OpenSource",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Late",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Timelapse",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Pandora",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Backdoor",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Return",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "BountyHunter",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Admirer",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "ServMon",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Sauna",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Heist",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Netmon",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Active",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Bounty",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Blue",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Granny",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Grandpa",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Arctic",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Optimum",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Devel",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Legacy",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "tags": []
+    },
+    {
+      "name": "Lame",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "tags": []
+    }
+  ]
+}

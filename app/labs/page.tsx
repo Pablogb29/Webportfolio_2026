@@ -14,51 +14,27 @@ interface HTBMachine {
 
 const htbMachines: HTBMachine[] = [
   {
-    name: "Lame",
+    name: "33 Machines Completed",
     category: "Linux",
     difficulty: "Easy",
-    skills: ["SMB Enumeration", "Metasploit", "Privilege Escalation"],
-    writeupUrl: "https://example.com",
+    skills: ["SMB Enumeration", "Kerberoasting", "SUID Exploitation", "Linux Capabilities", "IDOR", "GPP Attacks"],
+    writeupUrl: "https://github.com/Pablogb29/HackTheBox",
     htbUrl: "https://app.hackthebox.com",
   },
   {
-    name: "Legacy",
+    name: "30 Easy Machines",
     category: "Windows",
     difficulty: "Easy",
-    skills: ["SMB", "MS17-010", "EternalBlue"],
-    writeupUrl: "https://example.com",
+    skills: ["Network Scanning", "Web Enumeration", "SMB Exploitation", "Privilege Escalation"],
+    writeupUrl: "https://github.com/Pablogb29/HackTheBox",
     htbUrl: "https://app.hackthebox.com",
   },
   {
-    name: "Blue",
-    category: "Windows",
-    difficulty: "Easy",
-    skills: ["SMB", "MS17-010", "Privilege Escalation"],
-    writeupUrl: "https://example.com",
-    htbUrl: "https://app.hackthebox.com",
-  },
-  {
-    name: "Jerry",
-    category: "Windows",
-    difficulty: "Easy",
-    skills: ["Tomcat", "File Upload", "Reverse Shell"],
-    writeupUrl: "https://example.com",
-    htbUrl: "https://app.hackthebox.com",
-  },
-  {
-    name: "Bastard",
+    name: "3 Medium Machines",
     category: "Windows",
     difficulty: "Medium",
-    skills: ["Drupal", "RCE", "Token Impersonation"],
-    writeupUrl: "https://example.com",
-    htbUrl: "https://app.hackthebox.com",
-  },
-  {
-    name: "Nibbles",
-    category: "Linux",
-    difficulty: "Easy",
-    skills: ["Web Enumeration", "Nibbleblog", "SUID"],
-    writeupUrl: "https://example.com",
+    skills: ["Active Directory Attacks", "Impacket", "BloodHound", "RBCD", "ACL Abuse"],
+    writeupUrl: "https://github.com/Pablogb29/HackTheBox",
     htbUrl: "https://app.hackthebox.com",
   },
 ];
@@ -86,12 +62,11 @@ export default function LabsPage() {
           className="text-center mb-12"
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-light mb-4">
-            HTB <span className="text-accent">Writeups</span>
+            HTB <span className="text-cyber-purple">Writeups</span>
           </h1>
-          <div className="w-24 h-1 bg-accent mx-auto mb-4" />
-          <p className="text-gray-light/80 max-w-2xl mx-auto">
-            Detailed writeups of HackTheBox machines I've completed. Each writeup includes
-            methodology, tools used, and key learnings.
+          <div className="w-24 h-1 bg-cyber-purple mx-auto mb-4" />
+          <p className="text-gray-light/80 max-w-2xl mx-auto text-justify">
+            I maintain an active practice in offensive security through Hack The Box labs, having completed 33 machines with a focus on Windows and Linux environments. All write-ups follow an OSCP-oriented style, documenting methodologies, tool usage, and mitigation strategies without exposing flags or detailed exploitation steps.
           </p>
         </motion.div>
 
@@ -103,26 +78,20 @@ export default function LabsPage() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
         >
           <div className="bg-container-alt rounded-lg p-6 border border-accent/20 text-center">
-            <div className="text-3xl font-bold text-accent mb-2">{htbMachines.length}</div>
+            <div className="text-3xl font-bold text-purple-accent mb-2">33</div>
             <div className="text-gray-light/80 text-sm">Machines Solved</div>
           </div>
           <div className="bg-container-alt rounded-lg p-6 border border-accent/20 text-center">
-            <div className="text-3xl font-bold text-cyber-blue mb-2">
-              {htbMachines.filter((m) => m.category === "Windows").length}
-            </div>
-            <div className="text-gray-light/80 text-sm">Windows</div>
-          </div>
-          <div className="bg-container-alt rounded-lg p-6 border border-accent/20 text-center">
-            <div className="text-3xl font-bold text-cyber-blue mb-2">
-              {htbMachines.filter((m) => m.category === "Linux").length}
-            </div>
-            <div className="text-gray-light/80 text-sm">Linux</div>
-          </div>
-          <div className="bg-container-alt rounded-lg p-6 border border-accent/20 text-center">
-            <div className="text-3xl font-bold text-green-400 mb-2">
-              {htbMachines.filter((m) => m.difficulty === "Easy").length}
-            </div>
+            <div className="text-3xl font-bold text-accent mb-2">30</div>
             <div className="text-gray-light/80 text-sm">Easy</div>
+          </div>
+          <div className="bg-container-alt rounded-lg p-6 border border-accent/20 text-center">
+            <div className="text-3xl font-bold text-purple-accent mb-2">3</div>
+            <div className="text-gray-light/80 text-sm">Medium</div>
+          </div>
+          <div className="bg-container-alt rounded-lg p-6 border border-accent/20 text-center">
+            <div className="text-3xl font-bold text-green-400 mb-2">OSCP</div>
+            <div className="text-gray-light/80 text-sm">Oriented</div>
           </div>
         </motion.div>
 
@@ -152,12 +121,12 @@ export default function LabsPage() {
               </div>
 
               <div className="mb-4">
-                <p className="text-xs text-accent/80 font-mono mb-2">SKILLS ACQUIRED:</p>
+                <p className="text-xs text-purple-accent/80 font-mono mb-2">SKILLS ACQUIRED:</p>
                 <div className="flex flex-wrap gap-2">
                   {machine.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-2 py-1 bg-accent/10 text-accent text-xs rounded border border-accent/20"
+                      className="px-2 py-1 bg-cyber-purple/10 text-purple-accent text-xs rounded border border-cyber-purple/20"
                     >
                       {skill}
                     </span>
@@ -165,13 +134,13 @@ export default function LabsPage() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 pt-4 border-t border-accent/10">
+              <div className="flex items-center gap-4 pt-4 border-t border-cyber-purple/10">
                 {machine.writeupUrl && (
                   <a
                     href={machine.writeupUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors text-sm"
+                    className="flex items-center gap-2 text-purple-accent hover:text-purple-accent/80 transition-colors text-sm"
                   >
                     <ExternalLink size={16} />
                     <span>Writeup</span>
@@ -182,7 +151,7 @@ export default function LabsPage() {
                     href={machine.htbUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-cyber-blue hover:text-cyber-blue/80 transition-colors text-sm"
+                    className="flex items-center gap-2 text-purple-accent hover:text-purple-accent/80 transition-colors text-sm"
                   >
                     <ExternalLink size={16} />
                     <span>HTB Profile</span>

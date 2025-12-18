@@ -18,13 +18,152 @@
 
 html {
   scroll-behavior: smooth;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
-  background-color: #0A0A0A;
+  background-color: #050508; /* Match gradient base color for seamless background */
   color: #D1D5DB;
   font-family: var(--font-inter);
   overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Multi-layer background system - Subtle Cyber Aesthetic */
+
+/* Base gradient layer with depth and ambient motion */
+html::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -3;
+  pointer-events: none;
+  
+  /* Multi-stop gradient: deep blacks, dark navy, subtle purples/cyans */
+  background: 
+    /* Soft radial gradient for depth */
+    radial-gradient(ellipse 100% 80% at 50% 20%, rgba(15, 20, 35, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 100% at 50% 80%, rgba(10, 15, 30, 0.25) 0%, transparent 60%),
+    /* Diagonal linear gradient */
+    linear-gradient(135deg, 
+      rgba(5, 5, 10, 0.95) 0%, 
+      rgba(8, 10, 18, 0.9) 20%, 
+      rgba(10, 12, 22, 0.92) 40%,
+      rgba(8, 10, 20, 0.9) 60%,
+      rgba(6, 8, 15, 0.93) 80%,
+      rgba(5, 5, 10, 0.95) 100%
+    ),
+    /* Base dark navy/black */
+    #050508;
+  
+  background-size: 100% 100%, 100% 100%, 200% 200%, 100% 100%;
+  background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  
+  /* Very subtle ambient motion - barely perceptible */
+  animation: ambientGradient 35s ease-in-out infinite;
+}
+
+/* Subtle cyber pattern layer - fine grid */
+html::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 0.03;
+  
+  /* Fine grid pattern - very subtle */
+  background-image: 
+    linear-gradient(rgba(100, 150, 200, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 150, 200, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 0;
+  
+  /* Static pattern - no movement */
+}
+
+/* Noise/grain layer */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.04;
+  
+  /* SVG noise texture - very subtle grain */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+  background-size: 120px 120px;
+  background-repeat: repeat;
+  
+  /* Static noise - no animation */
+}
+
+/* Light vignette overlay */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  
+  /* Radial gradient vignette - subtle edge darkening */
+  background: radial-gradient(ellipse 85% 75% at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+/* Ambient gradient animation - barely perceptible movement */
+@keyframes ambientGradient {
+  0%, 100% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+  25% {
+    background-position: 0% 0%, 0% 0%, 2% 1%, 0% 0%;
+  }
+  50% {
+    background-position: 0% 0%, 0% 0%, 1% 2%, 0% 0%;
+  }
+  75% {
+    background-position: 0% 0%, 0% 0%, 1.5% 0.5%, 0% 0%;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html::before {
+    animation: none;
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+/* Sidebar layout offset */
+body[data-sidebar-active="true"] main[data-sidebar-content] {
+  margin-left: 0; /* Mobile: no offset, sidebar overlays */
+}
+
+@media (min-width: 768px) {
+  body[data-sidebar-active="true"] main[data-sidebar-content] {
+    margin-left: 16rem; /* 256px = w-64 */
+  }
+}
+
+@media (min-width: 1024px) {
+  body[data-sidebar-active="true"] main[data-sidebar-content] {
+    margin-left: 20rem; /* 320px = w-80 */
+  }
 }
 
 @layer utilities {
@@ -33,18 +172,65 @@ body {
   }
   
   .cyber-glow {
-    text-shadow: 0 0 10px rgba(0, 255, 154, 0.5);
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.4), 0 0 20px rgba(147, 51, 234, 0.3);
   }
   
   .cyber-border {
-    border: 1px solid rgba(0, 255, 154, 0.3);
-    box-shadow: 0 0 10px rgba(0, 255, 154, 0.1);
+    border: 1px solid rgba(0, 217, 255, 0.25);
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.08);
   }
   
   .cyber-hover:hover {
-    border-color: rgba(0, 255, 154, 0.6);
-    box-shadow: 0 0 20px rgba(0, 255, 154, 0.3);
+    border-color: rgba(147, 51, 234, 0.5);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.2), 0 0 30px rgba(147, 51, 234, 0.2), 0 0 40px rgba(233, 30, 99, 0.1);
     transition: all 0.3s ease;
+  }
+  
+  .magenta-glow {
+    text-shadow: 0 0 10px rgba(233, 30, 99, 0.4), 0 0 20px rgba(233, 30, 99, 0.2);
+  }
+  
+  .purple-glow {
+    text-shadow: 0 0 10px rgba(147, 51, 234, 0.4), 0 0 20px rgba(168, 85, 247, 0.3);
+  }
+
+  /* Popover scrollbar styling */
+  .popover-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 217, 255, 0.3) transparent;
+  }
+
+  .popover-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .popover-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .popover-scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 217, 255, 0.3);
+    border-radius: 3px;
+  }
+
+  .popover-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 217, 255, 0.5);
+  }
+
+  /* Popover animation */
+  @keyframes popover-in {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-popover-in {
+    animation: popover-in 150ms ease-out;
   }
 }
 

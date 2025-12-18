@@ -5,11 +5,11 @@ import { Terminal } from "lucide-react";
 
 export default function About() {
   const skills = [
-    "Pentesting",
-    "AD Attack Paths",
-    "Web/API Security",
-    "Exploit Research",
-    "Scripting (Python, Bash, PowerShell)",
+    "Blue Team: IAM",
+    "Red Team: Penetration Testing",
+    "Security Automation",
+    "AI & Machine Learning",
+    "Python, Bash & PowerShell",
   ];
 
   return (
@@ -23,9 +23,9 @@ export default function About() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-light mb-4">
-            About <span className="text-accent">Me</span>
+            About <span className="text-cyber-purple">Me</span>
           </h2>
-          <div className="w-24 h-1 bg-accent mx-auto" />
+          <div className="w-24 h-1 bg-cyber-purple mx-auto" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -36,19 +36,14 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <p className="text-gray-light/90 leading-relaxed">
-              I'm an <span className="text-accent font-semibold">Offensive Security Engineer</span>{" "}
-              with a passion for finding vulnerabilities and understanding attack vectors. My work
-              focuses on identifying security weaknesses before malicious actors can exploit them.
+            <p className="text-gray-light/90 leading-relaxed text-justify">
+              With a foundation in <span className="text-purple-accent font-semibold">Telecommunications Engineering</span>, I've always been drawn to understanding how systems communicate and interconnect. I specialize in <span className="text-purple-accent font-semibold">Penetration Testing</span>, though I'm currently working on a Blue Team where I focus on identity and access management and automating the security of the information we protect. This dual experience gives me valuable insight into both offensive and defensive security perspectives.
             </p>
-            <p className="text-gray-light/90 leading-relaxed">
-              With expertise in penetration testing, red team operations, and exploit development,
-              I help organizations strengthen their security posture through comprehensive security
-              assessments and research.
+            <p className="text-gray-light/90 leading-relaxed text-justify">
+              I've always wanted to be an ethical hacker—to protect systems before malicious actors do, giving organizations time to correct vulnerabilities and protect their information. My Master's thesis project involved designing, building, and comprehensively auditing a full Active Directory lab environment from scratch, which deepened my expertise in attack methodologies like Kerberoasting, AS-REP roasting, and various privilege escalation vectors.
             </p>
-            <p className="text-gray-light/90 leading-relaxed">
-              Currently preparing for the OSCP certification while actively engaging in HTB labs,
-              developing custom tools, and contributing to the offensive security community.
+            <p className="text-gray-light/90 leading-relaxed text-justify">
+              Within penetration testing, I specialize in Active Directory, but I cover the full cycle from OSINT and network scanning to privilege escalation, lateral movement, and brute force attack techniques to achieve our goals.
             </p>
           </motion.div>
 
@@ -60,7 +55,7 @@ export default function About() {
             className="bg-container rounded-lg p-6 border border-accent/20 cyber-hover"
           >
             <div className="flex items-center gap-2 mb-4">
-              <Terminal className="text-accent" size={20} />
+              <Terminal className="text-cyber-purple" size={20} />
               <h3 className="text-xl font-semibold text-gray-light">Core Focus Areas</h3>
             </div>
             <ul className="space-y-3">
@@ -73,7 +68,7 @@ export default function About() {
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   className="flex items-center gap-3 text-gray-light/80"
                 >
-                  <span className="text-accent font-mono">▸</span>
+                  <span className="text-purple-accent font-mono">▸</span>
                   <span>{skill}</span>
                 </motion.li>
               ))}

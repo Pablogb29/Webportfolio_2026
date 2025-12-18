@@ -26,7 +26,7 @@ export default function ContactPage() {
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com",
+      url: "https://github.com/Pablogb29",
       icon: <Github size={24} />,
       color: "text-gray-light hover:text-accent",
     },
@@ -34,7 +34,7 @@ export default function ContactPage() {
       name: "LinkedIn",
       url: "https://linkedin.com",
       icon: <Linkedin size={24} />,
-      color: "text-gray-light hover:text-cyber-blue",
+      color: "text-gray-light hover:text-accent",
     },
     {
       name: "HackTheBox",
@@ -44,7 +44,7 @@ export default function ContactPage() {
     },
     {
       name: "Email",
-      url: "mailto:contact@example.com",
+      url: "mailto:pabloinfosec@gmail.com",
       icon: <Mail size={24} />,
       color: "text-gray-light hover:text-accent",
     },
@@ -60,12 +60,11 @@ export default function ContactPage() {
           className="text-center mb-12"
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-light mb-4">
-            Get In <span className="text-accent">Touch</span>
+            Get In <span className="text-cyber-purple">Touch</span>
           </h1>
-          <div className="w-24 h-1 bg-accent mx-auto mb-4" />
-          <p className="text-gray-light/80 max-w-2xl mx-auto">
-            Interested in collaboration, job opportunities, or just want to discuss offensive
-            security? Feel free to reach out.
+          <div className="w-24 h-1 bg-cyber-purple mx-auto mb-4" />
+          <p className="text-gray-light/80 max-w-2xl mx-auto text-justify">
+            Interested in collaboration, job opportunities, or just want to discuss cybersecurity, offensive security, or IAM automation? Feel free to reach out.
           </p>
         </motion.div>
 
@@ -130,7 +129,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-6 py-3 bg-accent text-background font-semibold rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,154,0.5)] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full px-6 py-3 bg-accent text-background font-semibold rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,217,255,0.4),0_0_30px_rgba(147,51,234,0.3),0_0_40px_rgba(233,30,99,0.2)] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
                   "Sending..."
@@ -174,21 +173,29 @@ export default function ContactPage() {
 
             <div className="bg-container-alt rounded-lg p-8 border border-accent/20">
               <h3 className="text-xl font-semibold text-gray-light mb-4">Availability</h3>
-              <p className="text-gray-light/80 text-sm leading-relaxed mb-4">
+              <p className="text-gray-light/80 text-sm leading-relaxed mb-4 text-justify">
                 Currently open to opportunities in:
               </p>
               <ul className="space-y-2 text-sm text-gray-light/80">
                 <li className="flex items-center gap-2">
                   <span className="text-accent font-mono">▸</span>
-                  <span>Pentester Roles</span>
+                  <span><span className="text-purple-accent font-semibold">Pentester Roles</span> (Primary Goal)</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="text-accent font-mono">▸</span>
-                  <span>Red Team Operator</span>
+                  <span>Red Team Operations</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="text-accent font-mono">▸</span>
-                  <span>Security Consultant</span>
+                  <span>Junior/Associate Pentester Positions</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-accent font-mono">▸</span>
+                  <span>Security Engineering / IAM (Current)</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-accent font-mono">▸</span>
+                  <span>EU-level cybersecurity roles (CERT-EU, ENISA, etc.)</span>
                 </li>
               </ul>
             </div>

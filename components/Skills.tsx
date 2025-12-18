@@ -11,76 +11,72 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Red Team & Pentesting",
+    title: "Offensive Security",
     icon: <Shield size={24} />,
     skills: [
-      "Nmap",
-      "Burp Suite",
-      "Cobalt Strike",
-      "Beacon Object Files",
-      "Phishing Infrastructure",
-      "Metasploit",
-      "Empire",
+      "Penetration Testing: Burp Suite, OWASP ZAP, Metasploit",
+      "Network Reconnaissance: Nmap, Masscan, Gobuster",
+      "Active Directory: Impacket, BloodHound, linPEAS, winPEAS",
+      "Web Security: SQL Injection, XSS, SSRF, IDOR",
+      "Post-Exploitation: psexec.py, enum4linux, ldapsearch",
+      "Active CTF Player & Student",
+      "Forensic Analysis & Log Analysis with Autopsy",
     ],
   },
   {
-    title: "Active Directory Attacks",
+    title: "Security Engineering & IAM",
     icon: <Network size={24} />,
     skills: [
-      "Impacket",
-      "BloodHound",
-      "Kerberoasting",
-      "AS-REP Roasting",
-      "RBCD (Resource-Based Constrained Delegation)",
-      "ACL Abuse",
-      "DCSync",
-      "Golden Ticket",
+      "Identity and Access Management (IAM)",
+      "Azure Databricks Security & IAM Automation",
+      "Active Directory Security & Administration",
+      "Compliance: GDPR, ISO 27001, ENS Framework",
+      "Centralized Data Governance Platforms",
+      "Security Policy Implementation & Auditing",
     ],
   },
   {
-    title: "Web Security",
+    title: "Cloud & Infrastructure",
     icon: <Globe size={24} />,
     skills: [
-      "OWASP Top 10",
-      "API Security",
-      "SSRF",
-      "SQL Injection",
-      "XXE",
-      "Deserialization",
-      "JWT Vulnerabilities",
-      "IDOR",
+      "Azure Databricks & Azure Cloud Services",
+      "AWS Cloud Platform",
+      "Active Directory & Windows Server",
+      "Network Security & Firewall Management",
+      "Deployment: Vercel, Railway, GitHub Actions",
+      "Linux & Windows Administration",
     ],
   },
   {
-    title: "Exploit Development",
+    title: "Programming & Automation",
     icon: <Code size={24} />,
     skills: [
-      "Buffer Overflow",
-      "ROP (Return-Oriented Programming)",
-      "Windows Internals",
-      "Linux ELF Analysis",
-      "Shellcode Development",
-      "Fuzzing",
+      "Languages: Python, Bash, PowerShell, SQL",
+      "Web Development: JavaScript, TypeScript, HTML, CSS, PHP",
+      "Engineering: MATLAB, Simulink, LabVIEW",
+      "Mobile Testing: Appium, Selenium, XCode",
+      "Infrastructure Automation: Databricks, Jira, Confluence",
+      "System Automation: Task Schedulers, Privilege Management",
+      "IDEs: VS Code, Cursor",
     ],
   },
   {
-    title: "Malware / Reverse Engineering",
+    title: "AI & Machine Learning",
     icon: <Bug size={24} />,
     skills: [
-      "Ghidra",
-      "Radare2",
-      "IDA Free",
-      "Static Analysis",
-      "Dynamic Analysis",
-      "Malware Analysis",
-      "Debugging",
+      "Prompt Engineering & LLM Integration",
+      "Neural Networks & Deep Learning",
+      "Machine Learning Models & Algorithms",
+      "Workflow Automation: n8n, Make",
+      "ChatBot Development & AI Image Generation",
+      "Data Analysis & Visualization",
     ],
   },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-container/30">
+    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -90,9 +86,9 @@ export default function Skills() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-light mb-4">
-            Skills <span className="text-accent">Matrix</span>
+            Skills <span className="text-cyber-purple">Matrix</span>
           </h2>
-          <div className="w-24 h-1 bg-accent mx-auto" />
+          <div className="w-24 h-1 bg-cyber-purple mx-auto" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -106,7 +102,7 @@ export default function Skills() {
               className="bg-container-alt rounded-lg p-6 border border-accent/20 cyber-hover"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="text-accent">{category.icon}</div>
+                <div className="text-cyber-purple">{category.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-light">{category.title}</h3>
               </div>
               <ul className="space-y-2">
@@ -119,7 +115,7 @@ export default function Skills() {
                     transition={{ delay: categoryIndex * 0.1 + skillIndex * 0.05, duration: 0.4 }}
                     className="text-gray-light/80 text-sm flex items-center gap-2"
                   >
-                    <span className="text-accent font-mono text-xs">•</span>
+                    <span className="text-purple-accent font-mono text-xs">•</span>
                     <span>{skill}</span>
                   </motion.li>
                 ))}
