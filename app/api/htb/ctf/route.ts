@@ -25,6 +25,8 @@ function transformMachines(machines: Array<{
   tags?: string[];
   attackPaths?: string[];
   difficultyRatings?: any;
+  writeupUrl?: string | null;
+  hasWriteup?: boolean;
 }>): MachineSolved[] {
   return machines.map((machine) => ({
     id: machine.id,

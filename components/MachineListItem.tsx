@@ -71,7 +71,7 @@ export default function MachineListItem({ machine, index = 0 }: MachineListItemP
             </div>
           )}
           {/* Attack Paths, Tags, and Skills */}
-          {(machine.attackPaths?.length > 0 || machine.tags?.length > 0 || machine.skills?.length > 0) && (
+          {((machine.attackPaths?.length ?? 0) > 0 || (machine.tags?.length ?? 0) > 0 || (machine.skills?.length ?? 0) > 0) && (
             <div className="flex flex-wrap gap-2 mt-2">
               {/* Attack Paths */}
               {machine.attackPaths && machine.attackPaths.length > 0 && (

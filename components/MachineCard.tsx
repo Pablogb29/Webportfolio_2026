@@ -92,7 +92,7 @@ export default function MachineCard({ machine, index = 0 }: MachineCardProps) {
         </div>
 
         {/* Tags, Attack Paths, and Skills */}
-        {(machine.tags?.length > 0 || machine.attackPaths?.length > 0 || machine.skills?.length > 0) && (
+        {((machine.tags?.length ?? 0) > 0 || (machine.attackPaths?.length ?? 0) > 0 || (machine.skills?.length ?? 0) > 0) && (
           <div className="mb-4">
             {/* Attack Paths */}
             {machine.attackPaths && machine.attackPaths.length > 0 && (

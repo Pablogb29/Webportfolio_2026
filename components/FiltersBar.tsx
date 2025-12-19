@@ -69,11 +69,27 @@ export default function FiltersBar({
   const [showFilters, setShowFilters] = useState(false);
   const [showSort, setShowSort] = useState(false);
 
-  const toggleFilter = <K extends keyof MachineFilters>(
-    key: K,
-    value: MachineFilters[K] extends (infer U)[] ? U : never
-  ) => {
-    const current = filters[key] as any[];
+  function toggleFilter(
+    key: "difficulty",
+    value: "Easy" | "Medium" | "Hard" | "Insane" | "Tutorial"
+  ): void;
+  function toggleFilter(
+    key: "os",
+    value: "Linux" | "Windows" | "Other" | "FreeBSD" | "OpenBSD"
+  ): void;
+  function toggleFilter(
+    key: "status",
+    value: "Active" | "Retired"
+  ): void;
+  function toggleFilter(
+    key: "tags" | "skills",
+    value: string
+  ): void;
+  function toggleFilter(
+    key: "difficulty" | "os" | "status" | "tags" | "skills",
+    value: string | "Easy" | "Medium" | "Hard" | "Insane" | "Tutorial" | "Linux" | "Windows" | "Other" | "FreeBSD" | "OpenBSD" | "Active" | "Retired"
+  ): void {
+    const current = filters[key] as any[] | undefined;
     const newFilters = { ...filters };
 
     if (current && current.includes(value)) {
@@ -88,7 +104,7 @@ export default function FiltersBar({
     }
 
     onFiltersChange(newFilters);
-  };
+  }
 
   const clearFilters = () => {
     onFiltersChange({});
