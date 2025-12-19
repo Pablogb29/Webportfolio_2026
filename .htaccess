@@ -1,0 +1,67 @@
+# Next.js Hostinger Deployment - Apache Configuration
+# Place this file in your public_html root directory
+
+# Enable Rewrite Engine
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # CRITICAL: Serve Next.js static assets directly (do not proxy)
+  # This ensures CSS/JS files are accessible
+  RewriteCond %{REQUEST_URI} ^/_next/static/
+  RewriteRule ^_next/static/(.*)$ .next/static/$1 [L]
+
+  # Handle API routes - Proxy to Node.js server
+  # Only uncomment if using Node.js hosting with reverse proxy
+  # Replace 3000 with your actual Node.js port
+  RewriteCond %{REQUEST_URI} ^/api/
+  RewriteRule ^api/(.*)$ http://localhost:3000/api/$1 [P,L]
+
+  # Handle Next.js client-side routing
+  # Proxy all other requests to Node.js server
+  # Only uncomment if using Node.js hosting
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !^/_next/
+  RewriteCond %{REQUEST_URI} !^/api/
+  RewriteRule ^(.*)$ http://localhost:3000/$1 [P,L]
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+  # Allow Next.js to load assets
+  Header set Access-Control-Allow-Origin "*"
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # Cache CSS and JS for 1 year
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  # Cache images for 1 month
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpg "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/gif "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  # Cache fonts for 1 year
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+</IfModule>
+
+# Gzip compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Custom error pages (optional)
+# ErrorDocument 404 /404.html
+# ErrorDocument 500 /500.html
+
