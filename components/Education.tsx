@@ -120,7 +120,6 @@ function CertificationIcon({ type, className }: { type: "htb" | "oscp"; classNam
 
 // Certification Card Component with Hover Tooltip
 function CertificationCard({ cert, index, total }: { cert: Certification; index: number; total: number }) {
-  const [isHovered, setIsHovered] = useState(false);
   const [shouldReduceMotion, setShouldReduceMotion] = useState(false);
   const isActive = cert.status === "In Progress";
   const isCompleted = cert.status?.includes("Completed") || cert.status?.includes("Obtained");
@@ -150,10 +149,6 @@ function CertificationCard({ cert, index, total }: { cert: Certification; index:
           delay: shouldReduceMotion ? 0 : 0.5 + index * 0.15,
           duration: shouldReduceMotion ? 0.3 : 0.5,
         }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onFocus={() => setIsHovered(true)}
-        onBlur={() => setIsHovered(false)}
         className={`group relative w-full md:w-auto ${
           isActive ? "md:scale-105" : ""
         } transition-transform duration-300`}
@@ -169,7 +164,7 @@ function CertificationCard({ cert, index, total }: { cert: Certification; index:
               : isCompleted
               ? "border-green-500/50"
               : "border-cyber-purple/30"
-          } ${isHovered ? "border-opacity-80 shadow-lg" : ""}`}
+          } group-hover:border-opacity-80 group-hover:shadow-lg group-focus-within:border-opacity-80 group-focus-within:shadow-lg`}
         >
           {/* Pulsing glow for active cert */}
           {isActive && (
@@ -225,7 +220,7 @@ function CertificationCard({ cert, index, total }: { cert: Certification; index:
             >
               <CertificationIcon
                 type={cert.icon}
-                className={`w-12 h-12 ${isHovered && !shouldReduceMotion ? "drop-shadow-[0_0_8px_currentColor]" : ""}`}
+                className={`w-12 h-12 group-hover:drop-shadow-[0_0_8px_currentColor] group-focus-within:drop-shadow-[0_0_8px_currentColor] transition-all duration-300`}
               />
             </motion.div>
           </div>
@@ -302,30 +297,19 @@ function CertificationCard({ cert, index, total }: { cert: Certification; index:
           </div>
         </div>
 
-        {/* Hover Tooltip */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{
-            opacity: isHovered ? 1 : 0,
-            y: isHovered ? 0 : 10,
-          }}
-          transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
-          className={`absolute ${
-            index === total - 1
-              ? "md:right-0 right-0"
-              : index === 0
-              ? "md:left-0 left-0"
-              : "md:left-1/2 md:-translate-x-1/2 left-0"
-          } top-full mt-4 w-64 max-w-[calc(100vw-2rem)] p-4 bg-container border border-accent/30 rounded-lg shadow-xl z-20 pointer-events-none ${
-            isHovered ? "block" : "hidden"
-          }`}
+        {/* Hover Tooltip - Anchored to card bottom-center */}
+        <div
+          className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-64 max-w-[calc(100vw-2rem)] p-4 bg-container border border-accent/30 rounded-lg shadow-xl z-50 pointer-events-none opacity-0 translate-y-1 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0"
         >
-          <div className="flex items-start gap-2">
+          {/* Arrow pointing up to card */}
+          <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-container border-l border-t border-accent/30 transform rotate-45" />
+          
+          {/* Tooltip content */}
+          <div className="flex items-start gap-2 relative z-10">
             <Info className="text-accent mt-0.5 flex-shrink-0" size={16} />
             <p className="text-sm text-gray-light/90 leading-relaxed text-justify">{cert.description}</p>
           </div>
-          <div className="absolute -top-2 md:left-1/2 md:-translate-x-1/2 left-6 w-4 h-4 bg-container border-l border-t border-accent/30 transform rotate-45" />
-        </motion.div>
+        </div>
       </motion.div>
 
       {/* Arrow Connector */}
@@ -374,7 +358,7 @@ function CertificationPath({ certifications }: { certifications: Certification[]
       </div>
 
       {/* Path Container */}
-      <div className="relative">
+      <div className="relative overflow-visible">
         {/* Enhanced Timeline */}
         <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 transform -translate-y-1/2 z-0">
           {/* Background line (muted for future) */}
@@ -431,7 +415,7 @@ function CertificationPath({ certifications }: { certifications: Certification[]
         </div>
 
         {/* Certifications Path */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-6 relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-6 relative z-10 overflow-visible">
           {certifications.map((cert, index) => (
             <CertificationCard key={cert.name} cert={cert} index={index} total={certifications.length} />
           ))}

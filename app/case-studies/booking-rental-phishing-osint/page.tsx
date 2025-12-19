@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Calendar, Shield, AlertTriangle, Search, FileText, ExternalLink } from "lucide-react";
+import { Calendar, Shield, AlertTriangle, Search, FileText, ExternalLink, X } from "lucide-react";
 
 const metadata = {
   title: "Booking Rental Scam: Phishing & OSINT Takedown (Real Case)",
@@ -13,6 +14,25 @@ const metadata = {
 };
 
 export default function BookingPhishingCaseStudy() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  // Close modal on ESC key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
+    if (selectedImage) {
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedImage]);
+
   return (
     <main className="min-h-screen pt-20">
       <article className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -75,14 +95,17 @@ export default function BookingPhishingCaseStudy() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="relative w-full mb-12"
           >
-            <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-container-alt border-2 border-cyber-purple/30 shadow-[0_0_30px_rgba(147,51,234,0.2),0_0_60px_rgba(147,51,234,0.1)] group">
+            <div 
+              className="relative w-full aspect-video rounded-xl overflow-hidden bg-container-alt border-2 border-cyber-purple/30 shadow-[0_0_30px_rgba(147,51,234,0.2),0_0_60px_rgba(147,51,234,0.1)] group cursor-pointer"
+              onClick={() => setSelectedImage("/case-studies/booking-phishing/fig-01.png")}
+            >
               {/* Gradient overlay for depth */}
               <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 via-transparent to-purple-accent/5 z-10 pointer-events-none" />
               
               {/* Image */}
               <Image
                 src="/case-studies/booking-phishing/fig-01.png"
-                alt="Case Study Hero Image - Booking Phishing Investigation"
+                alt="Rental Scam Investigation Overview - Booking Phishing Case Study"
                 fill
                 className="object-contain group-hover:scale-[1.02] transition-transform duration-500"
                 priority
@@ -104,11 +127,18 @@ export default function BookingPhishingCaseStudy() {
               {/* Corner accent decorations */}
               <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-purple-accent/40 rounded-tl-xl z-10 pointer-events-none" />
               <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-purple-accent/40 rounded-br-xl z-10 pointer-events-none" />
+              
+              {/* Click hint overlay */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center z-20 pointer-events-none">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-lg text-white text-sm font-medium">
+                  Click to enlarge
+                </div>
+              </div>
             </div>
             
             {/* Caption */}
             <p className="text-center text-sm text-gray-light/60 mt-4 font-mono">
-              Figure 1: Case Study Overview
+              Figure 1: Rental Scam Investigation Overview
             </p>
           </motion.div>
         </motion.header>
@@ -423,40 +453,55 @@ export default function BookingPhishingCaseStudy() {
           <div className="w-20 h-1 bg-cyber-purple mb-6" />
           
           <div className="grid md:grid-cols-2 gap-6">
-            {[2, 3, 4, 5, 6, 7].map((figNum) => (
-              <div key={figNum} className="bg-container-alt rounded-lg overflow-hidden border border-accent/20">
-                <div className="relative w-full h-48 bg-container flex items-center justify-center">
-                  <Image
-                    src={`/case-studies/booking-phishing/fig-0${figNum}.png`}
-                    alt={`Figure ${figNum}`}
-                    fill
-                    className="object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const parent = target.parentElement;
-                      if (parent && !parent.querySelector('.fallback-text')) {
-                        const fallback = document.createElement('div');
-                        fallback.className = 'fallback-text text-gray-light/60 text-xs text-center p-4';
-                        fallback.textContent = `Figure ${figNum} placeholder - Extract from PDF`;
-                        parent.appendChild(fallback);
-                      }
-                    }}
-                  />
+            {[2, 3, 4, 5, 6].map((figNum) => {
+              const imageSrc = `/case-studies/booking-phishing/fig-0${figNum}.png`;
+              const figureTitles: Record<number, string> = {
+                2: "Facebook Rental Post - Suspicious Profile & Apartment Listing",
+                3: "Phishing Email - Broken Booking.com Link Redirect",
+                4: "Phishing Website Infrastructure - Cloudflare CDN & Network Status",
+                5: "Domain Analysis - e-ffiliate.express WHOIS & Threat Intelligence",
+                6: "Payment Collection Form - Bank Transfer Details (IBAN/SWIFT)"
+              };
+              
+              return (
+                <div 
+                  key={figNum} 
+                  className="bg-container-alt rounded-lg overflow-hidden border border-accent/20 group cursor-pointer hover:border-purple-accent/40 transition-colors"
+                  onClick={() => setSelectedImage(imageSrc)}
+                >
+                  <div className="relative w-full h-48 bg-container flex items-center justify-center overflow-hidden">
+                    <Image
+                      src={imageSrc}
+                      alt={`Figure ${figNum}: ${figureTitles[figNum]}`}
+                      fill
+                      className="object-contain group-hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent && !parent.querySelector('.fallback-text')) {
+                          const fallback = document.createElement('div');
+                          fallback.className = 'fallback-text text-gray-light/60 text-xs text-center p-4';
+                          fallback.textContent = `Figure ${figNum} placeholder - Extract from PDF`;
+                          parent.appendChild(fallback);
+                        }
+                      }}
+                    />
+                    {/* Click hint overlay */}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center pointer-events-none">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded text-white text-xs font-medium">
+                        Click to enlarge
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-sm text-gray-light/80 font-mono">
+                      Figure {figNum}: {figureTitles[figNum]}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-4">
-                  <p className="text-sm text-gray-light/80 font-mono">
-                    Figure {figNum}: {figNum === 2 ? "Suspicious Facebook profile" : figNum === 3 ? "Broken Booking.com link" : figNum === 4 ? "Phishing website interface" : figNum === 5 ? "Domain WHOIS information" : figNum === 6 ? "Payment collection form" : "Post-24h executable download attempt"}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="mt-6 bg-container-alt border border-accent/20 rounded-lg p-4">
-            <p className="text-sm text-gray-light/80">
-              <strong className="text-purple-accent">Note:</strong> Images need to be extracted from the PDF report and placed in <code className="text-purple-accent/80">public/case-studies/booking-phishing/</code> following the naming convention (fig-01.png through fig-07.png). See the README.md in that directory for instructions.
-            </p>
+              );
+            })}
           </div>
         </motion.section>
 
@@ -475,6 +520,58 @@ export default function BookingPhishingCaseStudy() {
           </a>
         </motion.div>
       </article>
+
+      {/* Image Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+              onClick={() => setSelectedImage(null)}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-4 right-4 z-60 p-2 bg-black/60 hover:bg-black/80 rounded-full text-white transition-colors backdrop-blur-sm border border-white/20"
+                aria-label="Close image"
+              >
+                <X size={24} />
+              </button>
+
+              {/* Image Container */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+                className="relative w-full h-full max-w-7xl max-h-[90vh] flex items-center justify-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="relative w-full h-full">
+                  <Image
+                    src={selectedImage}
+                    alt="Enlarged evidence image"
+                    fill
+                    className="object-contain"
+                    sizes="90vw"
+                    priority
+                  />
+                </div>
+              </motion.div>
+
+              {/* Instructions */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white/60 text-sm">
+                Press ESC or click outside to close
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </main>
   );
 }
