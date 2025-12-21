@@ -41,7 +41,7 @@ export default function CTFPage() {
           className="text-center mb-8 sm:mb-12"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-light mb-3 sm:mb-4 px-2">
-            <Terminal className="inline-block mr-2 sm:mr-4 text-accent" size={32} className="sm:w-12 sm:h-12" />
+            <Terminal className="inline-block mr-2 sm:mr-4 text-accent w-8 h-8 sm:w-12 sm:h-12" size={32} />
             CTF <span className="text-accent">Machines</span>
           </h1>
           <div className="w-20 sm:w-24 h-1 bg-accent mx-auto mb-3 sm:mb-4" />
