@@ -55,7 +55,7 @@ export default function About() {
             className="bg-container rounded-lg p-4 sm:p-6 border border-accent/20 cyber-hover"
           >
             <div className="flex items-center gap-2 mb-3 sm:mb-4">
-              <Terminal className="text-cyber-purple" size={18} className="sm:w-5 sm:h-5" />
+              <Terminal size={18} className="text-cyber-purple w-[18px] h-[18px] sm:w-5 sm:h-5" />
               <h3 className="text-lg sm:text-xl font-semibold text-gray-light">Core Focus Areas</h3>
             </div>
             <ul className="space-y-3">
