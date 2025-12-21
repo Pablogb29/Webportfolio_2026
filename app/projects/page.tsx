@@ -33,7 +33,7 @@ const professionalProjects = [
     visibility: "private" as const,
   },
   {
-    title: "JIRA-PowerBI Reporting Automation",
+    title: "JIRA-PowerBI Reporting Automation - Bertrandt",
     description:
       "Created an automated reporting system that runs on an hourly schedule, fetching data from JIRA via API using various filters (projects, tasks, issues, change requests, etc.). The script structures and saves this information into PowerBI dashboards featuring interactive filters, heat maps, latest testing plans with their status, upcoming versions and features, and comprehensive project metrics. This automation eliminates manual reporting efforts and provides real-time insights for project management.",
     stack: ["Python", "JIRA API", "PowerBI", "Automation", "Data Visualization", "Scheduled Tasks"],
