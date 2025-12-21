@@ -56,7 +56,7 @@ export default function Hero() {
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   View Projects
-                  <ArrowDown className="group-hover:translate-y-1 transition-transform" size={16} className="sm:w-[18px] sm:h-[18px]" />
+                  <ArrowDown size={16} className="group-hover:translate-y-1 transition-transform w-4 h-4 sm:w-[18px] sm:h-[18px]" />
                 </span>
               </Link>
 

@@ -89,7 +89,7 @@ export default function Experience() {
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 sm:gap-3 mb-2">
-                    <Briefcase className="text-cyber-purple" size={18} className="sm:w-5 sm:h-5" />
+                    <Briefcase size={18} className="text-cyber-purple w-[18px] h-[18px] sm:w-5 sm:h-5" />
                     <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-light">{exp.title}</h3>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-2 sm:gap-4 text-gray-light/80 text-xs sm:text-sm md:text-base">

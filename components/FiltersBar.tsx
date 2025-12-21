@@ -169,7 +169,7 @@ export default function FiltersBar({
 
         {/* Search Bar */}
         <div className="relative flex-1 min-w-[150px] sm:min-w-[200px] max-w-md">
-          <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-gray-light/60" size={16} className="sm:w-[18px] sm:h-[18px]" />
+          <Search size={16} className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-gray-light/60 w-4 h-4 sm:w-[18px] sm:h-[18px]" />
           <input
             type="text"
             placeholder="Search machines..."

@@ -353,7 +353,7 @@ function CertificationPath({ certifications }: { certifications: Certification[]
       className="bg-container-alt rounded-lg p-4 sm:p-6 md:p-8 border border-accent/20"
     >
       <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
-        <Award className="text-cyber-purple" size={20} className="sm:w-6 sm:h-6" />
+        <Award size={20} className="text-cyber-purple w-5 h-5 sm:w-6 sm:h-6" />
         <h3 className="text-xl sm:text-2xl font-semibold text-gray-light">Certification Path</h3>
       </div>
 
@@ -468,7 +468,7 @@ export default function Education() {
                 <div className="flex-1">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
                     <div className="flex items-center gap-2 sm:gap-3">
-                      <GraduationCap className="text-cyber-purple" size={18} className="sm:w-5 sm:h-5" />
+                      <GraduationCap size={18} className="text-cyber-purple w-[18px] h-[18px] sm:w-5 sm:h-5" />
                       <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-light">{edu.degree}</h3>
                     </div>
                     {edu.status && (
