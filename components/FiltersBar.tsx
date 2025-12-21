@@ -134,57 +134,57 @@ export default function FiltersBar({
   };
 
   return (
-    <div className="mb-8">
+    <div className="mb-6 sm:mb-8">
       {/* Toolbar - Fixed Alignment */}
-      <div className="flex flex-wrap items-center gap-3 mb-4">
+      <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
         {/* View Toggle */}
         {onViewModeChange && (
-          <div className="flex items-center gap-0 bg-container-alt border border-accent/20 rounded-lg p-1 h-10">
+          <div className="flex items-center gap-0 bg-container-alt border border-accent/20 rounded-lg p-1 h-9 sm:h-10">
             <button
               onClick={() => onViewModeChange("grid")}
-              className={`px-3 py-2 rounded transition-colors flex items-center gap-2 h-8 leading-none ${
+              className={`px-2 sm:px-3 py-1.5 sm:py-2 rounded transition-colors flex items-center gap-1 sm:gap-2 h-7 sm:h-8 leading-none ${
                 viewMode === "grid"
                   ? "bg-accent/20 text-accent"
                   : "text-gray-light/60 hover:text-gray-light"
               }`}
               aria-label="Grid view"
             >
-              <Grid3x3 size={18} />
-              <span className="text-sm font-medium hidden sm:inline">Grid</span>
+              <Grid3x3 size={16} className="sm:w-[18px] sm:h-[18px]" />
+              <span className="text-xs sm:text-sm font-medium hidden sm:inline">Grid</span>
             </button>
             <button
               onClick={() => onViewModeChange("list")}
-              className={`px-3 py-2 rounded transition-colors flex items-center gap-2 h-8 leading-none ${
+              className={`px-2 sm:px-3 py-1.5 sm:py-2 rounded transition-colors flex items-center gap-1 sm:gap-2 h-7 sm:h-8 leading-none ${
                 viewMode === "list"
                   ? "bg-accent/20 text-accent"
                   : "text-gray-light/60 hover:text-gray-light"
               }`}
               aria-label="List view"
             >
-              <List size={18} />
-              <span className="text-sm font-medium hidden sm:inline">List</span>
+              <List size={16} className="sm:w-[18px] sm:h-[18px]" />
+              <span className="text-xs sm:text-sm font-medium hidden sm:inline">List</span>
             </button>
           </div>
         )}
 
         {/* Search Bar */}
-        <div className="relative flex-1 min-w-[200px] max-w-md">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-light/60" size={18} />
+        <div className="relative flex-1 min-w-[150px] sm:min-w-[200px] max-w-md">
+          <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 text-gray-light/60" size={16} className="sm:w-[18px] sm:h-[18px]" />
           <input
             type="text"
             placeholder="Search machines..."
             value={filters.search || ""}
             onChange={(e) => handleSearchChange(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 h-10 bg-container-alt border border-accent/20 rounded-lg text-gray-light placeholder-gray-light/50 focus:outline-none focus:border-accent/40 transition-colors"
+            className="w-full pl-8 sm:pl-10 pr-3 sm:pr-4 py-1.5 sm:py-2 h-9 sm:h-10 bg-container-alt border border-accent/20 rounded-lg text-gray-light placeholder-gray-light/50 focus:outline-none focus:border-accent/40 transition-colors text-sm sm:text-base"
           />
         </div>
 
         {/* Filter Toggle */}
         <button
           onClick={() => setShowFilters(!showFilters)}
-          className="flex items-center gap-2 px-4 py-2 h-10 bg-container-alt border border-accent/20 rounded-lg text-gray-light hover:border-accent/40 transition-colors leading-none"
+          className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 h-9 sm:h-10 bg-container-alt border border-accent/20 rounded-lg text-gray-light hover:border-accent/40 transition-colors leading-none text-sm sm:text-base"
         >
-          <Filter size={18} />
+          <Filter size={16} className="sm:w-[18px] sm:h-[18px]" />
           <span>Filters</span>
           {hasActiveFilters && (
             <span className="px-2 py-0.5 bg-accent text-background text-xs rounded-full leading-none">
@@ -204,10 +204,12 @@ export default function FiltersBar({
         <div className="relative">
           <button
             onClick={() => setShowSort(!showSort)}
-            className="flex items-center gap-2 px-4 py-2 h-10 bg-container-alt border border-accent/20 rounded-lg text-gray-light hover:border-accent/40 transition-colors leading-none"
+            className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 h-9 sm:h-10 bg-container-alt border border-accent/20 rounded-lg text-gray-light hover:border-accent/40 transition-colors leading-none text-xs sm:text-sm"
           >
-            <span>Sort: {sortOptions.find((o) => o.value === sortBy)?.label}</span>
-            <ChevronDown size={18} className={showSort ? "rotate-180" : ""} />
+            <span className="hidden sm:inline">Sort: </span>
+            <span className="sm:hidden">Sort</span>
+            <span className="hidden sm:inline">{sortOptions.find((o) => o.value === sortBy)?.label}</span>
+            <ChevronDown size={16} className={`sm:w-[18px] sm:h-[18px] ${showSort ? "rotate-180" : ""}`} />
           </button>
 
           {showSort && (
@@ -216,7 +218,7 @@ export default function FiltersBar({
                 className="fixed inset-0 z-10"
                 onClick={() => setShowSort(false)}
               />
-              <div className="absolute top-full left-0 mt-2 w-64 bg-container-alt border border-accent/20 rounded-lg shadow-lg z-20 max-h-96 overflow-y-auto">
+              <div className="absolute top-full left-0 mt-2 w-56 sm:w-64 bg-container-alt border border-accent/20 rounded-lg shadow-lg z-20 max-h-96 overflow-y-auto">
                 {sortOptions.map((option) => (
                   <button
                     key={option.value}
@@ -240,9 +242,9 @@ export default function FiltersBar({
         {hasActiveFilters && (
           <button
             onClick={clearFilters}
-            className="flex items-center gap-2 px-4 py-2 h-10 text-gray-light/60 hover:text-gray-light transition-colors leading-none"
+            className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 h-9 sm:h-10 text-gray-light/60 hover:text-gray-light transition-colors leading-none text-sm sm:text-base"
           >
-            <X size={18} />
+            <X size={16} className="sm:w-[18px] sm:h-[18px]" />
             <span>Clear</span>
           </button>
         )}
@@ -250,10 +252,10 @@ export default function FiltersBar({
 
       {/* Filters Panel */}
       {showFilters && (
-        <div className="bg-container-alt border border-accent/20 rounded-lg p-6 space-y-6">
+        <div className="bg-container-alt border border-accent/20 rounded-lg p-4 sm:p-6 space-y-4 sm:space-y-6">
           {/* Difficulty Filter */}
           <div>
-            <label className="block text-sm font-semibold text-gray-light mb-3">Difficulty</label>
+            <label className="block text-xs sm:text-sm font-semibold text-gray-light mb-2 sm:mb-3">Difficulty</label>
             <div className="flex flex-wrap gap-2">
               {difficulties.map((diff) => {
                 const isSelected = filters.difficulty?.includes(diff);
@@ -262,7 +264,7 @@ export default function FiltersBar({
                   <button
                     key={diff}
                     onClick={() => toggleFilter("difficulty", diff)}
-                    className={`px-3 py-1.5 rounded border text-sm transition-colors leading-none ${
+                    className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded border text-xs sm:text-sm transition-colors leading-none ${
                       isSelected
                         ? "bg-accent/20 border-accent text-accent"
                         : "bg-container border-accent/20 text-gray-light hover:border-accent/40"
@@ -277,7 +279,7 @@ export default function FiltersBar({
 
           {/* OS Filter */}
           <div>
-            <label className="block text-sm font-semibold text-gray-light mb-3">Operating System</label>
+            <label className="block text-xs sm:text-sm font-semibold text-gray-light mb-2 sm:mb-3">Operating System</label>
             <div className="flex flex-wrap gap-2">
               {osTypes.map((os) => {
                 const isSelected = filters.os?.includes(os);
@@ -286,7 +288,7 @@ export default function FiltersBar({
                   <button
                     key={os}
                     onClick={() => toggleFilter("os", os)}
-                    className={`px-3 py-1.5 rounded border text-sm transition-colors leading-none ${
+                    className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded border text-xs sm:text-sm transition-colors leading-none ${
                       isSelected
                         ? "bg-accent/20 border-accent text-accent"
                         : "bg-container border-accent/20 text-gray-light hover:border-accent/40"
@@ -301,7 +303,7 @@ export default function FiltersBar({
 
           {/* Status Filter */}
           <div>
-            <label className="block text-sm font-semibold text-gray-light mb-3">Status</label>
+            <label className="block text-xs sm:text-sm font-semibold text-gray-light mb-2 sm:mb-3">Status</label>
             <div className="flex flex-wrap gap-2">
               {statusTypes.map((status) => {
                 const isSelected = filters.status?.includes(status);
@@ -310,7 +312,7 @@ export default function FiltersBar({
                   <button
                     key={status}
                     onClick={() => toggleFilter("status", status)}
-                    className={`px-3 py-1.5 rounded border text-sm transition-colors leading-none ${
+                    className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded border text-xs sm:text-sm transition-colors leading-none ${
                       isSelected
                         ? "bg-accent/20 border-accent text-accent"
                         : "bg-container border-accent/20 text-gray-light hover:border-accent/40"
@@ -326,7 +328,7 @@ export default function FiltersBar({
           {/* Tags Filter */}
           {availableTags.length > 0 && (
             <div>
-              <label className="block text-sm font-semibold text-gray-light mb-3">Tags</label>
+              <label className="block text-xs sm:text-sm font-semibold text-gray-light mb-2 sm:mb-3">Tags</label>
               <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto">
                 {availableTags.slice(0, 50).map((tag) => {
                   const isSelected = filters.tags?.some(
@@ -336,7 +338,7 @@ export default function FiltersBar({
                     <button
                       key={tag}
                       onClick={() => toggleFilter("tags", tag)}
-                      className={`px-3 py-1.5 rounded border text-sm transition-colors leading-none ${
+                      className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded border text-xs sm:text-sm transition-colors leading-none ${
                         isSelected
                           ? "bg-purple-accent/20 border-purple-accent text-purple-accent"
                           : "bg-container border-cyber-purple/20 text-gray-light hover:border-purple-accent/40"
@@ -353,7 +355,7 @@ export default function FiltersBar({
           {/* Skills Filter */}
           {availableSkills.length > 0 && (
             <div>
-              <label className="block text-sm font-semibold text-gray-light mb-3">Skills</label>
+              <label className="block text-xs sm:text-sm font-semibold text-gray-light mb-2 sm:mb-3">Skills</label>
               <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto">
                 {availableSkills.slice(0, 50).map((skill) => {
                   const isSelected = filters.skills?.some(
@@ -363,7 +365,7 @@ export default function FiltersBar({
                     <button
                       key={skill}
                       onClick={() => toggleFilter("skills", skill)}
-                      className={`px-3 py-1.5 rounded border text-sm transition-colors leading-none ${
+                      className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded border text-xs sm:text-sm transition-colors leading-none ${
                         isSelected
                           ? "bg-cyan-400/20 border-cyan-400 text-cyan-400"
                           : "bg-container border-cyan-400/20 text-gray-light hover:border-cyan-400/40"
@@ -380,7 +382,7 @@ export default function FiltersBar({
           {/* Year Filter */}
           {getYears().length > 0 && (
             <div>
-              <label className="block text-sm font-semibold text-gray-light mb-3">Year</label>
+              <label className="block text-xs sm:text-sm font-semibold text-gray-light mb-2 sm:mb-3">Year</label>
               <div className="flex flex-wrap gap-2">
                 {getYears().map((year) => {
                   const isSelected = filters.year === year;
@@ -394,7 +396,7 @@ export default function FiltersBar({
                           year: isSelected ? undefined : year,
                         })
                       }
-                      className={`px-3 py-1.5 rounded border text-sm transition-colors leading-none ${
+                      className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded border text-xs sm:text-sm transition-colors leading-none ${
                         isSelected
                           ? "bg-accent/20 border-accent text-accent"
                           : "bg-container border-accent/20 text-gray-light hover:border-accent/40"

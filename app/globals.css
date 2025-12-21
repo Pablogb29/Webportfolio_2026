@@ -152,14 +152,24 @@ body::after {
 /* Sidebar layout offset */
 body[data-sidebar-active="true"] main[data-sidebar-content] {
   margin-left: 0; /* Mobile: no offset, sidebar overlays */
+  padding-left: 0; /* Ensure no padding conflicts */
 }
 
+/* Small screens (640px+) - sidebar is narrower */
+@media (min-width: 640px) {
+  body[data-sidebar-active="true"] main[data-sidebar-content] {
+    margin-left: 0; /* Still overlay on small tablets */
+  }
+}
+
+/* Medium screens (768px+) - sidebar takes space */
 @media (min-width: 768px) {
   body[data-sidebar-active="true"] main[data-sidebar-content] {
     margin-left: 16rem; /* 256px = w-64 */
   }
 }
 
+/* Large screens (1024px+) - wider sidebar */
 @media (min-width: 1024px) {
   body[data-sidebar-active="true"] main[data-sidebar-content] {
     margin-left: 20rem; /* 320px = w-80 */

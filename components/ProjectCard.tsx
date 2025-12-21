@@ -32,14 +32,14 @@ export default function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.6 }}
-      className="bg-container-alt rounded-lg p-6 border border-cyber-purple/20 cyber-hover h-full flex flex-col"
+      className="bg-container-alt rounded-lg p-4 sm:p-6 border border-cyber-purple/20 cyber-hover h-full flex flex-col"
     >
       <div className="flex-1">
-        <div className="flex items-center gap-2 mb-3">
-          <h3 className="text-xl font-semibold text-gray-light">{title}</h3>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-3">
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-light">{title}</h3>
           {visibility && (
             <span
-              className={`px-2 py-0.5 text-xs font-semibold rounded ${
+              className={`px-2 py-0.5 text-xs font-semibold rounded self-start sm:self-auto ${
                 visibility === "public"
                   ? "bg-green-500/20 text-green-400 border border-green-500/30"
                   : "bg-orange-500/20 text-orange-400 border border-orange-500/30"
@@ -49,7 +49,7 @@ export default function ProjectCard({
             </span>
           )}
         </div>
-        <p className="text-gray-light/80 text-sm mb-4 leading-relaxed text-justify">{description}</p>
+        <p className="text-gray-light/80 text-xs sm:text-sm mb-4 leading-relaxed text-justify">{description}</p>
 
         <div className="mb-4">
           <p className="text-xs text-purple-accent/80 font-mono mb-2">STACK:</p>
@@ -71,15 +71,15 @@ export default function ProjectCard({
         </div>
       </div>
 
-      <div className="flex items-center gap-4 pt-4 border-t border-cyber-purple/10">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 pt-4 border-t border-cyber-purple/10">
         {repoUrl && (
           <a
             href={repoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-purple-accent hover:text-purple-accent/80 transition-colors text-sm"
+            className="flex items-center gap-2 text-purple-accent hover:text-purple-accent/80 transition-colors text-xs sm:text-sm"
           >
-            <Github size={16} />
+            <Github size={14} className="sm:w-4 sm:h-4" />
             <span>Repository</span>
           </a>
         )}
@@ -88,9 +88,9 @@ export default function ProjectCard({
             href={demoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-purple-accent hover:text-purple-accent/80 transition-colors text-sm"
+            className="flex items-center gap-2 text-purple-accent hover:text-purple-accent/80 transition-colors text-xs sm:text-sm"
           >
-            <ExternalLink size={16} />
+            <ExternalLink size={14} className="sm:w-4 sm:h-4" />
             <span>Demo</span>
           </a>
         )}

@@ -61,22 +61,22 @@ const experiences: ExperienceItem[] = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-light mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-light mb-3 sm:mb-4 px-2">
             Work <span className="text-cyber-purple">Experience</span>
           </h2>
-          <div className="w-24 h-1 bg-cyber-purple mx-auto" />
+          <div className="w-20 sm:w-24 h-1 bg-cyber-purple mx-auto" />
         </motion.div>
 
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.title}
@@ -84,15 +84,15 @@ export default function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
-              className="bg-container-alt rounded-lg p-6 md:p-8 border border-accent/20 cyber-hover"
+              className="bg-container-alt rounded-lg p-4 sm:p-6 md:p-8 border border-accent/20 cyber-hover"
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <Briefcase className="text-cyber-purple" size={20} />
-                    <h3 className="text-xl md:text-2xl font-semibold text-gray-light">{exp.title}</h3>
+                  <div className="flex items-center gap-2 sm:gap-3 mb-2">
+                    <Briefcase className="text-cyber-purple" size={18} className="sm:w-5 sm:h-5" />
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-light">{exp.title}</h3>
                   </div>
-                  <div className="flex flex-wrap items-center gap-4 text-gray-light/80 text-sm md:text-base">
+                  <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-2 sm:gap-4 text-gray-light/80 text-xs sm:text-sm md:text-base">
                     <span className="font-medium text-purple-accent">{exp.company}</span>
                     <div className="flex items-center gap-1">
                       <MapPin size={14} />
@@ -106,7 +106,7 @@ export default function Experience() {
                 </div>
               </div>
 
-              <ul className="space-y-3 mb-6">
+              <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                 {exp.bullets.map((bullet, bulletIndex) => (
                   <motion.li
                     key={bulletIndex}
@@ -114,7 +114,7 @@ export default function Experience() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2 + bulletIndex * 0.1, duration: 0.4 }}
-                    className="flex items-start gap-3 text-gray-light/90"
+                    className="flex items-start gap-2 sm:gap-3 text-gray-light/90 text-sm sm:text-base"
                   >
                     <span className="text-purple-accent font-mono mt-1">▸</span>
                     <span>{bullet}</span>

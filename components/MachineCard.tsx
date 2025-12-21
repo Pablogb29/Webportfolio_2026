@@ -44,33 +44,33 @@ export default function MachineCard({ machine, index = 0 }: MachineCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05, duration: 0.4 }}
-      className="bg-container-alt rounded-lg p-6 border border-accent/20 cyber-hover group relative overflow-hidden"
+      className="bg-container-alt rounded-lg p-4 sm:p-6 border border-accent/20 cyber-hover group relative overflow-hidden"
     >
       {/* Background gradient effect on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
       <div className="relative z-10">
         {/* Header */}
-        <div className="flex items-start justify-between mb-4">
+        <div className="flex items-start justify-between mb-3 sm:mb-4">
           <div className="flex-1">
-            <h3 className="text-xl font-semibold text-gray-light mb-2 group-hover:text-accent transition-colors">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-light mb-2 group-hover:text-accent transition-colors">
               {machine.name}
             </h3>
-            <div className="flex items-center gap-3 flex-wrap">
+            <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
               {/* Difficulty Badge */}
               <span
-                className={`px-2 py-1 text-xs font-semibold rounded border ${difficultyColor}`}
+                className={`px-2 py-0.5 sm:py-1 text-xs font-semibold rounded border ${difficultyColor}`}
               >
                 {machine.difficulty}
               </span>
               {/* OS */}
-              <span className={`text-sm font-mono ${osColor}`}>{machine.os}</span>
+              <span className={`text-xs sm:text-sm font-mono ${osColor}`}>{machine.os}</span>
             </div>
           </div>
         </div>
 
         {/* Stats Row */}
-        <div className="flex items-center gap-4 mb-4 text-sm text-gray-light/80">
+        <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4 text-xs sm:text-sm text-gray-light/80 flex-wrap">
           {machine.points > 0 && (
             <div className="flex items-center gap-1">
               <Award size={14} className="text-accent" />
@@ -165,29 +165,29 @@ export default function MachineCard({ machine, index = 0 }: MachineCardProps) {
         )}
 
         {/* Footer */}
-        <div className="flex items-center justify-between pt-4 border-t border-accent/10">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 pt-3 sm:pt-4 border-t border-accent/10">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
             <a
               href={machine.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors text-sm font-medium group/link"
+              className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors text-xs sm:text-sm font-medium group/link"
             >
               <span>View on HTB</span>
-              <ExternalLink size={14} className="group-hover/link:translate-x-0.5 transition-transform" />
+              <ExternalLink size={12} className="sm:w-3.5 sm:h-3.5 group-hover/link:translate-x-0.5 transition-transform" />
             </a>
             {machine.hasWriteup && machine.writeupUrl ? (
               <a
                 href={machine.writeupUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-purple-accent hover:text-purple-accent/80 transition-colors text-sm font-medium group/writeup"
+                className="flex items-center gap-2 text-purple-accent hover:text-purple-accent/80 transition-colors text-xs sm:text-sm font-medium group/writeup"
               >
                 <span>View Writeup</span>
-                <ExternalLink size={14} className="group-hover/writeup:translate-x-0.5 transition-transform" />
+                <ExternalLink size={12} className="sm:w-3.5 sm:h-3.5 group-hover/writeup:translate-x-0.5 transition-transform" />
               </a>
             ) : (
-              <span className="text-sm text-gray-light/60 font-medium">Writeup in progress</span>
+              <span className="text-xs sm:text-sm text-gray-light/60 font-medium">Writeup in progress</span>
             )}
           </div>
           {machine.maker && (

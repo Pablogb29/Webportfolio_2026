@@ -112,19 +112,19 @@ const personalProjects = [
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen pt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <main className="min-h-screen pt-16 sm:pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-light mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-light mb-3 sm:mb-4 px-2">
             All <span className="text-cyber-purple">Projects</span>
           </h1>
-          <div className="w-24 h-1 bg-cyber-purple mx-auto mb-4" />
-          <p className="text-gray-light/80 max-w-2xl mx-auto text-justify">
+          <div className="w-20 sm:w-24 h-1 bg-cyber-purple mx-auto mb-3 sm:mb-4" />
+          <p className="text-gray-light/80 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0 text-justify">
             A comprehensive collection of professional and personal projects showcasing automation, security, and software development skills.
           </p>
         </motion.div>
@@ -135,19 +135,19 @@ export default function ProjectsPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-20"
+          className="mb-12 sm:mb-16 lg:mb-20"
         >
-          <div className="mb-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-light mb-4">
+          <div className="mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-light mb-3 sm:mb-4 px-2 sm:px-0">
               Professional <span className="text-cyber-purple">Projects</span>
             </h2>
-            <div className="w-20 h-1 bg-cyber-purple mb-4" />
-            <p className="text-gray-light/80 max-w-3xl text-justify">
+            <div className="w-16 sm:w-20 h-1 bg-cyber-purple mb-3 sm:mb-4" />
+            <p className="text-gray-light/80 max-w-3xl text-sm sm:text-base px-4 sm:px-0 text-justify">
               Professional projects are projects that I made to improve my job. I was not obligated to do them, I did them by myself to improve my job and my team&apos;s work.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {professionalProjects.map((project, index) => (
               <ProjectCard key={project.title} {...project} index={index} />
             ))}
@@ -160,37 +160,37 @@ export default function ProjectsPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="mb-20"
+          className="mb-12 sm:mb-16 lg:mb-20"
         >
-          <div className="mb-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-light mb-4">
+          <div className="mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-light mb-3 sm:mb-4 px-2 sm:px-0">
               Cybersecurity <span className="text-cyber-purple">Case Studies</span>
             </h2>
-            <div className="w-20 h-1 bg-cyber-purple mb-4" />
-            <p className="text-gray-light/80 max-w-3xl text-justify">
+            <div className="w-16 sm:w-20 h-1 bg-cyber-purple mb-3 sm:mb-4" />
+            <p className="text-gray-light/80 max-w-3xl text-sm sm:text-base px-4 sm:px-0 text-justify">
               Real-world incident investigations and security analysis showcasing OSINT techniques, phishing analysis, and threat intelligence.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="bg-container-alt rounded-lg p-6 border border-cyber-purple/20 cyber-hover h-full flex flex-col group cursor-pointer"
+              className="bg-container-alt rounded-lg p-4 sm:p-6 border border-cyber-purple/20 cyber-hover h-full flex flex-col group cursor-pointer"
               onClick={() => window.location.href = "/case-studies/booking-rental-phishing-osint"}
             >
               <div className="flex-1">
-                <div className="flex items-center gap-2 mb-3">
-                  <h3 className="text-xl font-semibold text-gray-light group-hover:text-purple-accent transition-colors">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-3">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-light group-hover:text-purple-accent transition-colors">
                     Booking Rental Scam: Phishing & OSINT Takedown
                   </h3>
-                  <span className="px-2 py-0.5 text-xs font-semibold rounded bg-red-500/20 text-red-400 border border-red-500/30">
+                  <span className="px-2 py-0.5 text-xs font-semibold rounded bg-red-500/20 text-red-400 border border-red-500/30 self-start sm:self-auto">
                     Real Case
                   </span>
                 </div>
-                <p className="text-gray-light/80 text-sm mb-4 leading-relaxed text-justify">
+                <p className="text-gray-light/80 text-xs sm:text-sm mb-4 leading-relaxed text-justify">
                   Investigation of a sophisticated rental scam targeting expatriates in Luxembourg. Documented OSINT techniques, phishing website analysis, domain investigation, and threat actor behavior mapping. Prevented financial loss through systematic analysis and reporting.
                 </p>
 
@@ -232,19 +232,19 @@ export default function ProjectsPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-20"
+          className="mb-12 sm:mb-16 lg:mb-20"
         >
-          <div className="mb-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-light mb-4">
+          <div className="mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-light mb-3 sm:mb-4 px-2 sm:px-0">
               Personal <span className="text-cyber-purple">Projects</span>
             </h2>
-            <div className="w-20 h-1 bg-cyber-purple mb-4" />
-            <p className="text-gray-light/80 max-w-3xl text-justify">
+            <div className="w-16 sm:w-20 h-1 bg-cyber-purple mb-3 sm:mb-4" />
+            <p className="text-gray-light/80 max-w-3xl text-sm sm:text-base px-4 sm:px-0 text-justify">
               Personal projects have been made to test my knowledge and create my own apps to improve my life.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {personalProjects.map((project, index) => (
               <ProjectCard key={project.title} {...project} index={index} />
             ))}

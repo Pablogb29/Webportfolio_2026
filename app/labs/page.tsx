@@ -53,19 +53,19 @@ const categoryIcons = {
 
 export default function LabsPage() {
   return (
-    <main className="min-h-screen pt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <main className="min-h-screen pt-16 sm:pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-light mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-light mb-3 sm:mb-4 px-2">
             HTB <span className="text-cyber-purple">Writeups</span>
           </h1>
-          <div className="w-24 h-1 bg-cyber-purple mx-auto mb-4" />
-          <p className="text-gray-light/80 max-w-2xl mx-auto text-justify">
+          <div className="w-20 sm:w-24 h-1 bg-cyber-purple mx-auto mb-3 sm:mb-4" />
+          <p className="text-gray-light/80 max-w-2xl mx-auto text-sm sm:text-base text-justify px-4 sm:px-0">
             I maintain an active practice in offensive security through Hack The Box labs, having completed 33 machines with a focus on Windows and Linux environments. All write-ups follow an OSCP-oriented style, documenting methodologies, tool usage, and mitigation strategies without exposing flags or detailed exploitation steps.
           </p>
         </motion.div>
@@ -75,40 +75,40 @@ export default function LabsPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-12"
         >
-          <div className="bg-container-alt rounded-lg p-6 border border-accent/20 text-center">
-            <div className="text-3xl font-bold text-purple-accent mb-2">33</div>
-            <div className="text-gray-light/80 text-sm">Machines Solved</div>
+          <div className="bg-container-alt rounded-lg p-4 sm:p-6 border border-accent/20 text-center">
+            <div className="text-2xl sm:text-3xl font-bold text-purple-accent mb-1 sm:mb-2">33</div>
+            <div className="text-gray-light/80 text-xs sm:text-sm">Machines Solved</div>
           </div>
-          <div className="bg-container-alt rounded-lg p-6 border border-accent/20 text-center">
-            <div className="text-3xl font-bold text-accent mb-2">30</div>
-            <div className="text-gray-light/80 text-sm">Easy</div>
+          <div className="bg-container-alt rounded-lg p-4 sm:p-6 border border-accent/20 text-center">
+            <div className="text-2xl sm:text-3xl font-bold text-accent mb-1 sm:mb-2">30</div>
+            <div className="text-gray-light/80 text-xs sm:text-sm">Easy</div>
           </div>
-          <div className="bg-container-alt rounded-lg p-6 border border-accent/20 text-center">
-            <div className="text-3xl font-bold text-purple-accent mb-2">3</div>
-            <div className="text-gray-light/80 text-sm">Medium</div>
+          <div className="bg-container-alt rounded-lg p-4 sm:p-6 border border-accent/20 text-center">
+            <div className="text-2xl sm:text-3xl font-bold text-purple-accent mb-1 sm:mb-2">3</div>
+            <div className="text-gray-light/80 text-xs sm:text-sm">Medium</div>
           </div>
-          <div className="bg-container-alt rounded-lg p-6 border border-accent/20 text-center">
-            <div className="text-3xl font-bold text-green-400 mb-2">OSCP</div>
-            <div className="text-gray-light/80 text-sm">Oriented</div>
+          <div className="bg-container-alt rounded-lg p-4 sm:p-6 border border-accent/20 text-center">
+            <div className="text-2xl sm:text-3xl font-bold text-green-400 mb-1 sm:mb-2">OSCP</div>
+            <div className="text-gray-light/80 text-xs sm:text-sm">Oriented</div>
           </div>
         </motion.div>
 
         {/* Machines Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {htbMachines.map((machine, index) => (
             <motion.div
               key={machine.name}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="bg-container-alt rounded-lg p-6 border border-accent/20 cyber-hover"
+              className="bg-container-alt rounded-lg p-4 sm:p-6 border border-accent/20 cyber-hover"
             >
-              <div className="flex items-start justify-between mb-4">
+              <div className="flex items-start justify-between mb-3 sm:mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-light mb-2">{machine.name}</h3>
-                  <div className="flex items-center gap-4 text-sm">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-light mb-2">{machine.name}</h3>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm">
                     <div className="flex items-center gap-2 text-gray-light/80">
                       {categoryIcons[machine.category]}
                       <span>{machine.category}</span>
@@ -134,15 +134,15 @@ export default function LabsPage() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 pt-4 border-t border-cyber-purple/10">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 pt-3 sm:pt-4 border-t border-cyber-purple/10">
                 {machine.writeupUrl && (
                   <a
                     href={machine.writeupUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-purple-accent hover:text-purple-accent/80 transition-colors text-sm"
+                    className="flex items-center gap-2 text-purple-accent hover:text-purple-accent/80 transition-colors text-xs sm:text-sm"
                   >
-                    <ExternalLink size={16} />
+                    <ExternalLink size={14} className="sm:w-4 sm:h-4" />
                     <span>Writeup</span>
                   </a>
                 )}
@@ -151,9 +151,9 @@ export default function LabsPage() {
                     href={machine.htbUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-purple-accent hover:text-purple-accent/80 transition-colors text-sm"
+                    className="flex items-center gap-2 text-purple-accent hover:text-purple-accent/80 transition-colors text-xs sm:text-sm"
                   >
-                    <ExternalLink size={16} />
+                    <ExternalLink size={14} className="sm:w-4 sm:h-4" />
                     <span>HTB Profile</span>
                   </a>
                 )}
