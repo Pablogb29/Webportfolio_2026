@@ -8,9 +8,9 @@ const professionalProjects = [
   {
     title: "QA Mobile Automation - Bertrandt",
     description:
-      "Created a comprehensive automation environment using Python, XCode, Selenium, Appium, and Android Studio to automate test cases. The system measures the time users spend to start specific functions, providing valuable performance metrics for mobile applications.",
-    stack: ["Python", "XCode", "Selenium", "Appium", "Android Studio"],
-    result: "Automated test case execution with performance timing metrics for mobile applications",
+      "Created a comprehensive automation environment for iOS and Android applications (MyCupra and MySeat) using Python, XCode, Selenium, Appium, and Android Studio. The automation measures average user time for critical actions such as starting air conditioning or battery charging when the car is connected. Metrics are captured from the moment the action is initiated on the mobile screen until the notification appears, providing valuable performance data to developers for code optimization and API call improvements.",
+    stack: ["Python", "XCode", "Selenium", "Appium", "Android Studio", "iOS", "Android", "Performance Testing"],
+    result: "Automated performance measurement system that identified optimization opportunities, addressing user complaints about app speed in Play Store and App Store reviews",
     repoUrl: undefined,
     visibility: "private" as const,
   },
@@ -29,6 +29,15 @@ const professionalProjects = [
       "Created a custom 'BloodHound' for Databricks using Python and PyVis library. The tool visualizes a network of connections between users, groups, service principals, permissions, catalogs, schemas, tables, and more. Features include route finding to determine if a user can access a specific table, searching for all schemas and tables with group privileges, and comprehensive permission mapping.",
     stack: ["Python", "PyVis", "Databricks API", "Network Visualization", "Security Analysis"],
     result: "Comprehensive security visualization tool for Databricks environments with permission analysis capabilities",
+    repoUrl: undefined,
+    visibility: "private" as const,
+  },
+  {
+    title: "JIRA-PowerBI Reporting Automation",
+    description:
+      "Created an automated reporting system that runs on an hourly schedule, fetching data from JIRA via API using various filters (projects, tasks, issues, change requests, etc.). The script structures and saves this information into PowerBI dashboards featuring interactive filters, heat maps, latest testing plans with their status, upcoming versions and features, and comprehensive project metrics. This automation eliminates manual reporting efforts and provides real-time insights for project management.",
+    stack: ["Python", "JIRA API", "PowerBI", "Automation", "Data Visualization", "Scheduled Tasks"],
+    result: "Automated weekly and monthly reporting system that provides real-time project insights and eliminates manual reporting overhead",
     repoUrl: undefined,
     visibility: "private" as const,
   },
