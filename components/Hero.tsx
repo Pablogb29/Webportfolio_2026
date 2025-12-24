@@ -2,32 +2,89 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Hero() {
   const router = useRouter();
+  const pathname = usePathname();
 
-  const scrollToProjects = () => {
-    const projectsSection = document.getElementById("projects");
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      // If not on home page, navigate to home and then scroll
+  const scrollToProjects = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    console.log("Scroll to projects clicked");
+    
+    const performScroll = () => {
+      const projectsSection = document.getElementById("projects");
+      console.log("Looking for projects section:", projectsSection);
+      
+      if (projectsSection) {
+        const offset = 100;
+        const elementPosition = projectsSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        
+        console.log("Scrolling to:", offsetPosition);
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      } else {
+        console.log("Projects section not found, retrying...");
+        setTimeout(performScroll, 200);
+      }
+    };
+
+    // If we're not on the home page, navigate first
+    if (pathname !== "/") {
+      console.log("Not on home page, navigating...");
       router.push("/");
-      setTimeout(() => {
-        const section = document.getElementById("projects");
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 100);
+      setTimeout(performScroll, 500);
+    } else {
+      // We're already on home page, just scroll
+      setTimeout(performScroll, 100);
     }
   };
+
+  const handleDownload = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    console.log("Download clicked");
+    
+    // Simple direct download approach
+    const link = document.createElement("a");
+    link.href = "/Pablo_Gutierrez_CV.pdf";
+    link.download = "Pablo_Gutierrez_CV.pdf";
+    link.target = "_blank";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  // Handle hash navigation on mount
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash === "#projects") {
+      setTimeout(() => {
+        const projectsSection = document.getElementById("projects");
+        if (projectsSection) {
+          const offset = 100;
+          const elementPosition = projectsSection.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 500);
+    }
+  }, []);
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 sm:pt-24">
 
       {/* Centered content container */}
-      <div className="w-full max-w-[62.5rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-[62.5rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-[60]">
         <div className="flex flex-col items-center justify-center text-center space-y-4 sm:space-y-6">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -69,8 +126,10 @@ export default function Hero() {
               className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4 sm:pt-8 w-full sm:w-auto px-4"
             >
               <button
+                type="button"
                 onClick={scrollToProjects}
-                className="group relative w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-accent text-background font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,217,255,0.4),0_0_30px_rgba(147,51,234,0.3),0_0_40px_rgba(233,30,99,0.2)] text-sm sm:text-base"
+                className="group relative w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-accent text-background font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,217,255,0.4),0_0_30px_rgba(147,51,234,0.3),0_0_40px_rgba(233,30,99,0.2)] text-sm sm:text-base cursor-pointer"
+                style={{ pointerEvents: "auto", position: "relative", zIndex: 100 }}
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   View Projects
@@ -81,7 +140,9 @@ export default function Hero() {
               <a
                 href="/Pablo_Gutierrez_CV.pdf"
                 download="Pablo_Gutierrez_CV.pdf"
-                className="group w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-accent text-accent font-semibold rounded-lg transition-all duration-300 hover:bg-accent/10 hover:shadow-[0_0_20px_rgba(0,217,255,0.3),0_0_30px_rgba(147,51,234,0.25),0_0_40px_rgba(233,30,99,0.15)] text-sm sm:text-base"
+                onClick={handleDownload}
+                className="group w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-accent text-accent font-semibold rounded-lg transition-all duration-300 hover:bg-accent/10 hover:shadow-[0_0_20px_rgba(0,217,255,0.3),0_0_30px_rgba(147,51,234,0.25),0_0_40px_rgba(233,30,99,0.15)] text-sm sm:text-base cursor-pointer"
+                style={{ pointerEvents: "auto", position: "relative", zIndex: 100 }}
               >
                 <span className="flex items-center justify-center gap-2">
                   <Download size={16} className="sm:w-[18px] sm:h-[18px]" />
