@@ -2,9 +2,27 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
+  const router = useRouter();
+
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      // If not on home page, navigate to home and then scroll
+      router.push("/");
+      setTimeout(() => {
+        const section = document.getElementById("projects");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 sm:pt-24">
 
@@ -50,19 +68,19 @@ export default function Hero() {
               transition={{ delay: 0.8, duration: 0.8 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4 sm:pt-8 w-full sm:w-auto px-4"
             >
-              <Link
-                href="/#projects"
+              <button
+                onClick={scrollToProjects}
                 className="group relative w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-accent text-background font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,217,255,0.4),0_0_30px_rgba(147,51,234,0.3),0_0_40px_rgba(233,30,99,0.2)] text-sm sm:text-base"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   View Projects
                   <ArrowDown size={16} className="group-hover:translate-y-1 transition-transform w-4 h-4 sm:w-[18px] sm:h-[18px]" />
                 </span>
-              </Link>
+              </button>
 
               <a
                 href="/Pablo_Gutierrez_CV.pdf"
-                download
+                download="Pablo_Gutierrez_CV.pdf"
                 className="group w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-accent text-accent font-semibold rounded-lg transition-all duration-300 hover:bg-accent/10 hover:shadow-[0_0_20px_rgba(0,217,255,0.3),0_0_30px_rgba(147,51,234,0.25),0_0_40px_rgba(233,30,99,0.15)] text-sm sm:text-base"
               >
                 <span className="flex items-center justify-center gap-2">
