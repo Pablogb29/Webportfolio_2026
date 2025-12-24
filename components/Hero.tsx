@@ -61,7 +61,7 @@ export default function Hero() {
               </Link>
 
               <a
-                href="/Pablo_Gutierrez_EN_11_12_2025.pdf"
+                href="/Pablo_Gutierrez_CV.pdf"
                 download
                 className="group w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-accent text-accent font-semibold rounded-lg transition-all duration-300 hover:bg-accent/10 hover:shadow-[0_0_20px_rgba(0,217,255,0.3),0_0_30px_rgba(147,51,234,0.25),0_0_40px_rgba(233,30,99,0.15)] text-sm sm:text-base"
               >
