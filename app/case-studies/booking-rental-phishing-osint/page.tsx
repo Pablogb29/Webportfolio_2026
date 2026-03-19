@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Calendar, Shield, AlertTriangle, Search, FileText, ExternalLink, X } from "lucide-react";
 
-const metadata = {
+const caseStudy = {
   title: "Booking Rental Scam: Phishing & OSINT Takedown (Real Case)",
   date: "2025-09-18",
   tags: ["Phishing", "OSINT", "Incident Response", "Fraud", "Web Security"],
@@ -34,7 +34,7 @@ export default function BookingPhishingCaseStudy() {
   }, [selectedImage]);
 
   return (
-    <main className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20">
       <article className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Header */}
         <motion.header
@@ -53,26 +53,26 @@ export default function BookingPhishingCaseStudy() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-light mb-6">
-            {metadata.title}
+            {caseStudy.title}
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-light/80">
             <div className="flex items-center gap-2">
               <Calendar size={16} />
-              <span>{metadata.date}</span>
+              <span>{caseStudy.date}</span>
             </div>
             <div className="flex items-center gap-2">
               <Shield size={16} />
-              <span>{metadata.role}</span>
+              <span>{caseStudy.role}</span>
             </div>
             <div className="flex items-center gap-2">
               <AlertTriangle size={16} className="text-green-400" />
-              <span className="text-green-400">{metadata.status}</span>
+              <span className="text-green-400">{caseStudy.status}</span>
             </div>
           </div>
 
           <div className="flex flex-wrap gap-2 mb-6">
-            {metadata.tags.map((tag) => (
+            {caseStudy.tags.map((tag) => (
               <span
                 key={tag}
                 className="px-3 py-1 bg-cyber-purple/20 text-purple-accent text-xs rounded border border-cyber-purple/30"
@@ -156,7 +156,7 @@ export default function BookingPhishingCaseStudy() {
           </h2>
           <div className="w-20 h-1 bg-cyber-purple mb-6" />
           <div className="bg-container-alt rounded-lg p-6 border border-accent/20">
-            <p className="text-gray-light/90 leading-relaxed text-lg text-justify">
+            <p className="text-gray-light/90 leading-relaxed text-lg ">
               In September 2025, a sophisticated rental scam targeting expatriates in Luxembourg was identified and investigated through OSINT techniques. The threat actor impersonated legitimate property owners on Facebook, directing victims to a phishing website that cloned Booking.com&apos;s interface. Through systematic domain analysis, infrastructure investigation, and behavioral analysis, the attack vector was mapped and reported to INCIBE and local law enforcement. This case study documents the investigation methodology, technical findings, and lessons learned from preventing potential financial losses.
             </p>
           </div>
@@ -178,21 +178,21 @@ export default function BookingPhishingCaseStudy() {
           <div className="space-y-6 text-gray-light/90 leading-relaxed">
             <div>
               <h3 className="text-xl font-semibold text-gray-light mb-3">Rental Scam via Facebook</h3>
-              <p className="text-justify">
+              <p className="">
                 The threat actor leveraged Facebook groups dedicated to housing in Luxembourg, posting attractive rental listings with below-market prices. These posts targeted expatriates and international workers seeking accommodation, exploiting their urgency and potential lack of local knowledge.
               </p>
             </div>
 
             <div>
               <h3 className="text-xl font-semibold text-gray-light mb-3">Identity Impersonation</h3>
-              <p className="text-justify">
+              <p className="">
                 The scammer created Facebook profiles impersonating legitimate property owners, using stolen or fabricated photos and minimal profile information. These profiles appeared authentic at first glance but lacked the depth and history of genuine accounts.
               </p>
             </div>
 
             <div>
               <h3 className="text-xl font-semibold text-gray-light mb-3">Booking.com Brand Abuse</h3>
-              <p className="text-justify">
+              <p className="">
                 To add credibility, the threat actor directed victims to a phishing website that closely mimicked Booking.com&apos;s interface. This brand abuse exploited trust in a well-known platform, making the scam appear legitimate to unsuspecting victims.
               </p>
             </div>
@@ -258,28 +258,28 @@ export default function BookingPhishingCaseStudy() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-container-alt rounded-lg p-6 border border-accent/20">
               <h3 className="text-lg font-semibold text-gray-light mb-3">Suspicious Facebook Profile</h3>
-              <p className="text-gray-light/80 text-sm text-justify">
+              <p className="text-gray-light/80 text-sm ">
                 Profile contained minimal information, recent creation date, and lacked mutual connections or activity history typical of legitimate property owners.
               </p>
             </div>
 
             <div className="bg-container-alt rounded-lg p-6 border border-accent/20">
               <h3 className="text-lg font-semibold text-gray-light mb-3">Comments Disabled</h3>
-              <p className="text-gray-light/80 text-sm text-justify">
+              <p className="text-gray-light/80 text-sm ">
                 The threat actor disabled comments on posts to prevent public warnings and questions from other group members who might recognize the scam.
               </p>
             </div>
 
             <div className="bg-container-alt rounded-lg p-6 border border-accent/20">
               <h3 className="text-lg font-semibold text-gray-light mb-3">Random Gmail Address</h3>
-              <p className="text-gray-light/80 text-sm text-justify">
+              <p className="text-gray-light/80 text-sm ">
                 Contact email used a generic Gmail account with random characters, inconsistent with professional property management practices.
               </p>
             </div>
 
             <div className="bg-container-alt rounded-lg p-6 border border-accent/20">
               <h3 className="text-lg font-semibold text-gray-light mb-3">Refusal to Provide Phone Number</h3>
-              <p className="text-gray-light/80 text-sm text-justify">
+              <p className="text-gray-light/80 text-sm ">
                 When requested, the threat actor refused to provide a phone number or schedule a property viewing, insisting on online-only communication and payment.
               </p>
             </div>
@@ -302,7 +302,7 @@ export default function BookingPhishingCaseStudy() {
           <div className="space-y-8">
             <div>
               <h3 className="text-xl font-semibold text-gray-light mb-3">Broken Booking.com Link as Trigger</h3>
-              <p className="text-gray-light/90 leading-relaxed mb-4 text-justify">
+              <p className="text-gray-light/90 leading-relaxed mb-4 ">
                 The initial link provided appeared to be a Booking.com URL but was malformed or broken. This served as a pretext to redirect victims to a secondary communication channel, where the threat actor could provide the &quot;correct&quot; link to the phishing website.
               </p>
               <div className="bg-container-alt rounded-lg p-4 border border-accent/20 font-mono text-sm text-gray-light/80">
@@ -312,14 +312,14 @@ export default function BookingPhishingCaseStudy() {
 
             <div>
               <h3 className="text-xl font-semibold text-gray-light mb-3">Secondary Email Pivot</h3>
-              <p className="text-gray-light/90 leading-relaxed mb-4 text-justify">
+              <p className="text-gray-light/90 leading-relaxed mb-4 ">
                 When the initial link failed, the threat actor provided a secondary email address and directed victims to contact them directly. This email was used to send the phishing link, bypassing Facebook&apos;s link scanning mechanisms.
               </p>
             </div>
 
             <div>
               <h3 className="text-xl font-semibold text-gray-light mb-3">Domain Analysis: e-ffiliate[.]express</h3>
-              <p className="text-gray-light/90 leading-relaxed mb-4 text-justify">
+              <p className="text-gray-light/90 leading-relaxed mb-4 ">
                 The phishing domain e-ffiliate[.]express was identified through email analysis. Key findings:
               </p>
               <ul className="list-disc list-inside space-y-2 text-gray-light/90 ml-4 mb-4">
@@ -332,7 +332,7 @@ export default function BookingPhishingCaseStudy() {
 
             <div>
               <h3 className="text-xl font-semibold text-gray-light mb-3">WHOIS / Infrastructure Indicators</h3>
-              <p className="text-gray-light/90 leading-relaxed mb-4 text-justify">
+              <p className="text-gray-light/90 leading-relaxed mb-4 ">
                 WHOIS data revealed:
               </p>
               <ul className="list-disc list-inside space-y-2 text-gray-light/90 ml-4 mb-4">
@@ -572,7 +572,7 @@ export default function BookingPhishingCaseStudy() {
           </>
         )}
       </AnimatePresence>
-    </main>
+    </div>
   );
 }
 

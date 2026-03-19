@@ -31,7 +31,7 @@ export default function CTFPage() {
   } = useMachines({ filters, sortBy, pageSize: 12 });
 
   return (
-    <main className="min-h-screen pt-16 sm:pt-20">
+    <div className="min-h-screen pt-16 sm:pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
         {/* Header */}
         <motion.div
@@ -45,7 +45,7 @@ export default function CTFPage() {
             CTF <span className="text-accent">Machines</span>
           </h1>
           <div className="w-20 sm:w-24 h-1 bg-accent mx-auto mb-3 sm:mb-4" />
-          <p className="text-gray-light/80 max-w-2xl mx-auto text-sm sm:text-base text-justify px-4 sm:px-0">
+          <p className="text-gray-light/80 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0">
             A comprehensive showcase of Hack The Box machines I&apos;ve solved, demonstrating my
             offensive security skills across various difficulty levels, operating systems, and
             attack techniques.
@@ -203,7 +203,7 @@ export default function CTFPage() {
           </div>
         )}
       </div>
-    </main>
+    </div>
   );
 }
 

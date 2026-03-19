@@ -3,15 +3,14 @@
 import { motion } from "framer-motion";
 import { Terminal } from "lucide-react";
 
-export default function About() {
-  const skills = [
-    "Blue Team: IAM",
-    "Red Team: Penetration Testing",
-    "Security Automation",
-    "AI & Machine Learning",
-    "Python, Bash & PowerShell",
-  ];
+const coreAreas = [
+  "Security Engineering & IAM",
+  "Offensive Security & Penetration Testing",
+  "Active Directory Attack & Defense",
+  "Security Automation (Python, Bash, PowerShell)",
+];
 
+export default function About() {
   return (
     <section id="about" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -36,14 +35,14 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="space-y-4 sm:space-y-6"
           >
-            <p className="text-gray-light/90 text-sm sm:text-base leading-relaxed text-justify px-2 sm:px-0">
-              With a foundation in <span className="text-purple-accent font-semibold">Telecommunications Engineering</span>, I've always been drawn to understanding how systems communicate and interconnect. I specialize in <span className="text-purple-accent font-semibold">Penetration Testing</span>, though I'm currently working on a Blue Team where I focus on identity and access management and automating the security of the information we protect. This dual experience gives me valuable insight into both offensive and defensive security perspectives.
+            <p className="text-gray-light/90 text-sm sm:text-base leading-relaxed px-2 sm:px-0">
+              With a foundation in <span className="text-purple-accent font-semibold">Telecommunications Engineering</span> and two Master&apos;s degrees in Cybersecurity and AI, I currently work as a Cybersecurity Engineer at Indra | Minsait Cyber, where I manage identity lifecycle, automate access governance, and build security tooling for large-scale data platforms.
             </p>
-            <p className="text-gray-light/90 leading-relaxed text-justify">
-              I've always wanted to be an ethical hacker—to protect systems before malicious actors do, giving organizations time to correct vulnerabilities and protect their information. My Master's thesis project involved designing, building, and comprehensively auditing a full Active Directory lab environment from scratch, which deepened my expertise in attack methodologies like Kerberoasting, AS-REP roasting, and various privilege escalation vectors.
+            <p className="text-gray-light/90 leading-relaxed">
+              I am actively transitioning toward <span className="text-purple-accent font-semibold">offensive security</span>. My Master&apos;s thesis involved designing, building, and comprehensively auditing a full Active Directory lab environment from scratch, deepening my expertise in attack methodologies like Kerberoasting, AS-REP roasting, and various privilege escalation vectors.
             </p>
-            <p className="text-gray-light/90 leading-relaxed text-justify">
-              Within penetration testing, I specialize in Active Directory, but I cover the full cycle from OSINT and network scanning to privilege escalation, lateral movement, and brute force attack techniques to achieve our goals.
+            <p className="text-gray-light/90 leading-relaxed">
+              I maintain consistent hands-on practice through Hack The Box (33 machines solved with OSCP-oriented write-ups) and am working toward CJCA, CPTS, and OSCP certifications. My Blue Team experience in IAM and compliance gives me a practical understanding of the defensive postures that offensive testers need to navigate.
             </p>
           </motion.div>
 
@@ -52,16 +51,16 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-container rounded-lg p-4 sm:p-6 border border-accent/20 cyber-hover"
+            className="bg-container rounded-lg p-4 sm:p-6 border border-accent/20 hover:border-accent/40 transition-colors duration-200"
           >
             <div className="flex items-center gap-2 mb-3 sm:mb-4">
               <Terminal size={18} className="text-cyber-purple w-[18px] h-[18px] sm:w-5 sm:h-5" />
               <h3 className="text-lg sm:text-xl font-semibold text-gray-light">Core Focus Areas</h3>
             </div>
             <ul className="space-y-3">
-              {skills.map((skill, index) => (
+              {coreAreas.map((area, index) => (
                 <motion.li
-                  key={skill}
+                  key={area}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -69,7 +68,7 @@ export default function About() {
                   className="flex items-center gap-3 text-gray-light/80"
                 >
                   <span className="text-purple-accent font-mono">▸</span>
-                  <span>{skill}</span>
+                  <span>{area}</span>
                 </motion.li>
               ))}
             </ul>
@@ -79,4 +78,3 @@ export default function About() {
     </section>
   );
 }
-

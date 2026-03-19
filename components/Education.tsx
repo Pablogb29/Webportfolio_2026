@@ -3,107 +3,8 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Calendar, Award, BookOpen, FileText, ArrowRight, CheckCircle2, Shield, Target, Info } from "lucide-react";
 import { useState, useEffect } from "react";
-
-interface EducationItem {
-  degree: string;
-  institution: string;
-  location: string;
-  period: string;
-  eqfLevel: string;
-  status?: string;
-  thesis?: string;
-  thesisPdf?: string;
-  keySubjects: string[];
-}
-
-const education: EducationItem[] = [
-  {
-    degree: "Master`s in Artificial Intelligence",
-    institution: "Racks Academy IUNIT - Centro Universitario",
-    location: "Remote, Spain",
-    period: "10/2024 - 12/2025",
-    eqfLevel: "EQF level 7",
-    thesis: "Design and Implementation of an AI-Based Automated System for Job Offer Management and Prioritization",
-    thesisPdf: "/thesis/ai-thesis.pdf",
-    keySubjects: [
-      "Development of LLMs to analyse responses from cybersecurity tools to ensure a short path to finding vulnerabilities",
-      "Machine Learning, Deep Learning and LLM-based systems applied to automation and data analysis",
-      "Development of AI-driven SaaS tools and workflow optimization solutions",
-      "Integration of AI models to support intelligent decision-making across different industries",
-    ],
-  },
-  {
-    degree: "Master's in Cybersecurity",
-    institution: "Deloitte - IMF Smart Education",
-    location: "Remote, Spain",
-    period: "03/2024 - 04/2025",
-    eqfLevel: "EQF level 7",
-    thesis: "Building and Breaking an Active Directory Environment",
-    thesisPdf: "/thesis/cybersecurity-thesis.pdf",
-    keySubjects: [
-      "Ethical hacking, technical security audits and malware analysis",
-      "Digital forensics and security incident management",
-      "Secure development practices and penetration testing of systems and networks",
-      "SIEM monitoring, event correlation and attack mitigation",
-      "Security frameworks: ENS, ISO 27001, GDPR",
-    ],
-  },
-  {
-    degree: "Bachelor's degree in Electronic Telecommunications Engineering",
-    institution: "Universidad Autónoma de Barcelona",
-    location: "Cerdanyola del Vallès, Spain",
-    period: "09/2019 - 02/2024",
-    eqfLevel: "EQF level 6",
-    thesis: "Neuronal Network for Random Number Generation",
-    thesisPdf: "/thesis/telecommunication-thesis.pdf",
-    keySubjects: [
-      "Electronics, telecommunications, networking and digital systems",
-      "Design, implementation and validation of technical engineering projects",
-      "Technical analysis, measurement, calculation and report writing",
-      "Problem-solving, applied programming and multidisciplinary teamwork",
-    ],
-  },
-];
-
-interface Certification {
-  name: string;
-  fullName: string;
-  status: string;
-  issuer: string;
-  description: string;
-  goal: "current" | "next" | "final";
-  icon: "htb" | "oscp";
-}
-
-const certifications: Certification[] = [
-  {
-    name: "CJCA",
-    fullName: "Certified Junior Cybersecurity Analyst",
-    status: "In Progress",
-    issuer: "Hack The Box",
-    description: "Foundation certification validating core cybersecurity analysis skills and practical knowledge.",
-    goal: "current",
-    icon: "htb",
-  },
-  {
-    name: "CPTS",
-    fullName: "Certified Penetration Testing Specialist",
-    status: "Planned for 2026",
-    issuer: "Hack The Box",
-    description: "Advanced pentesting certification focused on real-world attack paths and comprehensive security assessments.",
-    goal: "next",
-    icon: "htb",
-  },
-  {
-    name: "OSCP",
-    fullName: "Offensive Security Certified Professional",
-    status: "Planned for 2026",
-    issuer: "Offensive Security",
-    description: "Industry-leading penetration testing certification emphasizing hands-on exploitation and reporting skills.",
-    goal: "final",
-    icon: "oscp",
-  },
-];
+import { education, certifications } from "@/lib/content";
+import type { Certification } from "@/lib/content";
 
 // Certification Icon Component
 function CertificationIcon({ type, className }: { type: "htb" | "oscp"; className?: string }) {
@@ -121,7 +22,7 @@ function CertificationIcon({ type, className }: { type: "htb" | "oscp"; classNam
 // Certification Card Component with Hover Tooltip
 function CertificationCard({ cert, index, total }: { cert: Certification; index: number; total: number }) {
   const [shouldReduceMotion, setShouldReduceMotion] = useState(false);
-  const isActive = cert.status === "In Progress";
+  const isActive = cert.goal === "current";
   const isCompleted = cert.status?.includes("Completed") || cert.status?.includes("Obtained");
   const isPlanned = cert.status?.includes("Planned");
 
@@ -166,25 +67,6 @@ function CertificationCard({ cert, index, total }: { cert: Certification; index:
               : "border-cyber-purple/30"
           } group-hover:border-opacity-80 group-hover:shadow-lg group-focus-within:border-opacity-80 group-focus-within:shadow-lg`}
         >
-          {/* Pulsing glow for active cert */}
-          {isActive && (
-            <motion.div
-              className="absolute inset-0 rounded-xl"
-              animate={{
-                boxShadow: [
-                  "0 0 20px rgba(0,217,255,0.3)",
-                  "0 0 30px rgba(0,217,255,0.5)",
-                  "0 0 20px rgba(0,217,255,0.3)",
-                ],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-          )}
-
           {/* Status Indicator */}
           <div className="absolute -top-3 -right-3 z-10">
             {isCompleted ? (
@@ -192,19 +74,9 @@ function CertificationCard({ cert, index, total }: { cert: Certification; index:
                 <CheckCircle2 className="text-background" size={16} />
               </div>
             ) : isActive ? (
-              <motion.div
-                className="w-7 h-7 bg-accent rounded-full flex items-center justify-center border-2 border-background shadow-lg"
-                animate={{
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
+              <div className="w-7 h-7 bg-accent rounded-full flex items-center justify-center border-2 border-background shadow-lg">
                 <div className="w-2.5 h-2.5 bg-background rounded-full" />
-              </motion.div>
+              </div>
             ) : (
               <div className="w-7 h-7 bg-cyber-purple/40 rounded-full border-2 border-background" />
             )}
@@ -273,27 +145,6 @@ function CertificationCard({ cert, index, total }: { cert: Certification; index:
               {cert.status}
             </span>
 
-            {/* Progress Bar for Active Cert */}
-            {isActive && (
-              <div className="mt-3 pt-3 border-t border-cyber-purple/10">
-                <div className="flex items-center justify-between text-xs text-gray-light/60 mb-1.5">
-                  <span>Progress</span>
-                  <span className="font-semibold text-accent">In Progress</span>
-                </div>
-                <div className="h-1.5 bg-cyber-purple/20 rounded-full overflow-hidden">
-                  <motion.div
-                    className="h-full bg-gradient-to-r from-accent to-cyber-purple"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "65%" }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: shouldReduceMotion ? 0.3 : 1.5,
-                      ease: "easeOut",
-                    }}
-                  />
-                </div>
-              </div>
-            )}
           </div>
         </div>
 
@@ -307,7 +158,7 @@ function CertificationCard({ cert, index, total }: { cert: Certification; index:
           {/* Tooltip content */}
           <div className="flex items-start gap-2 relative z-10">
             <Info className="text-accent mt-0.5 flex-shrink-0" size={16} />
-            <p className="text-sm text-gray-light/90 leading-relaxed text-justify">{cert.description}</p>
+            <p className="text-sm text-gray-light/90 leading-relaxed">{cert.description}</p>
           </div>
         </div>
       </motion.div>
@@ -334,7 +185,7 @@ function CertificationCard({ cert, index, total }: { cert: Certification; index:
 // Main Certification Path Component
 function CertificationPath({ certifications }: { certifications: Certification[] }) {
   const [shouldReduceMotion, setShouldReduceMotion] = useState(false);
-  const activeIndex = certifications.findIndex((c) => c.status === "In Progress");
+  const activeIndex = certifications.findIndex((c) => c.goal === "current");
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -462,7 +313,7 @@ export default function Education() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
-              className="bg-container-alt rounded-lg p-4 sm:p-6 md:p-8 border border-accent/20 cyber-hover"
+              className="bg-container-alt rounded-lg p-4 sm:p-6 md:p-8 border border-accent/20 hover:border-accent/40 transition-colors duration-200"
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div className="flex-1">
@@ -471,11 +322,6 @@ export default function Education() {
                       <GraduationCap size={18} className="text-cyber-purple w-[18px] h-[18px] sm:w-5 sm:h-5" />
                       <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-light">{edu.degree}</h3>
                     </div>
-                    {edu.status && (
-                      <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded border border-green-500/30 self-start sm:self-auto">
-                        {edu.status}
-                      </span>
-                    )}
                   </div>
                   <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 sm:gap-4 text-gray-light/80 text-xs sm:text-sm md:text-base mb-2">
                     <span className="font-medium text-purple-accent">{edu.institution}</span>
@@ -492,7 +338,7 @@ export default function Education() {
                       <div className="flex-1">
                         <p className="text-xs text-purple-accent/80 font-mono mb-1">THESIS:</p>
                         <div className="flex items-center gap-3 flex-wrap">
-                          <p className="text-sm text-gray-light/90 italic text-justify">"{edu.thesis}"</p>
+                          <p className="text-sm text-gray-light/90 italic">"{edu.thesis}"</p>
                           {edu.thesisPdf && (
                             <a
                               href={edu.thesisPdf}

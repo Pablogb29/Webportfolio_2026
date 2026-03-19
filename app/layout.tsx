@@ -18,9 +18,45 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pablo Gutiérrez – Cybersecurity & IAM Engineer | Transitioning to Pentester",
-  description: "Cybersecurity & IAM Engineer (Blue Team) actively transitioning to Pentester/Red Team. Preparing for OSCP and eJPTv2. Active HTB practice (33 machines). AD security, IAM automation, offensive security preparation.",
-  keywords: ["Cybersecurity", "IAM", "Blue Team", "Red Team", "Pentester", "Offensive Security", "Active Directory", "Penetration Testing", "OSCP", "eJPTv2", "Security Automation", "Hack The Box", "Career Transition"],
+  metadataBase: new URL("https://www.pabloinfosec.com"),
+  title: {
+    default: "Pablo Gutiérrez – Cybersecurity Engineer",
+    template: "%s | Pablo Gutiérrez",
+  },
+  description:
+    "Cybersecurity Engineer actively transitioning to Pentester/Red Team. AD security, IAM automation, AWS security design, HTB practice (33 machines), and OSCP preparation.",
+  keywords: [
+    "Cybersecurity",
+    "IAM",
+    "Blue Team",
+    "Red Team",
+    "Pentester",
+    "Offensive Security",
+    "Active Directory",
+    "Penetration Testing",
+    "OSCP",
+    "CPTS",
+    "Security Automation",
+    "Hack The Box",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Pablo Gutiérrez – Cybersecurity Portfolio",
+    title: "Pablo Gutiérrez – Cybersecurity Engineer",
+    description:
+      "Cybersecurity Engineer actively transitioning to Pentester/Red Team. AD security, IAM automation, and OSCP preparation.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Pablo Gutiérrez – Cybersecurity Engineer",
+    description:
+      "Cybersecurity Engineer actively transitioning to Pentester/Red Team.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -33,7 +69,7 @@ export default function RootLayout({
       <body className="bg-background text-gray-light font-sans">
         <PopoverProvider>
           <ScrollMorphNav />
-          <main className="transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]" data-sidebar-content>
+          <main className="md:ml-14 transition-[margin] duration-300">
             {children}
           </main>
           <Footer />

@@ -32,7 +32,7 @@ export default function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.6 }}
-      className="bg-container-alt rounded-lg p-4 sm:p-6 border border-cyber-purple/20 cyber-hover h-full flex flex-col"
+      className="bg-container-alt rounded-lg p-4 sm:p-6 border border-cyber-purple/20 hover:border-accent/40 transition-colors duration-200 h-full flex flex-col"
     >
       <div className="flex-1">
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-3">
@@ -49,7 +49,7 @@ export default function ProjectCard({
             </span>
           )}
         </div>
-        <p className="text-gray-light/80 text-xs sm:text-sm mb-4 leading-relaxed text-justify">{description}</p>
+        <p className="text-gray-light/80 text-xs sm:text-sm mb-4 leading-relaxed">{description}</p>
 
         <div className="mb-4">
           <p className="text-xs text-purple-accent/80 font-mono mb-2">STACK:</p>
@@ -67,7 +67,7 @@ export default function ProjectCard({
 
         <div className="mb-4">
           <p className="text-xs text-purple-accent/80 font-mono mb-2">RESULT:</p>
-          <p className="text-gray-light/70 text-sm text-justify">{result}</p>
+          <p className="text-gray-light/70 text-sm">{result}</p>
         </div>
       </div>
 

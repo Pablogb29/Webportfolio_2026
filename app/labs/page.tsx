@@ -53,7 +53,7 @@ const categoryIcons = {
 
 export default function LabsPage() {
   return (
-    <main className="min-h-screen pt-16 sm:pt-20">
+    <div className="min-h-screen pt-16 sm:pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -65,7 +65,7 @@ export default function LabsPage() {
             HTB <span className="text-cyber-purple">Writeups</span>
           </h1>
           <div className="w-20 sm:w-24 h-1 bg-cyber-purple mx-auto mb-3 sm:mb-4" />
-          <p className="text-gray-light/80 max-w-2xl mx-auto text-sm sm:text-base text-justify px-4 sm:px-0">
+          <p className="text-gray-light/80 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0">
             I maintain an active practice in offensive security through Hack The Box labs, having completed 33 machines with a focus on Windows and Linux environments. All write-ups follow an OSCP-oriented style, documenting methodologies, tool usage, and mitigation strategies without exposing flags or detailed exploitation steps.
           </p>
         </motion.div>
@@ -103,7 +103,7 @@ export default function LabsPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="bg-container-alt rounded-lg p-4 sm:p-6 border border-accent/20 cyber-hover"
+              className="bg-container-alt rounded-lg p-4 sm:p-6 border border-accent/20 hover:border-accent/40 transition-colors duration-200"
             >
               <div className="flex items-start justify-between mb-3 sm:mb-4">
                 <div>
@@ -162,6 +162,6 @@ export default function LabsPage() {
           ))}
         </div>
       </div>
-    </main>
+    </div>
   );
 }

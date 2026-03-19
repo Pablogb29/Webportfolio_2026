@@ -44,7 +44,7 @@ export default function MachineListItem({ machine, index = 0 }: MachineListItemP
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: index * 0.03, duration: 0.4 }}
-      className="bg-container-alt rounded-lg p-4 border border-accent/20 cyber-hover group relative overflow-hidden"
+      className="bg-container-alt rounded-lg p-4 border border-accent/20 hover:border-accent/40 transition-colors duration-200 group relative overflow-hidden"
     >
       {/* Background gradient effect on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
