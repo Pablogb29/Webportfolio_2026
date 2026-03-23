@@ -39,6 +39,16 @@ export default function MachineCard({ machine, index = 0 }: MachineCardProps) {
     }
   };
 
+  const hasAnyMeta =
+    (machine.tags?.length ?? 0) > 0 ||
+    (machine.attackPaths?.length ?? 0) > 0 ||
+    (machine.skills?.length ?? 0) > 0;
+
+  const showNoTagsMessage =
+    (machine.tags?.length ?? 0) === 0 &&
+    (machine.attackPaths?.length ?? 0) === 0 &&
+    (machine.skills?.length ?? 0) === 0;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -92,7 +102,7 @@ export default function MachineCard({ machine, index = 0 }: MachineCardProps) {
         </div>
 
         {/* Tags, Attack Paths, and Skills */}
-        {((machine.tags?.length ?? 0) > 0 || (machine.attackPaths?.length ?? 0) > 0 || (machine.skills?.length ?? 0) > 0) && (
+        {(hasAnyMeta || showNoTagsMessage) && (
           <div className="mb-4">
             {/* Attack Paths */}
             {machine.attackPaths && machine.attackPaths.length > 0 && (
@@ -154,6 +164,20 @@ export default function MachineCard({ machine, index = 0 }: MachineCardProps) {
                   popoverPosition="bottom"
                   popoverAlign="left"
                 />
+              </div>
+            )}
+
+            {showNoTagsMessage && (
+              <div className="mb-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <Tag size={14} className="text-purple-accent" />
+                  <span className="text-xs text-purple-accent/80 font-mono">TAGS</span>
+                </div>
+                <p className="text-xs text-gray-light/60">
+                  Hack The Box tags and full metadata are pending for this Active machine (Season 10). You
+                  can confirm the solve on my Hack The Box profile or via the GitHub write-up; the write-up
+                  will be available in May.
+                </p>
               </div>
             )}
           </div>

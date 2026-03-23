@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-22T20:55:57.568Z",
+  "lastUpdated": "2026-03-22T21:30:51.202Z",
   "total": 40,
   "machines": [
     {
@@ -24,8 +24,8 @@
         "counterExHard": 31,
         "counterBrainFuck": 94
       },
-      "writeupUrl": null,
-      "hasWriteup": false
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/WingData/README.md",
+      "hasWriteup": true
     },
     {
       "id": 829,
@@ -49,8 +49,8 @@
         "counterExHard": 25,
         "counterBrainFuck": 89
       },
-      "writeupUrl": null,
-      "hasWriteup": false
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Facts/README.md",
+      "hasWriteup": true
     },
     {
       "id": 351,
@@ -892,9 +892,28 @@
       "difficulty": "Easy",
       "solveDate": null,
       "htbUrl": "https://app.hackthebox.com/machines/423",
-      "tags": [],
+      "tags": [
+        "Web Application",
+        "Enterprise Network",
+        "Vulnerability Assessment",
+        "SQL Injection",
+        "Remote Code Execution",
+        "Clear Text Credentials",
+        "Path Hijacking",
+        "Apache",
+        "SNMP",
+        "Reconnaissance",
+        "Tunneling",
+        "Injections",
+        "Protocols",
+        "Software & OS exploitation"
+      ],
       "attackPaths": [],
-      "skills": [],
+      "skills": [
+        "Network",
+        "Security Assessment",
+        "Web Exploitation"
+      ],
       "difficultyRatings": {
         "counterCake": 444,
         "counterVeryEasy": 553,
@@ -917,9 +936,23 @@
       "difficulty": "Easy",
       "solveDate": null,
       "htbUrl": "https://app.hackthebox.com/machines/416",
-      "tags": [],
+      "tags": [
+        "Vulnerability Assessment",
+        "Remote Code Execution",
+        "Directory Traversal",
+        "PHP",
+        "Wordpress",
+        "Backdoor",
+        "Reconnaissance",
+        "Maintain Access",
+        "Software & OS exploitation"
+      ],
       "attackPaths": [],
-      "skills": [],
+      "skills": [
+        "Crypto",
+        "Security Assessment",
+        "Web Exploitation"
+      ],
       "difficultyRatings": {
         "counterCake": 628,
         "counterVeryEasy": 909,
@@ -942,9 +975,28 @@
       "difficulty": "Easy",
       "solveDate": null,
       "htbUrl": "https://app.hackthebox.com/machines/401",
-      "tags": [],
+      "tags": [
+        "Enterprise Network",
+        "Vulnerability Assessment",
+        "Group Membership",
+        "Weak Authentication",
+        "Information Disclosure",
+        "SMB",
+        "LDAP",
+        "WinRM",
+        "Reconnaissance",
+        "Password Capture",
+        "Active Directory",
+        "Protocols",
+        "Common Services",
+        "Authentication"
+      ],
       "attackPaths": [],
-      "skills": [],
+      "skills": [
+        "Active Directory",
+        "Network",
+        "Security Assessment"
+      ],
       "difficultyRatings": {
         "counterCake": 1674,
         "counterVeryEasy": 2093,
@@ -967,9 +1019,22 @@
       "difficulty": "Easy",
       "solveDate": null,
       "htbUrl": "https://app.hackthebox.com/machines/359",
-      "tags": [],
+      "tags": [
+        "Vulnerability Assessment",
+        "Clear Text Credentials",
+        "XXE Injection",
+        "Python",
+        "Web Site Structure Discovery",
+        "Password Spraying",
+        "SUDO Exploitation",
+        "Source Code Analysis"
+      ],
       "attackPaths": [],
-      "skills": [],
+      "skills": [
+        "Linux PrivEsc",
+        "Security Assessment",
+        "Web Exploitation"
+      ],
       "difficultyRatings": {
         "counterCake": 1043,
         "counterVeryEasy": 1722,
@@ -1086,30 +1151,9 @@
       "difficulty": "Easy",
       "solveDate": null,
       "htbUrl": "https://app.hackthebox.com/machines/229",
-      "tags": [
-        "Enterprise Network",
-        "Vulnerability Assessment",
-        "Misconfiguration",
-        "Autologon Credentials",
-        "Reconnaissance",
-        "User Enumeration",
-        "Password Cracking",
-        "ASREPRoasting",
-        "AD DCSync",
-        "Pass the Hash",
-        "Active Directory",
-        "Security Tools",
-        "Authentication"
-      ],
+      "tags": [],
       "attackPaths": [],
-      "skills": [
-        "Active Directory",
-        "Crypto",
-        "Forensics",
-        "Network",
-        "Security Assessment",
-        "System Hardening"
-      ],
+      "skills": [],
       "difficultyRatings": {
         "counterCake": 1307,
         "counterVeryEasy": 2192,
@@ -1132,31 +1176,9 @@
       "difficulty": "Easy",
       "solveDate": null,
       "htbUrl": "https://app.hackthebox.com/machines/212",
-      "tags": [
-        "Enterprise Network",
-        "Vulnerability Assessment",
-        "Group Membership",
-        "Misconfiguration",
-        "DNS",
-        "Kerberos",
-        "LDAP",
-        "Exchange",
-        "Reconnaissance",
-        "User Enumeration",
-        "Password Cracking",
-        "AD DCSync",
-        "Privilege Abuse",
-        "Active Directory",
-        "Security Tools"
-      ],
+      "tags": [],
       "attackPaths": [],
-      "skills": [
-        "Active Directory",
-        "Linux PrivEsc",
-        "Network",
-        "Security Assessment",
-        "System Hardening"
-      ],
+      "skills": [],
       "difficultyRatings": {
         "counterCake": 1403,
         "counterVeryEasy": 2031,
@@ -1265,18 +1287,7 @@
         "Network",
         "Security Assessment"
       ],
-      "difficultyRatings": {
-        "counterCake": 2805,
-        "counterVeryEasy": 4352,
-        "counterEasy": 12118,
-        "counterTooEasy": 7110,
-        "counterMedium": 8979,
-        "counterBitHard": 1777,
-        "counterHard": 1258,
-        "counterTooHard": 570,
-        "counterExHard": 165,
-        "counterBrainFuck": 249
-      },
+      "difficultyRatings": null,
       "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Active/README.md",
       "hasWriteup": true
     },
@@ -1303,18 +1314,7 @@
         "Security Assessment",
         "Web Exploitation"
       ],
-      "difficultyRatings": {
-        "counterCake": 818,
-        "counterVeryEasy": 1057,
-        "counterEasy": 2729,
-        "counterTooEasy": 3114,
-        "counterMedium": 5225,
-        "counterBitHard": 1210,
-        "counterHard": 759,
-        "counterTooHard": 345,
-        "counterExHard": 87,
-        "counterBrainFuck": 150
-      },
+      "difficultyRatings": null,
       "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Bounty/README.md",
       "hasWriteup": true
     },
@@ -1341,18 +1341,7 @@
         "Security Assessment",
         "Web Exploitation"
       ],
-      "difficultyRatings": {
-        "counterCake": 31686,
-        "counterVeryEasy": 14060,
-        "counterEasy": 9545,
-        "counterTooEasy": 2514,
-        "counterMedium": 9225,
-        "counterBitHard": 381,
-        "counterHard": 229,
-        "counterTooHard": 119,
-        "counterExHard": 53,
-        "counterBrainFuck": 258
-      },
+      "difficultyRatings": null,
       "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Blue/README.md",
       "hasWriteup": true
     },

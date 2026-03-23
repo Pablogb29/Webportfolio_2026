@@ -39,6 +39,16 @@ export default function MachineListItem({ machine, index = 0 }: MachineListItemP
     }
   };
 
+  const hasAnyMeta =
+    (machine.tags?.length ?? 0) > 0 ||
+    (machine.attackPaths?.length ?? 0) > 0 ||
+    (machine.skills?.length ?? 0) > 0;
+
+  const showNoTagsMessage =
+    (machine.tags?.length ?? 0) === 0 &&
+    (machine.attackPaths?.length ?? 0) === 0 &&
+    (machine.skills?.length ?? 0) === 0;
+
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -71,7 +81,7 @@ export default function MachineListItem({ machine, index = 0 }: MachineListItemP
             </div>
           )}
           {/* Attack Paths, Tags, and Skills */}
-          {((machine.attackPaths?.length ?? 0) > 0 || (machine.tags?.length ?? 0) > 0 || (machine.skills?.length ?? 0) > 0) && (
+          {(hasAnyMeta || showNoTagsMessage) && (
             <div className="flex flex-wrap gap-2 mt-2">
               {/* Attack Paths */}
               {machine.attackPaths && machine.attackPaths.length > 0 && (
@@ -116,6 +126,14 @@ export default function MachineListItem({ machine, index = 0 }: MachineListItemP
                   popoverPosition="top"
                   popoverAlign="left"
                 />
+              )}
+
+              {showNoTagsMessage && (
+                <span className="px-2 py-1 text-xs text-gray-light/60 border border-accent/20 rounded">
+                  Hack The Box tags and full metadata are pending for this Active machine (Season 10). You
+                  can confirm the solve on my Hack The Box profile or via the GitHub write-up; the
+                  write-up will be available in May.
+                </span>
               )}
             </div>
           )}
