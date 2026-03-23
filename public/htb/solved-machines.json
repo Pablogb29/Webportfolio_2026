@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-22T21:30:51.202Z",
+  "lastUpdated": "2026-03-23T09:57:28.956Z",
   "total": 40,
   "machines": [
     {
@@ -13,14 +13,14 @@
       "attackPaths": [],
       "skills": [],
       "difficultyRatings": {
-        "counterCake": 392,
-        "counterVeryEasy": 707,
-        "counterEasy": 2684,
-        "counterTooEasy": 2013,
-        "counterMedium": 967,
-        "counterBitHard": 357,
+        "counterCake": 394,
+        "counterVeryEasy": 712,
+        "counterEasy": 2691,
+        "counterTooEasy": 2020,
+        "counterMedium": 969,
+        "counterBitHard": 358,
         "counterHard": 249,
-        "counterTooHard": 87,
+        "counterTooHard": 88,
         "counterExHard": 31,
         "counterBrainFuck": 94
       },
@@ -38,16 +38,16 @@
       "attackPaths": [],
       "skills": [],
       "difficultyRatings": {
-        "counterCake": 1164,
-        "counterVeryEasy": 1691,
-        "counterEasy": 4552,
-        "counterTooEasy": 2578,
-        "counterMedium": 945,
+        "counterCake": 1168,
+        "counterVeryEasy": 1695,
+        "counterEasy": 4573,
+        "counterTooEasy": 2589,
+        "counterMedium": 949,
         "counterBitHard": 243,
-        "counterHard": 157,
+        "counterHard": 158,
         "counterTooHard": 57,
         "counterExHard": 25,
-        "counterBrainFuck": 89
+        "counterBrainFuck": 90
       },
       "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Facts/README.md",
       "hasWriteup": true
@@ -82,16 +82,16 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 17450,
-        "counterVeryEasy": 19558,
-        "counterEasy": 32986,
-        "counterTooEasy": 11392,
-        "counterMedium": 6497,
-        "counterBitHard": 1549,
-        "counterHard": 947,
+        "counterCake": 17455,
+        "counterVeryEasy": 19575,
+        "counterEasy": 33007,
+        "counterTooEasy": 11397,
+        "counterMedium": 6499,
+        "counterBitHard": 1552,
+        "counterHard": 948,
         "counterTooHard": 232,
         "counterExHard": 89,
-        "counterBrainFuck": 357
+        "counterBrainFuck": 358
       },
       "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Cap/README.md",
       "hasWriteup": true
@@ -124,7 +124,7 @@
       "difficultyRatings": {
         "counterCake": 1064,
         "counterVeryEasy": 1435,
-        "counterEasy": 6800,
+        "counterEasy": 6801,
         "counterTooEasy": 6578,
         "counterMedium": 2698,
         "counterBitHard": 1047,
@@ -184,10 +184,10 @@
       "difficultyRatings": {
         "counterCake": 361,
         "counterVeryEasy": 516,
-        "counterEasy": 2348,
+        "counterEasy": 2352,
         "counterTooEasy": 3565,
-        "counterMedium": 3310,
-        "counterBitHard": 1620,
+        "counterMedium": 3312,
+        "counterBitHard": 1621,
         "counterHard": 1030,
         "counterTooHard": 330,
         "counterExHard": 78,
@@ -232,7 +232,7 @@
       "difficultyRatings": {
         "counterCake": 714,
         "counterVeryEasy": 732,
-        "counterEasy": 3643,
+        "counterEasy": 3645,
         "counterTooEasy": 2593,
         "counterMedium": 2070,
         "counterBitHard": 606,
@@ -453,7 +453,7 @@
       ],
       "difficultyRatings": {
         "counterCake": 2208,
-        "counterVeryEasy": 2760,
+        "counterVeryEasy": 2762,
         "counterEasy": 6783,
         "counterTooEasy": 4055,
         "counterMedium": 1213,
@@ -491,10 +491,10 @@
       ],
       "difficultyRatings": {
         "counterCake": 5753,
-        "counterVeryEasy": 5705,
+        "counterVeryEasy": 5706,
         "counterEasy": 10186,
         "counterTooEasy": 4896,
-        "counterMedium": 1873,
+        "counterMedium": 1874,
         "counterBitHard": 759,
         "counterHard": 439,
         "counterTooHard": 103,
@@ -548,8 +548,8 @@
         "counterCake": 294,
         "counterVeryEasy": 275,
         "counterEasy": 1652,
-        "counterTooEasy": 2253,
-        "counterMedium": 2363,
+        "counterTooEasy": 2254,
+        "counterMedium": 2365,
         "counterBitHard": 851,
         "counterHard": 425,
         "counterTooHard": 92,
@@ -873,7 +873,7 @@
       "difficultyRatings": {
         "counterCake": 696,
         "counterVeryEasy": 1357,
-        "counterEasy": 5494,
+        "counterEasy": 5496,
         "counterTooEasy": 4797,
         "counterMedium": 3213,
         "counterBitHard": 973,
@@ -892,28 +892,9 @@
       "difficulty": "Easy",
       "solveDate": null,
       "htbUrl": "https://app.hackthebox.com/machines/423",
-      "tags": [
-        "Web Application",
-        "Enterprise Network",
-        "Vulnerability Assessment",
-        "SQL Injection",
-        "Remote Code Execution",
-        "Clear Text Credentials",
-        "Path Hijacking",
-        "Apache",
-        "SNMP",
-        "Reconnaissance",
-        "Tunneling",
-        "Injections",
-        "Protocols",
-        "Software & OS exploitation"
-      ],
+      "tags": [],
       "attackPaths": [],
-      "skills": [
-        "Network",
-        "Security Assessment",
-        "Web Exploitation"
-      ],
+      "skills": [],
       "difficultyRatings": {
         "counterCake": 444,
         "counterVeryEasy": 553,
@@ -999,7 +980,7 @@
       ],
       "difficultyRatings": {
         "counterCake": 1674,
-        "counterVeryEasy": 2093,
+        "counterVeryEasy": 2095,
         "counterEasy": 4569,
         "counterTooEasy": 2115,
         "counterMedium": 869,
@@ -1131,10 +1112,10 @@
       ],
       "difficultyRatings": {
         "counterCake": 1675,
-        "counterVeryEasy": 3035,
+        "counterVeryEasy": 3036,
         "counterEasy": 5501,
         "counterTooEasy": 3442,
-        "counterMedium": 5950,
+        "counterMedium": 5951,
         "counterBitHard": 1233,
         "counterHard": 857,
         "counterTooHard": 423,
@@ -1151,14 +1132,35 @@
       "difficulty": "Easy",
       "solveDate": null,
       "htbUrl": "https://app.hackthebox.com/machines/229",
-      "tags": [],
+      "tags": [
+        "Enterprise Network",
+        "Vulnerability Assessment",
+        "Misconfiguration",
+        "Autologon Credentials",
+        "Reconnaissance",
+        "User Enumeration",
+        "Password Cracking",
+        "ASREPRoasting",
+        "AD DCSync",
+        "Pass the Hash",
+        "Active Directory",
+        "Security Tools",
+        "Authentication"
+      ],
       "attackPaths": [],
-      "skills": [],
+      "skills": [
+        "Active Directory",
+        "Crypto",
+        "Forensics",
+        "Network",
+        "Security Assessment",
+        "System Hardening"
+      ],
       "difficultyRatings": {
         "counterCake": 1307,
         "counterVeryEasy": 2192,
-        "counterEasy": 7556,
-        "counterTooEasy": 6398,
+        "counterEasy": 7558,
+        "counterTooEasy": 6399,
         "counterMedium": 9368,
         "counterBitHard": 2426,
         "counterHard": 1679,
@@ -1176,9 +1178,31 @@
       "difficulty": "Easy",
       "solveDate": null,
       "htbUrl": "https://app.hackthebox.com/machines/212",
-      "tags": [],
+      "tags": [
+        "Enterprise Network",
+        "Vulnerability Assessment",
+        "Group Membership",
+        "Misconfiguration",
+        "DNS",
+        "Kerberos",
+        "LDAP",
+        "Exchange",
+        "Reconnaissance",
+        "User Enumeration",
+        "Password Cracking",
+        "AD DCSync",
+        "Privilege Abuse",
+        "Active Directory",
+        "Security Tools"
+      ],
       "attackPaths": [],
-      "skills": [],
+      "skills": [
+        "Active Directory",
+        "Linux PrivEsc",
+        "Network",
+        "Security Assessment",
+        "System Hardening"
+      ],
       "difficultyRatings": {
         "counterCake": 1403,
         "counterVeryEasy": 2031,
@@ -1287,7 +1311,18 @@
         "Network",
         "Security Assessment"
       ],
-      "difficultyRatings": null,
+      "difficultyRatings": {
+        "counterCake": 2805,
+        "counterVeryEasy": 4352,
+        "counterEasy": 12126,
+        "counterTooEasy": 7111,
+        "counterMedium": 8981,
+        "counterBitHard": 1777,
+        "counterHard": 1258,
+        "counterTooHard": 570,
+        "counterExHard": 165,
+        "counterBrainFuck": 249
+      },
       "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Active/README.md",
       "hasWriteup": true
     },
@@ -1314,7 +1349,18 @@
         "Security Assessment",
         "Web Exploitation"
       ],
-      "difficultyRatings": null,
+      "difficultyRatings": {
+        "counterCake": 818,
+        "counterVeryEasy": 1057,
+        "counterEasy": 2729,
+        "counterTooEasy": 3114,
+        "counterMedium": 5225,
+        "counterBitHard": 1210,
+        "counterHard": 759,
+        "counterTooHard": 345,
+        "counterExHard": 87,
+        "counterBrainFuck": 150
+      },
       "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Bounty/README.md",
       "hasWriteup": true
     },
@@ -1341,7 +1387,18 @@
         "Security Assessment",
         "Web Exploitation"
       ],
-      "difficultyRatings": null,
+      "difficultyRatings": {
+        "counterCake": 31686,
+        "counterVeryEasy": 14060,
+        "counterEasy": 9545,
+        "counterTooEasy": 2514,
+        "counterMedium": 9225,
+        "counterBitHard": 381,
+        "counterHard": 229,
+        "counterTooHard": 119,
+        "counterExHard": 53,
+        "counterBrainFuck": 258
+      },
       "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Blue/README.md",
       "hasWriteup": true
     },
@@ -1371,7 +1428,7 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 4856,
+        "counterCake": 4858,
         "counterVeryEasy": 5389,
         "counterEasy": 7449,
         "counterTooEasy": 3815,
@@ -1456,7 +1513,7 @@
         "counterVeryEasy": 3127,
         "counterEasy": 6449,
         "counterTooEasy": 4120,
-        "counterMedium": 2,
+        "counterMedium": 5910,
         "counterBitHard": 931,
         "counterHard": 511,
         "counterTooHard": 217,
@@ -1490,7 +1547,7 @@
       ],
       "difficultyRatings": {
         "counterCake": 12420,
-        "counterVeryEasy": 9683,
+        "counterVeryEasy": 9685,
         "counterEasy": 9937,
         "counterTooEasy": 5030,
         "counterMedium": 10053,
