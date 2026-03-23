@@ -47,7 +47,8 @@ export default function MachineCard({ machine, index = 0 }: MachineCardProps) {
   const showNoTagsMessage =
     (machine.tags?.length ?? 0) === 0 &&
     (machine.attackPaths?.length ?? 0) === 0 &&
-    (machine.skills?.length ?? 0) === 0;
+    (machine.skills?.length ?? 0) === 0 &&
+    !machine.writeupUrl;
 
   return (
     <motion.div
