@@ -48,7 +48,7 @@ export default function MachineCard({ machine, index = 0 }: MachineCardProps) {
     (machine.tags?.length ?? 0) === 0 &&
     (machine.attackPaths?.length ?? 0) === 0 &&
     (machine.skills?.length ?? 0) === 0 &&
-    !machine.writeupUrl;
+    machine.isActive;
 
   return (
     <motion.div
@@ -175,8 +175,8 @@ export default function MachineCard({ machine, index = 0 }: MachineCardProps) {
                   <span className="text-xs text-purple-accent/80 font-mono">TAGS</span>
                 </div>
                 <p className="text-xs text-gray-light/60">
-                  Hack The Box tags and full metadata are pending for this Active machine (Season 10). You
-                  can confirm the solve on my Hack The Box profile or via the GitHub write-up; the write-up
+                  Hack The Box tags and full metadata are pending for this Active machine. You can
+                  confirm the solve on my Hack The Box profile or via the GitHub write-up; the write-up
                   will be available in May.
                 </p>
               </div>

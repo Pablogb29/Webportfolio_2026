@@ -48,7 +48,7 @@ export default function MachineListItem({ machine, index = 0 }: MachineListItemP
     (machine.tags?.length ?? 0) === 0 &&
     (machine.attackPaths?.length ?? 0) === 0 &&
     (machine.skills?.length ?? 0) === 0 &&
-    !machine.writeupUrl;
+    machine.isActive;
 
   return (
     <motion.div
@@ -131,9 +131,9 @@ export default function MachineListItem({ machine, index = 0 }: MachineListItemP
 
               {showNoTagsMessage && (
                 <span className="px-2 py-1 text-xs text-gray-light/60 border border-accent/20 rounded">
-                  Hack The Box tags and full metadata are pending for this Active machine (Season 10). You
-                  can confirm the solve on my Hack The Box profile or via the GitHub write-up; the
-                  write-up will be available in May.
+                  Hack The Box tags and full metadata are pending for this Active machine. You can
+                  confirm the solve on my Hack The Box profile or via the GitHub write-up; the write-up
+                  will be available in May.
                 </span>
               )}
             </div>

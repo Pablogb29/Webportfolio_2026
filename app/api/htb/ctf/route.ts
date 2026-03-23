@@ -27,6 +27,9 @@ function transformMachines(machines: Array<{
   difficultyRatings?: any;
   writeupUrl?: string | null;
   hasWriteup?: boolean;
+  status?: "Active" | "Retired";
+  isActive?: boolean;
+  isRetired?: boolean;
 }>): MachineSolved[] {
   return machines.map((machine) => ({
     id: machine.id,
@@ -37,9 +40,9 @@ function transformMachines(machines: Array<{
     difficultyNumeric: getDifficultyNumeric(machine.difficulty),
     os: machine.os as MachineSolved["os"],
     solveDate: machine.solveDate || new Date().toISOString(),
-    status: "Active" as const, // Default status
-    isActive: true,
-    isRetired: false,
+    status: (machine.status || "Active") as MachineSolved["status"],
+    isActive: machine.isActive ?? (machine.status === "Active"),
+    isRetired: machine.isRetired ?? (machine.status === "Retired"),
     points: 0,
     tags: machine.tags || [],
     skills: machine.skills || [],
