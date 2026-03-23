@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-23T10:14:31.641Z",
+  "lastUpdated": "2026-03-23T11:22:40.791Z",
   "total": 40,
   "machines": [
     {
@@ -13,12 +13,12 @@
       "attackPaths": [],
       "skills": [],
       "difficultyRatings": {
-        "counterCake": 394,
-        "counterVeryEasy": 712,
+        "counterCake": 395,
+        "counterVeryEasy": 713,
         "counterEasy": 2691,
-        "counterTooEasy": 2020,
+        "counterTooEasy": 2021,
         "counterMedium": 969,
-        "counterBitHard": 358,
+        "counterBitHard": 359,
         "counterHard": 249,
         "counterTooHard": 88,
         "counterExHard": 31,
@@ -43,9 +43,9 @@
       "difficultyRatings": {
         "counterCake": 1168,
         "counterVeryEasy": 1695,
-        "counterEasy": 4573,
+        "counterEasy": 4575,
         "counterTooEasy": 2589,
-        "counterMedium": 949,
+        "counterMedium": 950,
         "counterBitHard": 243,
         "counterHard": 158,
         "counterTooHard": 57,
@@ -90,8 +90,8 @@
       "difficultyRatings": {
         "counterCake": 17455,
         "counterVeryEasy": 19575,
-        "counterEasy": 33007,
-        "counterTooEasy": 11397,
+        "counterEasy": 33010,
+        "counterTooEasy": 11398,
         "counterMedium": 6499,
         "counterBitHard": 1552,
         "counterHard": 948,
@@ -135,7 +135,7 @@
         "counterVeryEasy": 1435,
         "counterEasy": 6801,
         "counterTooEasy": 6578,
-        "counterMedium": 2698,
+        "counterMedium": 2699,
         "counterBitHard": 1047,
         "counterHard": 658,
         "counterTooHard": 120,
@@ -1307,7 +1307,7 @@
         "counterCake": 1403,
         "counterVeryEasy": 2031,
         "counterEasy": 7128,
-        "counterTooEasy": 6664,
+        "counterTooEasy": 6665,
         "counterMedium": 9100,
         "counterBitHard": 3011,
         "counterHard": 2781,
@@ -1420,7 +1420,18 @@
         "Network",
         "Security Assessment"
       ],
-      "difficultyRatings": null,
+      "difficultyRatings": {
+        "counterCake": 2805,
+        "counterVeryEasy": 4352,
+        "counterEasy": 12126,
+        "counterTooEasy": 7111,
+        "counterMedium": 8981,
+        "counterBitHard": 1777,
+        "counterHard": 1258,
+        "counterTooHard": 570,
+        "counterExHard": 165,
+        "counterBrainFuck": 249
+      },
       "status": "Retired",
       "isActive": false,
       "isRetired": true,
@@ -1744,7 +1755,7 @@
       "difficultyRatings": {
         "counterCake": 26734,
         "counterVeryEasy": 14367,
-        "counterEasy": 9935,
+        "counterEasy": 9937,
         "counterTooEasy": 2822,
         "counterMedium": 9253,
         "counterBitHard": 451,
