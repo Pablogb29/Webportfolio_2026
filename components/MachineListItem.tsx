@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Calendar, Tag } from "lucide-react";
+import { ExternalLink, Tag } from "lucide-react";
 import type { MachineSolved } from "@/lib/types/htb";
 import ChipsList from "./ChipsList";
 
@@ -29,15 +29,6 @@ const osColors = {
 export default function MachineListItem({ machine, index = 0 }: MachineListItemProps) {
   const difficultyColor = difficultyColors[machine.difficulty] || difficultyColors.Easy;
   const osColor = osColors[machine.os] || osColors.Other;
-
-  const formatDate = (dateString: string) => {
-    try {
-      const date = new Date(dateString);
-      return date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
-    } catch {
-      return dateString;
-    }
-  };
 
   const hasAnyMeta =
     (machine.tags?.length ?? 0) > 0 ||
@@ -74,13 +65,6 @@ export default function MachineListItem({ machine, index = 0 }: MachineListItemP
             {/* OS */}
             <span className={`text-sm font-mono ${osColor}`}>{machine.os}</span>
           </div>
-          {/* Solve Date */}
-          {machine.solveDate && (
-            <div className="flex items-center gap-1 text-sm text-gray-light/60 mb-2">
-              <Calendar size={14} className="text-purple-accent" />
-              <span>Solved: {formatDate(machine.solveDate)}</span>
-            </div>
-          )}
           {/* Attack Paths, Tags, and Skills */}
           {(hasAnyMeta || showNoTagsMessage) && (
             <div className="flex flex-wrap gap-2 mt-2">

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Calendar, Award, Star, Tag } from "lucide-react";
+import { ExternalLink, Award, Star, Tag } from "lucide-react";
 import type { MachineSolved } from "@/lib/types/htb";
 import ChipsList from "./ChipsList";
 
@@ -29,15 +29,6 @@ const osColors = {
 export default function MachineCard({ machine, index = 0 }: MachineCardProps) {
   const difficultyColor = difficultyColors[machine.difficulty] || difficultyColors.Easy;
   const osColor = osColors[machine.os] || osColors.Other;
-
-  const formatDate = (dateString: string) => {
-    try {
-      const date = new Date(dateString);
-      return date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
-    } catch {
-      return dateString;
-    }
-  };
 
   const hasAnyMeta =
     (machine.tags?.length ?? 0) > 0 ||
@@ -92,12 +83,6 @@ export default function MachineCard({ machine, index = 0 }: MachineCardProps) {
             <div className="flex items-center gap-1">
               <Star size={14} className="text-yellow-400 fill-yellow-400" />
               <span>{machine.rating.toFixed(1)}</span>
-            </div>
-          )}
-          {machine.solveDate && (
-            <div className="flex items-center gap-1">
-              <Calendar size={14} className="text-purple-accent" />
-              <span>{formatDate(machine.solveDate)}</span>
             </div>
           )}
         </div>
