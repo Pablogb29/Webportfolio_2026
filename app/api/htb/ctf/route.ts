@@ -19,9 +19,6 @@ function transformMachines(machines: Array<{
   name: string;
   os: string;
   difficulty: string;
-  status?: MachineSolved["status"];
-  isActive?: boolean;
-  isRetired?: boolean;
   solveDate?: string | null;
   htbUrl: string;
   skills?: string[];
@@ -40,9 +37,9 @@ function transformMachines(machines: Array<{
     difficultyNumeric: getDifficultyNumeric(machine.difficulty),
     os: machine.os as MachineSolved["os"],
     solveDate: machine.solveDate || new Date().toISOString(),
-    status: machine.status || (machine.isRetired ? "Retired" : "Active"),
-    isActive: machine.isActive ?? (!machine.isRetired && machine.status !== "Retired"),
-    isRetired: machine.isRetired ?? machine.status === "Retired",
+    status: "Active" as const, // Default status
+    isActive: true,
+    isRetired: false,
     points: 0,
     tags: machine.tags || [],
     skills: machine.skills || [],

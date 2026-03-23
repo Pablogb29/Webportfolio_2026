@@ -1328,9 +1328,19 @@
       "difficulty": "Easy",
       "solveDate": null,
       "htbUrl": "https://app.hackthebox.com/machines/201",
-      "tags": [],
+      "tags": [
+        "SMB", 
+        "WinRM", 
+        "Cisco", 
+        "Password Cracking", 
+        "Firefox Dump"
+      ],
       "attackPaths": [],
-      "skills": [],
+      "skills": [
+        "Network", 
+        "Forensics", 
+        "Security Assessment"
+      ],
       "difficultyRatings": {
         "counterCake": 485,
         "counterVeryEasy": 870,

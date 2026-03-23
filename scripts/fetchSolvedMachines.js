@@ -711,9 +711,6 @@ function extractMachineData(machine, profileData = null, tagsData = null, writeu
     attackPaths: attackPaths,
     skills: skills,
     difficultyRatings: difficultyRatings,
-    status: machine.__isRetired ? "Retired" : "Active",
-    isActive: !machine.__isRetired,
-    isRetired: Boolean(machine.__isRetired),
     writeupUrl: writeupUrl,
     hasWriteup: hasWriteup,
   };
@@ -736,21 +733,6 @@ async function main() {
   }
 
   try {
-    // Load previous solved machine data so we can conservatively merge
-    // tags/skills when HTB temporarily returns empty metadata (especially for retired machines).
-    let previousMachinesById = new Map();
-    try {
-      if (existsSync(OUTPUT_FILE)) {
-        const previousContent = readFileSync(OUTPUT_FILE, "utf8");
-        const previousJson = JSON.parse(previousContent);
-        if (previousJson?.machines && Array.isArray(previousJson.machines)) {
-          previousMachinesById = new Map(previousJson.machines.map((m) => [m.id, m]));
-        }
-      }
-    } catch (error) {
-      console.warn(`  Warning: Failed to load previous solved-machines.json for merge: ${error.message}`);
-    }
-
     // Fetch active machines
     console.log("\n[1/3] Fetching active machines...");
     const activeMachines = await fetchAllPages("/machine/paginated", token);
@@ -759,21 +741,14 @@ async function main() {
     console.log("\n[2/3] Fetching retired machines...");
     const retiredMachines = await fetchAllPages("/machine/list/retired/paginated", token);
 
-    console.log(`\nTotal machines fetched: ${activeMachines.length + retiredMachines.length}`);
+    // Combine all machines
+    const allMachines = [...activeMachines, ...retiredMachines];
+    console.log(`\nTotal machines fetched: ${allMachines.length}`);
 
-    // Filter solved machines (keeping origin: Active vs Retired)
+    // Filter solved machines
     console.log("\nFiltering solved machines...");
-    const solvedActiveMachines = filterSolvedMachines(activeMachines).map((m) => ({
-      ...m,
-      __isRetired: false,
-    }));
-    const solvedRetiredMachines = filterSolvedMachines(retiredMachines).map((m) => ({
-      ...m,
-      __isRetired: true,
-    }));
-
-    const solvedMachines = [...solvedActiveMachines, ...solvedRetiredMachines];
-    console.log(`Solved machines found: ${solvedMachines.length} (active: ${solvedActiveMachines.length}, retired: ${solvedRetiredMachines.length})`);
+    const solvedMachines = filterSolvedMachines(allMachines);
+    console.log(`Solved machines found: ${solvedMachines.length}`);
 
     if (solvedMachines.length === 0) {
       console.log("\nNo solved machines found. Exiting.");
@@ -868,43 +843,7 @@ async function main() {
     const extractedMachines = solvedMachines.map((machine) => {
       const profile = profileMap.get(machine.id);
       const tags = tagsMap.get(machine.id);
-      const extracted = extractMachineData(machine, profile, tags, writeupLookupMap);
-
-      // Conservative merge:
-      // If this is a retired machine, keep the previous tags/skills/attackPaths
-      // whenever the new fetch returns empty metadata.
-      if (machine.__isRetired && previousMachinesById?.has(machine.id)) {
-        const previous = previousMachinesById.get(machine.id);
-
-        if (
-          Array.isArray(extracted.tags) &&
-          extracted.tags.length === 0 &&
-          Array.isArray(previous?.tags) &&
-          previous.tags.length > 0
-        ) {
-          extracted.tags = previous.tags;
-        }
-
-        if (
-          Array.isArray(extracted.skills) &&
-          extracted.skills.length === 0 &&
-          Array.isArray(previous?.skills) &&
-          previous.skills.length > 0
-        ) {
-          extracted.skills = previous.skills;
-        }
-
-        if (
-          Array.isArray(extracted.attackPaths) &&
-          extracted.attackPaths.length === 0 &&
-          Array.isArray(previous?.attackPaths) &&
-          previous.attackPaths.length > 0
-        ) {
-          extracted.attackPaths = previous.attackPaths;
-        }
-      }
-
-      return extracted;
+      return extractMachineData(machine, profile, tags, writeupLookupMap);
     });
 
     // Prepare output data

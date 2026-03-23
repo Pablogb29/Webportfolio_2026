@@ -45,10 +45,10 @@ export default function MachineListItem({ machine, index = 0 }: MachineListItemP
     (machine.skills?.length ?? 0) > 0;
 
   const showNoTagsMessage =
-    machine.isActive &&
     (machine.tags?.length ?? 0) === 0 &&
     (machine.attackPaths?.length ?? 0) === 0 &&
-    (machine.skills?.length ?? 0) === 0;
+    (machine.skills?.length ?? 0) === 0 &&
+    !machine.writeupUrl;
 
   return (
     <motion.div
