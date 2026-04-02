@@ -30,8 +30,35 @@ function transformMachines(machines: Array<{
   status?: "Active" | "Retired";
   isActive?: boolean;
   isRetired?: boolean;
+  retired?: boolean;
 }>): MachineSolved[] {
-  return machines.map((machine) => ({
+  return machines.map((machine) => {
+    const status = (
+      machine.status === "Active" || machine.status === "Retired"
+        ? machine.status
+        : machine.isRetired === true || machine.retired === true
+          ? "Retired"
+          : (machine.status || "Active")
+    ) as MachineSolved["status"];
+
+    const hasExplicitPlatformState =
+      machine.status === "Active" ||
+      machine.status === "Retired" ||
+      typeof machine.isActive === "boolean";
+
+    const isActive = hasExplicitPlatformState
+      ? typeof machine.isActive === "boolean"
+        ? machine.isActive
+        : status === "Active"
+      : false;
+
+    const isRetired = hasExplicitPlatformState
+      ? typeof machine.isRetired === "boolean"
+        ? machine.isRetired
+        : status === "Retired"
+      : status === "Retired";
+
+    return {
     id: machine.id,
     name: machine.name,
     url: machine.htbUrl,
@@ -40,9 +67,9 @@ function transformMachines(machines: Array<{
     difficultyNumeric: getDifficultyNumeric(machine.difficulty),
     os: machine.os as MachineSolved["os"],
     solveDate: machine.solveDate || new Date().toISOString(),
-    status: (machine.status || "Active") as MachineSolved["status"],
-    isActive: machine.isActive ?? (machine.status === "Active"),
-    isRetired: machine.isRetired ?? (machine.status === "Retired"),
+    status,
+    isActive,
+    isRetired,
     points: 0,
     tags: machine.tags || [],
     skills: machine.skills || [],
@@ -50,7 +77,8 @@ function transformMachines(machines: Array<{
     difficultyRatings: machine.difficultyRatings || null,
     writeupUrl: machine.writeupUrl || null,
     hasWriteup: machine.hasWriteup || false,
-  }));
+  };
+  });
 }
 
 /**

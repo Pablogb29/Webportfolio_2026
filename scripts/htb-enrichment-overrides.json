@@ -1,0 +1,81 @@
+{
+  "byMachineId": {
+    "201": {
+      "tags": [
+        "Web Application",
+        "Password Reuse",
+        "Misconfiguration",
+        "Command Execution",
+        "Windows",
+        "Firefox",
+        "Impacket",
+        "SMB",
+        "PowerShell"
+      ],
+      "skills": [
+        "Web Exploitation",
+        "Windows PrivEsc",
+        "Security Assessment",
+        "Network"
+      ],
+      "attackPaths": []
+    },
+    "627": {
+      "tags": [
+        "Enterprise Network",
+        "Vulnerability Assessment",
+        "Hard-coded Credentials",
+        "Powershell",
+        "SMB",
+        "WinRM",
+        "Windows",
+        "Reconnaissance",
+        "Pass the Hash",
+        "Password Spraying",
+        "Privilege Abuse",
+        "Active Directory",
+        "Protocols",
+        "Common Services",
+        "Security Tools",
+        "Authentication"
+      ],
+      "skills": [
+        "Active Directory",
+        "Crypto",
+        "Linux PrivEsc",
+        "Network",
+        "Security Assessment",
+        "Windows PrivEsc"
+      ],
+      "attackPaths": []
+    },
+    "624": {
+      "tags": [
+        "Web Application",
+        "Vulnerability Assessment",
+        "Remote Code Execution",
+        "OS Command Injection",
+        "Cross Site Scripting (XSS)",
+        "Bash",
+        "JavaScript",
+        "SSH",
+        "NGINX",
+        "NodeJS",
+        "Docker",
+        "Password Cracking",
+        "Port Forwarding",
+        "Authentication bypass",
+        "Databases",
+        "Injections",
+        "Cryptography"
+      ],
+      "skills": [
+        "Crypto",
+        "Network",
+        "Security Assessment",
+        "Web Exploitation"
+      ],
+      "attackPaths": []
+    }
+  }
+}

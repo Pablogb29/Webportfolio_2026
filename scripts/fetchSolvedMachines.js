@@ -40,6 +40,7 @@ const PROJECT_ROOT = resolve(__dirname, "..");
 const OUTPUT_DIR = join(PROJECT_ROOT, "public", "htb");
 const OUTPUT_FILE = join(OUTPUT_DIR, "solved-machines.json");
 const SKILLS_MAP_FILE = join(__dirname, "skills-map.json");
+const ENRICHMENT_OVERRIDES_FILE = join(__dirname, "htb-enrichment-overrides.json");
 const REQUEST_TIMEOUT = 30000; // 30 seconds
 const MAX_RETRIES = 3;
 const INITIAL_RETRY_DELAY = 500; // Start with 500ms
@@ -57,6 +58,22 @@ try {
   }
 } catch (error) {
   console.warn(`Failed to load skills map: ${error.message}, skills will be empty`);
+}
+
+let enrichmentOverrides = { byMachineId: {} };
+try {
+  if (existsSync(ENRICHMENT_OVERRIDES_FILE)) {
+    const raw = JSON.parse(readFileSync(ENRICHMENT_OVERRIDES_FILE, "utf8"));
+    enrichmentOverrides =
+      raw && typeof raw.byMachineId === "object" && raw.byMachineId !== null
+        ? raw
+        : { byMachineId: {} };
+    console.log(
+      `Loaded HTB enrichment overrides for ${Object.keys(enrichmentOverrides.byMachineId).length} machine id(s)`
+    );
+  }
+} catch (error) {
+  console.warn(`Failed to load enrichment overrides: ${error.message}`);
 }
 
 /**
@@ -521,6 +538,78 @@ function normalizeMachineName(name) {
   return name.toLowerCase().replace(/[\s\-_]/g, "");
 }
 
+function enrichmentPresent(m) {
+  return (
+    (Array.isArray(m.tags) && m.tags.length > 0) ||
+    (Array.isArray(m.skills) && m.skills.length > 0) ||
+    (Array.isArray(m.attackPaths) && m.attackPaths.length > 0)
+  );
+}
+
+function loadPreviousMachinesById() {
+  try {
+    if (!existsSync(OUTPUT_FILE)) {
+      return new Map();
+    }
+    const prev = JSON.parse(readFileSync(OUTPUT_FILE, "utf8"));
+    const map = new Map();
+    if (Array.isArray(prev.machines)) {
+      prev.machines.forEach((m) => {
+        if (m && typeof m.id === "number") {
+          map.set(m.id, m);
+        }
+      });
+    }
+    return map;
+  } catch (error) {
+    console.warn(`Could not read previous output for merge: ${error.message}`);
+    return new Map();
+  }
+}
+
+function mergeEnrichmentFromPrevious(fresh, prev) {
+  if (!prev || !enrichmentPresent(prev)) {
+    return fresh;
+  }
+  const next = { ...fresh };
+  if (!Array.isArray(next.tags) || next.tags.length === 0) {
+    next.tags = [...(prev.tags || [])];
+  }
+  if (!Array.isArray(next.attackPaths) || next.attackPaths.length === 0) {
+    next.attackPaths = [...(prev.attackPaths || [])];
+  }
+  if (!Array.isArray(next.skills) || next.skills.length === 0) {
+    next.skills = [...(prev.skills || [])];
+  }
+  if (next.skills.length === 0 && next.tags.length > 0) {
+    next.skills = deriveSkillsFromTags(next.tags);
+  }
+  return next;
+}
+
+function applyEnrichmentOverrides(machine, overrides) {
+  const o = overrides.byMachineId[String(machine.id)];
+  if (!o || typeof o !== "object") {
+    return machine;
+  }
+  if (enrichmentPresent(machine)) {
+    return machine;
+  }
+  const next = { ...machine };
+  if (Array.isArray(o.tags) && o.tags.length > 0) {
+    next.tags = [...o.tags];
+  }
+  if (Array.isArray(o.attackPaths) && o.attackPaths.length > 0) {
+    next.attackPaths = [...o.attackPaths];
+  }
+  if (Array.isArray(o.skills) && o.skills.length > 0) {
+    next.skills = [...o.skills];
+  } else if (next.tags.length > 0) {
+    next.skills = deriveSkillsFromTags(next.tags);
+  }
+  return next;
+}
+
 /**
  * Fetch GitHub repo ref (to get latest commit SHA)
  */
@@ -664,8 +753,15 @@ function findWriteupUrl(machineName, difficulty, writeupLookupMap) {
 
 /**
  * Extract required fields from machine data
+ * @param {boolean} platformActive - true when the machine is still on the active (non-retired) HTB catalog
  */
-function extractMachineData(machine, profileData = null, tagsData = null, writeupLookupMap = null) {
+function extractMachineData(
+  machine,
+  profileData = null,
+  tagsData = null,
+  writeupLookupMap = null,
+  platformActive = false
+) {
   // Parse tags from tags endpoint
   const { tags, attackPaths, tagGroups } = parseTagsResponse(tagsData);
   
@@ -700,6 +796,9 @@ function extractMachineData(machine, profileData = null, tagsData = null, writeu
   const writeupUrl = findWriteupUrl(machine.name, machineDifficulty, writeupLookupMap);
   const hasWriteup = writeupUrl !== null;
 
+  const isActive = platformActive;
+  const status = isActive ? "Active" : "Retired";
+
   return {
     id: machine.id,
     name: machine.name || "Unknown",
@@ -713,6 +812,9 @@ function extractMachineData(machine, profileData = null, tagsData = null, writeu
     difficultyRatings: difficultyRatings,
     writeupUrl: writeupUrl,
     hasWriteup: hasWriteup,
+    status,
+    isActive,
+    isRetired: !isActive,
   };
 }
 
@@ -733,17 +835,30 @@ async function main() {
   }
 
   try {
+    const previousById = loadPreviousMachinesById();
+    if (previousById.size > 0) {
+      console.log(`\nLoaded ${previousById.size} machine(s) from previous JSON for enrichment merge`);
+    }
+
     // Fetch active machines
     console.log("\n[1/3] Fetching active machines...");
     const activeMachines = await fetchAllPages("/machine/paginated", token);
+    const activeIdSet = new Set(activeMachines.map((m) => m.id));
 
     // Fetch retired machines
     console.log("\n[2/3] Fetching retired machines...");
     const retiredMachines = await fetchAllPages("/machine/list/retired/paginated", token);
 
-    // Combine all machines
-    const allMachines = [...activeMachines, ...retiredMachines];
-    console.log(`\nTotal machines fetched: ${allMachines.length}`);
+    // Merge catalogs: prefer the active entry when an id exists in both lists
+    const mergedById = new Map();
+    activeMachines.forEach((m) => mergedById.set(m.id, m));
+    retiredMachines.forEach((m) => {
+      if (!mergedById.has(m.id)) {
+        mergedById.set(m.id, m);
+      }
+    });
+    const allMachines = Array.from(mergedById.values());
+    console.log(`\nTotal machines fetched (deduped): ${allMachines.length}`);
 
     // Filter solved machines
     console.log("\nFiltering solved machines...");
@@ -840,11 +955,28 @@ async function main() {
 
     // Extract required fields
     console.log("\nExtracting machine data...");
+    let mergedFromPreviousCount = 0;
     const extractedMachines = solvedMachines.map((machine) => {
       const profile = profileMap.get(machine.id);
       const tags = tagsMap.get(machine.id);
-      return extractMachineData(machine, profile, tags, writeupLookupMap);
+      const platformActive = activeIdSet.has(machine.id);
+      const prevRow = previousById.get(machine.id);
+      let row = extractMachineData(machine, profile, tags, writeupLookupMap, platformActive);
+      const emptyAfterApi = !enrichmentPresent(row);
+      const hadPrevEnrichment = prevRow && enrichmentPresent(prevRow);
+      row = mergeEnrichmentFromPrevious(row, prevRow);
+      if (emptyAfterApi && hadPrevEnrichment && enrichmentPresent(row)) {
+        mergedFromPreviousCount += 1;
+      }
+      row = applyEnrichmentOverrides(row, enrichmentOverrides);
+      return row;
     });
+
+    if (mergedFromPreviousCount > 0) {
+      console.log(
+        `  Restored tags/skills/paths from previous JSON for ${mergedFromPreviousCount} machine(s) where HTB returned empty enrichment`
+      );
+    }
 
     // Prepare output data
     const outputData = {

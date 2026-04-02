@@ -1,7 +1,35 @@
 {
-  "lastUpdated": "2026-03-23T11:22:40.791Z",
-  "total": 40,
+  "lastUpdated": "2026-04-02T20:08:50.673Z",
+  "total": 51,
   "machines": [
+    {
+      "id": 856,
+      "name": "Kobold",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "solveDate": null,
+      "htbUrl": "https://app.hackthebox.com/machines/856",
+      "tags": [],
+      "attackPaths": [],
+      "skills": [],
+      "difficultyRatings": {
+        "counterCake": 442,
+        "counterVeryEasy": 598,
+        "counterEasy": 1527,
+        "counterTooEasy": 886,
+        "counterMedium": 503,
+        "counterBitHard": 205,
+        "counterHard": 118,
+        "counterTooHard": 45,
+        "counterExHard": 9,
+        "counterBrainFuck": 45
+      },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Kobold/README.md",
+      "hasWriteup": true,
+      "status": "Active",
+      "isActive": true,
+      "isRetired": false
+    },
     {
       "id": 835,
       "name": "WingData",
@@ -13,22 +41,22 @@
       "attackPaths": [],
       "skills": [],
       "difficultyRatings": {
-        "counterCake": 395,
-        "counterVeryEasy": 713,
-        "counterEasy": 2691,
-        "counterTooEasy": 2021,
-        "counterMedium": 969,
-        "counterBitHard": 359,
-        "counterHard": 249,
-        "counterTooHard": 88,
-        "counterExHard": 31,
-        "counterBrainFuck": 94
+        "counterCake": 419,
+        "counterVeryEasy": 744,
+        "counterEasy": 2842,
+        "counterTooEasy": 2133,
+        "counterMedium": 1023,
+        "counterBitHard": 380,
+        "counterHard": 268,
+        "counterTooHard": 92,
+        "counterExHard": 36,
+        "counterBrainFuck": 99
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/WingData/README.md",
+      "hasWriteup": true,
       "status": "Active",
       "isActive": true,
-      "isRetired": false,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/WingData/README.md",
-      "hasWriteup": true
+      "isRetired": false
     },
     {
       "id": 829,
@@ -41,22 +69,22 @@
       "attackPaths": [],
       "skills": [],
       "difficultyRatings": {
-        "counterCake": 1168,
-        "counterVeryEasy": 1695,
-        "counterEasy": 4575,
-        "counterTooEasy": 2589,
-        "counterMedium": 950,
-        "counterBitHard": 243,
-        "counterHard": 158,
-        "counterTooHard": 57,
-        "counterExHard": 25,
-        "counterBrainFuck": 90
+        "counterCake": 1227,
+        "counterVeryEasy": 1785,
+        "counterEasy": 4836,
+        "counterTooEasy": 2798,
+        "counterMedium": 1021,
+        "counterBitHard": 273,
+        "counterHard": 181,
+        "counterTooHard": 61,
+        "counterExHard": 27,
+        "counterBrainFuck": 96
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Facts/README.md",
+      "hasWriteup": true,
       "status": "Active",
       "isActive": true,
-      "isRetired": false,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Facts/README.md",
-      "hasWriteup": true
+      "isRetired": false
     },
     {
       "id": 351,
@@ -88,22 +116,22 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 17455,
-        "counterVeryEasy": 19575,
-        "counterEasy": 33010,
-        "counterTooEasy": 11398,
-        "counterMedium": 6499,
-        "counterBitHard": 1552,
-        "counterHard": 948,
-        "counterTooHard": 232,
-        "counterExHard": 89,
-        "counterBrainFuck": 358
+        "counterCake": 17671,
+        "counterVeryEasy": 19854,
+        "counterEasy": 33416,
+        "counterTooEasy": 11571,
+        "counterMedium": 6567,
+        "counterBitHard": 1574,
+        "counterHard": 968,
+        "counterTooHard": 235,
+        "counterExHard": 90,
+        "counterBrainFuck": 361
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Cap/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Cap/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 547,
@@ -131,22 +159,22 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 1064,
-        "counterVeryEasy": 1435,
-        "counterEasy": 6801,
-        "counterTooEasy": 6578,
-        "counterMedium": 2699,
-        "counterBitHard": 1047,
-        "counterHard": 658,
-        "counterTooHard": 120,
-        "counterExHard": 32,
-        "counterBrainFuck": 120
+        "counterCake": 1075,
+        "counterVeryEasy": 1450,
+        "counterEasy": 6845,
+        "counterTooEasy": 6621,
+        "counterMedium": 2715,
+        "counterBitHard": 1054,
+        "counterHard": 662,
+        "counterTooHard": 123,
+        "counterExHard": 34,
+        "counterBrainFuck": 122
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/TwoMillion/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/TwoMillion/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 484,
@@ -194,22 +222,66 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 361,
-        "counterVeryEasy": 516,
-        "counterEasy": 2352,
-        "counterTooEasy": 3565,
-        "counterMedium": 3312,
-        "counterBitHard": 1621,
-        "counterHard": 1030,
+        "counterCake": 367,
+        "counterVeryEasy": 523,
+        "counterEasy": 2390,
+        "counterTooEasy": 3605,
+        "counterMedium": 3334,
+        "counterBitHard": 1631,
+        "counterHard": 1037,
         "counterTooHard": 330,
-        "counterExHard": 78,
-        "counterBrainFuck": 203
+        "counterExHard": 79,
+        "counterBrainFuck": 206
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Support/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": null,
-      "hasWriteup": false
+      "isRetired": true
+    },
+    {
+      "id": 642,
+      "name": "EscapeTwo",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "solveDate": null,
+      "htbUrl": "https://app.hackthebox.com/machines/642",
+      "tags": [
+        "Enterprise Network",
+        "Vulnerability Assessment",
+        "SQL",
+        "Powershell",
+        "Active Directory Certificate Services",
+        "Active Directory",
+        "Common Services",
+        "Common Security Controls",
+        "Security Tools"
+      ],
+      "attackPaths": [],
+      "skills": [
+        "Active Directory",
+        "Network",
+        "Security Assessment",
+        "Web Exploitation",
+        "Windows PrivEsc"
+      ],
+      "difficultyRatings": {
+        "counterCake": 435,
+        "counterVeryEasy": 642,
+        "counterEasy": 3192,
+        "counterTooEasy": 3821,
+        "counterMedium": 2240,
+        "counterBitHard": 1218,
+        "counterHard": 916,
+        "counterTooHard": 353,
+        "counterExHard": 93,
+        "counterBrainFuck": 243
+      },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/EscapeTwo/README.md",
+      "hasWriteup": true,
+      "status": "Retired",
+      "isActive": false,
+      "isRetired": true
     },
     {
       "id": 634,
@@ -246,21 +318,21 @@
       ],
       "difficultyRatings": {
         "counterCake": 714,
-        "counterVeryEasy": 732,
-        "counterEasy": 3645,
-        "counterTooEasy": 2593,
-        "counterMedium": 2070,
+        "counterVeryEasy": 738,
+        "counterEasy": 3668,
+        "counterTooEasy": 2601,
+        "counterMedium": 2072,
         "counterBitHard": 606,
         "counterHard": 266,
         "counterTooHard": 48,
         "counterExHard": 11,
         "counterBrainFuck": 55
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/MEDIUM/Administrator.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/MEDIUM/Administrator.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 631,
@@ -284,8 +356,8 @@
       "difficultyRatings": {
         "counterCake": 1355,
         "counterVeryEasy": 2126,
-        "counterEasy": 7058,
-        "counterTooEasy": 4233,
+        "counterEasy": 7057,
+        "counterTooEasy": 4234,
         "counterMedium": 1553,
         "counterBitHard": 545,
         "counterHard": 343,
@@ -293,11 +365,11 @@
         "counterExHard": 24,
         "counterBrainFuck": 115
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Chemistry/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Chemistry/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 627,
@@ -334,22 +406,22 @@
         "Windows PrivEsc"
       ],
       "difficultyRatings": {
-        "counterCake": 1877,
-        "counterVeryEasy": 2587,
-        "counterEasy": 8705,
-        "counterTooEasy": 4478,
-        "counterMedium": 1551,
-        "counterBitHard": 498,
+        "counterCake": 1878,
+        "counterVeryEasy": 2602,
+        "counterEasy": 8721,
+        "counterTooEasy": 4481,
+        "counterMedium": 1554,
+        "counterBitHard": 499,
         "counterHard": 308,
         "counterTooHard": 71,
         "counterExHard": 20,
         "counterBrainFuck": 89
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Cicada/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Cicada/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 624,
@@ -387,8 +459,8 @@
       "difficultyRatings": {
         "counterCake": 912,
         "counterVeryEasy": 1389,
-        "counterEasy": 4495,
-        "counterTooEasy": 2761,
+        "counterEasy": 4496,
+        "counterTooEasy": 2762,
         "counterMedium": 1653,
         "counterBitHard": 916,
         "counterHard": 613,
@@ -396,11 +468,11 @@
         "counterExHard": 46,
         "counterBrainFuck": 170
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Sightless/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Sightless/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 600,
@@ -436,20 +508,20 @@
       "difficultyRatings": {
         "counterCake": 337,
         "counterVeryEasy": 390,
-        "counterEasy": 1700,
-        "counterTooEasy": 2623,
-        "counterMedium": 1691,
-        "counterBitHard": 783,
+        "counterEasy": 1702,
+        "counterTooEasy": 2628,
+        "counterMedium": 1695,
+        "counterBitHard": 786,
         "counterHard": 526,
         "counterTooHard": 146,
         "counterExHard": 38,
         "counterBrainFuck": 128
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Mailing/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Mailing/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 594,
@@ -482,10 +554,10 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 2208,
+        "counterCake": 2209,
         "counterVeryEasy": 2762,
-        "counterEasy": 6783,
-        "counterTooEasy": 4055,
+        "counterEasy": 6786,
+        "counterTooEasy": 4057,
         "counterMedium": 1213,
         "counterBitHard": 442,
         "counterHard": 253,
@@ -493,11 +565,53 @@
         "counterExHard": 24,
         "counterBrainFuck": 99
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Headless/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Headless/README.md",
-      "hasWriteup": true
+      "isRetired": true
+    },
+    {
+      "id": 587,
+      "name": "Crafty",
+      "os": "Windows",
+      "difficulty": "Easy",
+      "solveDate": null,
+      "htbUrl": "https://app.hackthebox.com/machines/587",
+      "tags": [
+        "Web Application",
+        "Remote Code Execution",
+        "Hard-coded Credentials",
+        "Java",
+        "Batch",
+        "IIS",
+        "LDAP",
+        "Password Reuse",
+        "Decompilation",
+        "Common Applications",
+        "Injections"
+      ],
+      "attackPaths": [],
+      "skills": [
+        "Web Exploitation"
+      ],
+      "difficultyRatings": {
+        "counterCake": 410,
+        "counterVeryEasy": 587,
+        "counterEasy": 1913,
+        "counterTooEasy": 1454,
+        "counterMedium": 712,
+        "counterBitHard": 343,
+        "counterHard": 264,
+        "counterTooHard": 63,
+        "counterExHard": 26,
+        "counterBrainFuck": 111
+      },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Crafty/README.md",
+      "hasWriteup": true,
+      "status": "Retired",
+      "isActive": false,
+      "isRetired": true
     },
     {
       "id": 556,
@@ -523,22 +637,22 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 5753,
-        "counterVeryEasy": 5706,
-        "counterEasy": 10186,
-        "counterTooEasy": 4896,
-        "counterMedium": 1874,
-        "counterBitHard": 759,
+        "counterCake": 5758,
+        "counterVeryEasy": 5712,
+        "counterEasy": 10190,
+        "counterTooEasy": 4903,
+        "counterMedium": 1876,
+        "counterBitHard": 760,
         "counterHard": 439,
         "counterTooHard": 103,
         "counterExHard": 36,
         "counterBrainFuck": 174
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Keeper/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Keeper/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 531,
@@ -582,21 +696,65 @@
       ],
       "difficultyRatings": {
         "counterCake": 294,
-        "counterVeryEasy": 275,
-        "counterEasy": 1652,
-        "counterTooEasy": 2254,
-        "counterMedium": 2365,
-        "counterBitHard": 851,
-        "counterHard": 425,
-        "counterTooHard": 92,
+        "counterVeryEasy": 277,
+        "counterEasy": 1657,
+        "counterTooEasy": 2263,
+        "counterMedium": 2371,
+        "counterBitHard": 853,
+        "counterHard": 429,
+        "counterTooHard": 93,
         "counterExHard": 25,
         "counterBrainFuck": 65
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/MEDIUM/Escape/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/MEDIUM/Escape/README.md",
-      "hasWriteup": true
+      "isRetired": true
+    },
+    {
+      "id": 514,
+      "name": "Squashed",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "solveDate": null,
+      "htbUrl": "https://app.hackthebox.com/machines/514",
+      "tags": [
+        "Enterprise Network",
+        "Vulnerability Assessment",
+        "Arbitrary File Upload",
+        "Apache",
+        "X11",
+        "NFS",
+        "Reconnaissance",
+        "User Enumeration",
+        "Impersonation",
+        "Common Services",
+        "Authentication"
+      ],
+      "attackPaths": [],
+      "skills": [
+        "Active Directory",
+        "Network",
+        "Security Assessment"
+      ],
+      "difficultyRatings": {
+        "counterCake": 396,
+        "counterVeryEasy": 713,
+        "counterEasy": 2246,
+        "counterTooEasy": 1540,
+        "counterMedium": 771,
+        "counterBitHard": 254,
+        "counterHard": 167,
+        "counterTooHard": 53,
+        "counterExHard": 16,
+        "counterBrainFuck": 54
+      },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Squashed/README.md",
+      "hasWriteup": true,
+      "status": "Retired",
+      "isActive": false,
+      "isRetired": true
     },
     {
       "id": 500,
@@ -633,11 +791,11 @@
         "counterExHard": 33,
         "counterBrainFuck": 118
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Photobomb/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Photobomb/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 481,
@@ -669,20 +827,20 @@
       "difficultyRatings": {
         "counterCake": 653,
         "counterVeryEasy": 990,
-        "counterEasy": 3234,
-        "counterTooEasy": 3227,
-        "counterMedium": 2555,
-        "counterBitHard": 986,
+        "counterEasy": 3235,
+        "counterTooEasy": 3228,
+        "counterMedium": 2556,
+        "counterBitHard": 987,
         "counterHard": 631,
         "counterTooHard": 221,
         "counterExHard": 55,
-        "counterBrainFuck": 139
+        "counterBrainFuck": 140
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/RedPanda/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/RedPanda/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 476,
@@ -729,22 +887,22 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 68,
+        "counterCake": 71,
         "counterVeryEasy": 52,
-        "counterEasy": 140,
-        "counterTooEasy": 281,
-        "counterMedium": 742,
-        "counterBitHard": 629,
-        "counterHard": 519,
+        "counterEasy": 141,
+        "counterTooEasy": 283,
+        "counterMedium": 745,
+        "counterBitHard": 631,
+        "counterHard": 521,
         "counterTooHard": 132,
-        "counterExHard": 42,
-        "counterBrainFuck": 59
+        "counterExHard": 43,
+        "counterBrainFuck": 60
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/MEDIUM/Scrambled/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/MEDIUM/Scrambled.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 474,
@@ -791,22 +949,22 @@
         "Windows PrivEsc"
       ],
       "difficultyRatings": {
-        "counterCake": 56,
+        "counterCake": 58,
         "counterVeryEasy": 30,
-        "counterEasy": 123,
-        "counterTooEasy": 321,
-        "counterMedium": 887,
-        "counterBitHard": 736,
-        "counterHard": 784,
+        "counterEasy": 124,
+        "counterTooEasy": 322,
+        "counterMedium": 888,
+        "counterBitHard": 741,
+        "counterHard": 787,
         "counterTooHard": 320,
-        "counterExHard": 91,
+        "counterExHard": 92,
         "counterBrainFuck": 87
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/MEDIUM/StreamIO.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/MEDIUM/StreamIO.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 471,
@@ -842,19 +1000,19 @@
         "counterCake": 142,
         "counterVeryEasy": 170,
         "counterEasy": 595,
-        "counterTooEasy": 1063,
-        "counterMedium": 1640,
+        "counterTooEasy": 1064,
+        "counterMedium": 1642,
         "counterBitHard": 921,
         "counterHard": 624,
         "counterTooHard": 187,
         "counterExHard": 61,
         "counterBrainFuck": 104
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/OpenSource/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/OpenSource/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 463,
@@ -884,20 +1042,20 @@
       "difficultyRatings": {
         "counterCake": 405,
         "counterVeryEasy": 641,
-        "counterEasy": 1927,
+        "counterEasy": 1931,
         "counterTooEasy": 1932,
-        "counterMedium": 1497,
+        "counterMedium": 1499,
         "counterBitHard": 485,
         "counterHard": 336,
         "counterTooHard": 115,
         "counterExHard": 42,
         "counterBrainFuck": 150
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Late/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Late/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 452,
@@ -928,22 +1086,22 @@
         "Windows PrivEsc"
       ],
       "difficultyRatings": {
-        "counterCake": 696,
-        "counterVeryEasy": 1357,
-        "counterEasy": 5496,
-        "counterTooEasy": 4797,
-        "counterMedium": 3213,
+        "counterCake": 697,
+        "counterVeryEasy": 1359,
+        "counterEasy": 5501,
+        "counterTooEasy": 4802,
+        "counterMedium": 3214,
         "counterBitHard": 973,
-        "counterHard": 545,
+        "counterHard": 546,
         "counterTooHard": 180,
         "counterExHard": 50,
         "counterBrainFuck": 150
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Timelapse/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Timelapse/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 423,
@@ -977,20 +1135,20 @@
       "difficultyRatings": {
         "counterCake": 444,
         "counterVeryEasy": 553,
-        "counterEasy": 1936,
-        "counterTooEasy": 2598,
-        "counterMedium": 3100,
-        "counterBitHard": 1511,
+        "counterEasy": 1937,
+        "counterTooEasy": 2601,
+        "counterMedium": 3102,
+        "counterBitHard": 1513,
         "counterHard": 980,
-        "counterTooHard": 308,
+        "counterTooHard": 309,
         "counterExHard": 80,
         "counterBrainFuck": 163
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Pandora/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Pandora/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 416,
@@ -1018,9 +1176,9 @@
       ],
       "difficultyRatings": {
         "counterCake": 628,
-        "counterVeryEasy": 909,
+        "counterVeryEasy": 910,
         "counterEasy": 2699,
-        "counterTooEasy": 3335,
+        "counterTooEasy": 3336,
         "counterMedium": 3266,
         "counterBitHard": 1255,
         "counterHard": 755,
@@ -1028,11 +1186,11 @@
         "counterExHard": 60,
         "counterBrainFuck": 149
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Backdoor/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Backdoor/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 401,
@@ -1064,22 +1222,22 @@
         "Security Assessment"
       ],
       "difficultyRatings": {
-        "counterCake": 1674,
-        "counterVeryEasy": 2095,
-        "counterEasy": 4569,
-        "counterTooEasy": 2115,
-        "counterMedium": 869,
-        "counterBitHard": 242,
-        "counterHard": 104,
+        "counterCake": 1685,
+        "counterVeryEasy": 2104,
+        "counterEasy": 4592,
+        "counterTooEasy": 2128,
+        "counterMedium": 871,
+        "counterBitHard": 244,
+        "counterHard": 105,
         "counterTooHard": 20,
         "counterExHard": 7,
         "counterBrainFuck": 60
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Return/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Return/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 359,
@@ -1105,22 +1263,22 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 1043,
-        "counterVeryEasy": 1722,
-        "counterEasy": 4978,
-        "counterTooEasy": 5120,
-        "counterMedium": 4362,
+        "counterCake": 1045,
+        "counterVeryEasy": 1723,
+        "counterEasy": 4980,
+        "counterTooEasy": 5121,
+        "counterMedium": 4365,
         "counterBitHard": 1363,
         "counterHard": 753,
         "counterTooHard": 221,
         "counterExHard": 68,
         "counterBrainFuck": 200
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/BountyHunter/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/BountyHunter/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 248,
@@ -1157,17 +1315,17 @@
         "counterEasy": 1693,
         "counterTooEasy": 3015,
         "counterMedium": 7432,
-        "counterBitHard": 2486,
+        "counterBitHard": 2487,
         "counterHard": 2184,
         "counterTooHard": 1194,
         "counterExHard": 366,
         "counterBrainFuck": 457
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Admirer/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Admirer/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 240,
@@ -1205,22 +1363,22 @@
         "Windows PrivEsc"
       ],
       "difficultyRatings": {
-        "counterCake": 1675,
-        "counterVeryEasy": 3036,
-        "counterEasy": 5501,
-        "counterTooEasy": 3442,
-        "counterMedium": 5951,
-        "counterBitHard": 1233,
+        "counterCake": 1680,
+        "counterVeryEasy": 3040,
+        "counterEasy": 5508,
+        "counterTooEasy": 3451,
+        "counterMedium": 5953,
+        "counterBitHard": 1234,
         "counterHard": 857,
         "counterTooHard": 423,
         "counterExHard": 137,
         "counterBrainFuck": 307
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/ServMon/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": null,
-      "hasWriteup": false
+      "isRetired": true
     },
     {
       "id": 229,
@@ -1254,22 +1412,117 @@
         "System Hardening"
       ],
       "difficultyRatings": {
-        "counterCake": 1307,
-        "counterVeryEasy": 2192,
-        "counterEasy": 7558,
-        "counterTooEasy": 6399,
-        "counterMedium": 9368,
+        "counterCake": 1313,
+        "counterVeryEasy": 2201,
+        "counterEasy": 7589,
+        "counterTooEasy": 6410,
+        "counterMedium": 9372,
         "counterBitHard": 2426,
         "counterHard": 1679,
         "counterTooHard": 858,
         "counterExHard": 257,
         "counterBrainFuck": 375
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Sauna/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Sauna/README.md",
-      "hasWriteup": true
+      "isRetired": true
+    },
+    {
+      "id": 223,
+      "name": "Monteverde",
+      "os": "Windows",
+      "difficulty": "Medium",
+      "solveDate": null,
+      "htbUrl": "https://app.hackthebox.com/machines/223",
+      "tags": [
+        "Enterprise Network",
+        "Vulnerability Assessment",
+        "Weak Credentials",
+        "Misconfiguration",
+        "Anonymous/Guest Access",
+        "Powershell",
+        "SMB",
+        "Azure",
+        "User Enumeration",
+        "Password Reuse",
+        "Password Spraying",
+        "Azure Enumeration",
+        "Active Directory",
+        "Security Tools",
+        "Authentication"
+      ],
+      "attackPaths": [],
+      "skills": [
+        "Active Directory",
+        "Network",
+        "Security Assessment",
+        "System Hardening",
+        "Windows PrivEsc"
+      ],
+      "difficultyRatings": {
+        "counterCake": 642,
+        "counterVeryEasy": 1129,
+        "counterEasy": 3599,
+        "counterTooEasy": 3632,
+        "counterMedium": 6159,
+        "counterBitHard": 1836,
+        "counterHard": 1485,
+        "counterTooHard": 698,
+        "counterExHard": 170,
+        "counterBrainFuck": 264
+      },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/MEDIUM/Monteverde/README.md",
+      "hasWriteup": true,
+      "status": "Retired",
+      "isActive": false,
+      "isRetired": true
+    },
+    {
+      "id": 220,
+      "name": "Resolute",
+      "os": "Windows",
+      "difficulty": "Medium",
+      "solveDate": null,
+      "htbUrl": "https://app.hackthebox.com/machines/220",
+      "tags": [
+        "Enterprise Network",
+        "Vulnerability Assessment",
+        "Weak Credentials",
+        "Clear Text Credentials",
+        "Group Membership",
+        "Information Disclosure",
+        "Anonymous/Guest Access",
+        "Reconnaissance",
+        "Password Spraying",
+        "Active Directory",
+        "Security Tools",
+        "Authentication"
+      ],
+      "attackPaths": [],
+      "skills": [
+        "Active Directory",
+        "Network",
+        "Security Assessment"
+      ],
+      "difficultyRatings": {
+        "counterCake": 1172,
+        "counterVeryEasy": 1958,
+        "counterEasy": 4491,
+        "counterTooEasy": 3858,
+        "counterMedium": 7507,
+        "counterBitHard": 2254,
+        "counterHard": 1856,
+        "counterTooHard": 898,
+        "counterExHard": 283,
+        "counterBrainFuck": 327
+      },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/MEDIUM/Resolute/README.md",
+      "hasWriteup": true,
+      "status": "Retired",
+      "isActive": false,
+      "isRetired": true
     },
     {
       "id": 212,
@@ -1304,22 +1557,22 @@
         "System Hardening"
       ],
       "difficultyRatings": {
-        "counterCake": 1403,
-        "counterVeryEasy": 2031,
-        "counterEasy": 7128,
-        "counterTooEasy": 6665,
-        "counterMedium": 9100,
-        "counterBitHard": 3011,
-        "counterHard": 2781,
+        "counterCake": 1410,
+        "counterVeryEasy": 2039,
+        "counterEasy": 7154,
+        "counterTooEasy": 6682,
+        "counterMedium": 9110,
+        "counterBitHard": 3012,
+        "counterHard": 2785,
         "counterTooHard": 1630,
         "counterExHard": 585,
         "counterBrainFuck": 761
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Forest/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Forest/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 201,
@@ -1329,35 +1582,40 @@
       "solveDate": null,
       "htbUrl": "https://app.hackthebox.com/machines/201",
       "tags": [
-        "SMB", 
-        "WinRM", 
-        "Cisco", 
-        "Password Cracking", 
-        "Firefox Dump"
+        "Web Application",
+        "Password Reuse",
+        "Misconfiguration",
+        "Command Execution",
+        "Windows",
+        "Firefox",
+        "Impacket",
+        "SMB",
+        "PowerShell"
       ],
       "attackPaths": [],
       "skills": [
-        "Network", 
-        "Forensics", 
-        "Security Assessment"
+        "Web Exploitation",
+        "Windows PrivEsc",
+        "Security Assessment",
+        "Network"
       ],
       "difficultyRatings": {
         "counterCake": 485,
-        "counterVeryEasy": 870,
-        "counterEasy": 3278,
-        "counterTooEasy": 4051,
-        "counterMedium": 5916,
+        "counterVeryEasy": 871,
+        "counterEasy": 3283,
+        "counterTooEasy": 4054,
+        "counterMedium": 5921,
         "counterBitHard": 1898,
         "counterHard": 1287,
-        "counterTooHard": 507,
+        "counterTooHard": 508,
         "counterExHard": 179,
         "counterBrainFuck": 228
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Heist/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Heist/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 177,
@@ -1384,22 +1642,77 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 23645,
-        "counterVeryEasy": 8489,
-        "counterEasy": 8608,
-        "counterTooEasy": 4678,
-        "counterMedium": 13812,
+        "counterCake": 23661,
+        "counterVeryEasy": 8495,
+        "counterEasy": 8619,
+        "counterTooEasy": 4681,
+        "counterMedium": 13814,
         "counterBitHard": 1400,
         "counterHard": 1077,
-        "counterTooHard": 605,
+        "counterTooHard": 606,
         "counterExHard": 174,
         "counterBrainFuck": 391
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Netmon/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Netmon/README.md",
-      "hasWriteup": true
+      "isRetired": true
+    },
+    {
+      "id": 175,
+      "name": "Querier",
+      "os": "Windows",
+      "difficulty": "Medium",
+      "solveDate": null,
+      "htbUrl": "https://app.hackthebox.com/machines/175",
+      "tags": [
+        "Web Application",
+        "Enterprise Network",
+        "Vulnerability Assessment",
+        "Weak Credentials",
+        "Information Disclosure",
+        "Anonymous/Guest Access",
+        "Sensitive Data Exposure",
+        "Powershell",
+        "VBScript",
+        "MSSQL",
+        "SMB",
+        "Macros",
+        "Password Cracking",
+        "Hash Capture",
+        "Databases",
+        "Protocols",
+        "Reverse Engineering",
+        "Software & OS exploitation",
+        "Authentication"
+      ],
+      "attackPaths": [],
+      "skills": [
+        "Crypto",
+        "Network",
+        "Reverse Engineering",
+        "Security Assessment",
+        "Web Exploitation",
+        "Windows PrivEsc"
+      ],
+      "difficultyRatings": {
+        "counterCake": 379,
+        "counterVeryEasy": 412,
+        "counterEasy": 1387,
+        "counterTooEasy": 1838,
+        "counterMedium": 3922,
+        "counterBitHard": 1315,
+        "counterHard": 983,
+        "counterTooHard": 408,
+        "counterExHard": 119,
+        "counterBrainFuck": 138
+      },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/MEDIUM/Querier/README.md",
+      "hasWriteup": true,
+      "status": "Retired",
+      "isActive": false,
+      "isRetired": true
     },
     {
       "id": 148,
@@ -1431,22 +1744,22 @@
         "Security Assessment"
       ],
       "difficultyRatings": {
-        "counterCake": 2805,
-        "counterVeryEasy": 4352,
-        "counterEasy": 12126,
-        "counterTooEasy": 7111,
-        "counterMedium": 8981,
+        "counterCake": 2816,
+        "counterVeryEasy": 4374,
+        "counterEasy": 12163,
+        "counterTooEasy": 7123,
+        "counterMedium": 8987,
         "counterBitHard": 1777,
         "counterHard": 1258,
-        "counterTooHard": 570,
+        "counterTooHard": 572,
         "counterExHard": 165,
         "counterBrainFuck": 249
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Active/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Active/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 142,
@@ -1474,20 +1787,192 @@
       "difficultyRatings": {
         "counterCake": 818,
         "counterVeryEasy": 1057,
-        "counterEasy": 2729,
-        "counterTooEasy": 3114,
+        "counterEasy": 2736,
+        "counterTooEasy": 3118,
         "counterMedium": 5225,
-        "counterBitHard": 1210,
+        "counterBitHard": 1211,
         "counterHard": 759,
         "counterTooHard": 345,
         "counterExHard": 87,
         "counterBrainFuck": 150
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Bounty/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Bounty/README.md",
-      "hasWriteup": true
+      "isRetired": true
+    },
+    {
+      "id": 121,
+      "name": "Nibbles",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "solveDate": null,
+      "htbUrl": "https://app.hackthebox.com/machines/121",
+      "tags": [
+        "Vulnerability Assessment",
+        "Remote Code Execution",
+        "Default Credentials",
+        "Nibbleblog",
+        "User Enumeration",
+        "Web Site Structure Discovery",
+        "Brute Force Attack",
+        "SUDO Exploitation",
+        "Software & OS exploitation",
+        "Security Tools"
+      ],
+      "attackPaths": [],
+      "skills": [
+        "Forensics",
+        "Linux PrivEsc",
+        "Security Assessment",
+        "Web Exploitation"
+      ],
+      "difficultyRatings": {
+        "counterCake": 5312,
+        "counterVeryEasy": 8286,
+        "counterEasy": 13943,
+        "counterTooEasy": 7594,
+        "counterMedium": 10838,
+        "counterBitHard": 1382,
+        "counterHard": 819,
+        "counterTooHard": 338,
+        "counterExHard": 96,
+        "counterBrainFuck": 232
+      },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Nibbles/README.md",
+      "hasWriteup": true,
+      "status": "Retired",
+      "isActive": false,
+      "isRetired": true
+    },
+    {
+      "id": 118,
+      "name": "Bashed",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "solveDate": null,
+      "htbUrl": "https://app.hackthebox.com/machines/118",
+      "tags": [
+        "Web Application",
+        "OS Command Injection",
+        "Code Execution",
+        "Apache",
+        "Reconnaissance",
+        "Web Site Structure Discovery",
+        "SUDO Exploitation",
+        "Scheduled Job Abuse",
+        "Common Applications"
+      ],
+      "attackPaths": [],
+      "skills": [
+        "Linux PrivEsc",
+        "Web Exploitation"
+      ],
+      "difficultyRatings": {
+        "counterCake": 14284,
+        "counterVeryEasy": 10303,
+        "counterEasy": 10574,
+        "counterTooEasy": 5473,
+        "counterMedium": 10661,
+        "counterBitHard": 1322,
+        "counterHard": 865,
+        "counterTooHard": 397,
+        "counterExHard": 125,
+        "counterBrainFuck": 249
+      },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Bashed/README.md",
+      "hasWriteup": true,
+      "status": "Retired",
+      "isActive": false,
+      "isRetired": true
+    },
+    {
+      "id": 111,
+      "name": "Sense",
+      "os": "OpenBSD",
+      "difficulty": "Easy",
+      "solveDate": null,
+      "htbUrl": "https://app.hackthebox.com/machines/111",
+      "tags": [
+        "Vulnerability Assessment",
+        "Remote Code Execution",
+        "Clear Text Credentials",
+        "Sensitive Data Exposure",
+        "PHP",
+        "pfSense",
+        "LightHTTPD",
+        "Web Site Structure Discovery",
+        "Software & OS exploitation",
+        "Security Tools",
+        "Authentication"
+      ],
+      "attackPaths": [],
+      "skills": [
+        "Security Assessment",
+        "Web Exploitation"
+      ],
+      "difficultyRatings": {
+        "counterCake": 3477,
+        "counterVeryEasy": 3277,
+        "counterEasy": 5152,
+        "counterTooEasy": 3109,
+        "counterMedium": 5470,
+        "counterBitHard": 637,
+        "counterHard": 398,
+        "counterTooHard": 186,
+        "counterExHard": 51,
+        "counterBrainFuck": 108
+      },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Sense/README.md",
+      "hasWriteup": true,
+      "status": "Retired",
+      "isActive": false,
+      "isRetired": true
+    },
+    {
+      "id": 108,
+      "name": "Shocker",
+      "os": "Linux",
+      "difficulty": "Easy",
+      "solveDate": null,
+      "htbUrl": "https://app.hackthebox.com/machines/108",
+      "tags": [
+        "Vulnerability Assessment",
+        "Remote Code Execution",
+        "Bash",
+        "Perl",
+        "Apache",
+        "CGI",
+        "Reconnaissance",
+        "Web Site Structure Discovery",
+        "SUDO Exploitation",
+        "Software & OS exploitation",
+        "Security Tools"
+      ],
+      "attackPaths": [],
+      "skills": [
+        "Linux PrivEsc",
+        "Security Assessment",
+        "Web Exploitation"
+      ],
+      "difficultyRatings": {
+        "counterCake": 5923,
+        "counterVeryEasy": 6246,
+        "counterEasy": 10194,
+        "counterTooEasy": 5982,
+        "counterMedium": 8547,
+        "counterBitHard": 1104,
+        "counterHard": 670,
+        "counterTooHard": 227,
+        "counterExHard": 71,
+        "counterBrainFuck": 164
+      },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Shocker/README.md",
+      "hasWriteup": true,
+      "status": "Retired",
+      "isActive": false,
+      "isRetired": true
     },
     {
       "id": 51,
@@ -1513,9 +1998,9 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 31686,
-        "counterVeryEasy": 14060,
-        "counterEasy": 9545,
+        "counterCake": 31700,
+        "counterVeryEasy": 14069,
+        "counterEasy": 9550,
         "counterTooEasy": 2514,
         "counterMedium": 9225,
         "counterBitHard": 381,
@@ -1524,11 +2009,11 @@
         "counterExHard": 53,
         "counterBrainFuck": 258
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Blue/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Blue/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 14,
@@ -1556,10 +2041,10 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 4858,
-        "counterVeryEasy": 5389,
-        "counterEasy": 7449,
-        "counterTooEasy": 3815,
+        "counterCake": 4861,
+        "counterVeryEasy": 5390,
+        "counterEasy": 7459,
+        "counterTooEasy": 3816,
         "counterMedium": 5911,
         "counterBitHard": 603,
         "counterHard": 322,
@@ -1567,11 +2052,11 @@
         "counterExHard": 41,
         "counterBrainFuck": 116
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Granny/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Granny/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 13,
@@ -1600,21 +2085,21 @@
       ],
       "difficultyRatings": {
         "counterCake": 4145,
-        "counterVeryEasy": 5738,
-        "counterEasy": 7938,
-        "counterTooEasy": 4187,
-        "counterMedium": 6329,
+        "counterVeryEasy": 5745,
+        "counterEasy": 7940,
+        "counterTooEasy": 4190,
+        "counterMedium": 6330,
         "counterBitHard": 699,
         "counterHard": 402,
         "counterTooHard": 180,
         "counterExHard": 50,
         "counterBrainFuck": 131
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Grandpa/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Grandpa/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 9,
@@ -1643,10 +2128,10 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 2383,
-        "counterVeryEasy": 3127,
-        "counterEasy": 6449,
-        "counterTooEasy": 4120,
+        "counterCake": 2390,
+        "counterVeryEasy": 3130,
+        "counterEasy": 6453,
+        "counterTooEasy": 4123,
         "counterMedium": 5910,
         "counterBitHard": 931,
         "counterHard": 511,
@@ -1654,11 +2139,11 @@
         "counterExHard": 77,
         "counterBrainFuck": 143
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Arctic/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Arctic/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 6,
@@ -1683,22 +2168,22 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 12420,
-        "counterVeryEasy": 9685,
-        "counterEasy": 9937,
-        "counterTooEasy": 5030,
-        "counterMedium": 10053,
+        "counterCake": 12425,
+        "counterVeryEasy": 9689,
+        "counterEasy": 9944,
+        "counterTooEasy": 5036,
+        "counterMedium": 10054,
         "counterBitHard": 1299,
         "counterHard": 859,
         "counterTooHard": 444,
         "counterExHard": 123,
         "counterBrainFuck": 230
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Optimum/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Optimum/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 3,
@@ -1723,10 +2208,10 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 5938,
-        "counterVeryEasy": 9003,
-        "counterEasy": 15319,
-        "counterTooEasy": 8288,
+        "counterCake": 5940,
+        "counterVeryEasy": 9004,
+        "counterEasy": 15324,
+        "counterTooEasy": 8290,
         "counterMedium": 12611,
         "counterBitHard": 1456,
         "counterHard": 884,
@@ -1734,11 +2219,11 @@
         "counterExHard": 105,
         "counterBrainFuck": 223
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Devel/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Devel/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 2,
@@ -1763,22 +2248,22 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 26734,
-        "counterVeryEasy": 14367,
-        "counterEasy": 9937,
+        "counterCake": 26750,
+        "counterVeryEasy": 14377,
+        "counterEasy": 9941,
         "counterTooEasy": 2822,
-        "counterMedium": 9253,
+        "counterMedium": 9255,
         "counterBitHard": 451,
         "counterHard": 237,
         "counterTooHard": 112,
         "counterExHard": 71,
         "counterBrainFuck": 211
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Legacy/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Legacy/README.md",
-      "hasWriteup": true
+      "isRetired": true
     },
     {
       "id": 1,
@@ -1803,10 +2288,10 @@
         "Web Exploitation"
       ],
       "difficultyRatings": {
-        "counterCake": 35959,
-        "counterVeryEasy": 24360,
-        "counterEasy": 21926,
-        "counterTooEasy": 5531,
+        "counterCake": 35981,
+        "counterVeryEasy": 24382,
+        "counterEasy": 21941,
+        "counterTooEasy": 5533,
         "counterMedium": 13775,
         "counterBitHard": 848,
         "counterHard": 524,
@@ -1814,11 +2299,11 @@
         "counterExHard": 100,
         "counterBrainFuck": 340
       },
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Lame/README.md",
+      "hasWriteup": true,
       "status": "Retired",
       "isActive": false,
-      "isRetired": true,
-      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/EASY/Lame/README.md",
-      "hasWriteup": true
+      "isRetired": true
     }
   ]
 }
