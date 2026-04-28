@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Pablo Gutiérrez",
   },
   description:
-    "Cybersecurity Engineer actively transitioning to Pentester/Red Team. AD security, IAM automation, AWS security design, HTB practice (33 machines), and OSCP preparation.",
+    "Cybersecurity Engineer actively transitioning to Pentester/Red Team. AD security, IAM automation, AWS security design, HTB practice (59 machines), and OSCP preparation.",
   keywords: [
     "Cybersecurity",
     "IAM",

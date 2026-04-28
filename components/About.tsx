@@ -42,7 +42,7 @@ export default function About() {
               I am actively transitioning toward <span className="text-purple-accent font-semibold">offensive security</span>. My Master&apos;s thesis involved designing, building, and comprehensively auditing a full Active Directory lab environment from scratch, deepening my expertise in attack methodologies like Kerberoasting, AS-REP roasting, and various privilege escalation vectors.
             </p>
             <p className="text-gray-light/90 leading-relaxed">
-              I maintain consistent hands-on practice through Hack The Box (33 machines solved with OSCP-oriented write-ups) and am working toward CJCA, CPTS, and OSCP certifications. My Blue Team experience in IAM and compliance gives me a practical understanding of the defensive postures that offensive testers need to navigate.
+              I maintain consistent hands-on practice through Hack The Box (59 machines solved with OSCP-oriented write-ups) and am working toward CJCA, CPTS, and OSCP certifications. My Blue Team experience in IAM and compliance gives me a practical understanding of the defensive postures that offensive testers need to navigate.
             </p>
           </motion.div>
 
