@@ -1,6 +1,6 @@
 /**
- * Hostinger Passenger entry (PassengerStartupFile server.js).
- * Same runtime as `npm start` / next start — required for Passenger; not in the April repo.
+ * Passenger startup (PassengerStartupFile server.js).
+ * Hostinger overwrites this when output:standalone is set — keep a standard Next build instead.
  */
 const http = require("http");
 const { parse } = require("url");
