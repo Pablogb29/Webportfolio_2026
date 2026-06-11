@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-11T17:15:45.179Z",
+  "lastUpdated": "2026-06-11T17:22:43.985Z",
   "total": 73,
   "machines": [
     {
@@ -24,8 +24,8 @@
         "counterExHard": 16,
         "counterBrainFuck": 74
       },
-      "writeupUrl": null,
-      "hasWriteup": false,
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/Machines/EASY/Connected/README.md",
+      "hasWriteup": true,
       "status": "Active",
       "isActive": true,
       "isRetired": false
@@ -52,8 +52,8 @@
         "counterExHard": 10,
         "counterBrainFuck": 47
       },
-      "writeupUrl": null,
-      "hasWriteup": false,
+      "writeupUrl": "https://github.com/Pablogb29/HackTheBox/blob/main/Machines/MEDIUM/DevHub/README.md",
+      "hasWriteup": true,
       "status": "Active",
       "isActive": true,
       "isRetired": false
