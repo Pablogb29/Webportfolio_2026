@@ -1,30 +1,56 @@
 /**
- * Passenger startup (PassengerStartupFile server.js).
- * Hostinger overwrites this when output:standalone is set — keep a standard Next build instead.
+ * Hostinger entry point — run from project root after `npm run build`.
+ * Starts Next standalone from `.next/standalone` (correct cwd for assets).
  */
-const http = require("http");
-const { parse } = require("url");
-const next = require("next");
+const { spawn } = require("child_process");
+const fs = require("fs");
+const path = require("path");
 
-const port = parseInt(process.env.PORT || "3000", 10);
-const hostname = process.env.HOSTNAME || "0.0.0.0";
-const app = next({ dev: false, dir: __dirname });
-const handle = app.getRequestHandler();
+const root = __dirname;
+const standaloneDir = path.join(root, ".next", "standalone");
+const serverEntry = path.join(standaloneDir, "server.js");
 
 function log(msg) {
-  console.error(`[startup] ${msg}`);
+  console.error(`[server.js] ${msg}`);
 }
 
-log(`node=${process.version} dir=${__dirname} PORT=${port}`);
+log(`cwd=${process.cwd()}`);
+log(`root=${root}`);
+log(`PORT=${process.env.PORT || "(not set, default 3000)"}`);
 
-app
-  .prepare()
-  .then(() => {
-    http
-      .createServer((req, res) => handle(req, res, parse(req.url, true)))
-      .listen(port, hostname, () => log(`Ready http://${hostname}:${port}`));
-  })
-  .catch((err) => {
-    log(`prepare failed: ${err.stack || err.message}`);
-    process.exit(1);
-  });
+if (!fs.existsSync(serverEntry)) {
+  log(`FATAL: missing ${serverEntry}`);
+  try {
+    const nextDir = path.join(root, ".next");
+    if (fs.existsSync(nextDir)) {
+      log(`.next contents: ${fs.readdirSync(nextDir).join(", ")}`);
+    } else {
+      log("FATAL: .next/ does not exist — build did not run in this directory");
+    }
+  } catch (e) {
+    log(`list error: ${e.message}`);
+  }
+  process.exit(1);
+}
+
+log(`starting ${serverEntry}`);
+
+const child = spawn(process.execPath, [serverEntry], {
+  cwd: standaloneDir,
+  stdio: "inherit",
+  env: {
+    ...process.env,
+    HOSTNAME: process.env.HOSTNAME || "0.0.0.0",
+    PORT: process.env.PORT || "3000",
+  },
+});
+
+child.on("error", (err) => {
+  log(`spawn error: ${err.message}`);
+  process.exit(1);
+});
+
+child.on("exit", (code, signal) => {
+  log(`exited code=${code} signal=${signal}`);
+  process.exit(code ?? 1);
+});

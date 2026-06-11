@@ -301,7 +301,7 @@ export const projects: Project[] = [
       "Various Security Tools",
     ],
     result:
-      "59 machines completed (50 Easy, 9 Medium) with comprehensive OSCP-oriented write-ups",
+      "73 machines completed (61 Easy, 12 Medium) with comprehensive OSCP-oriented write-ups",
     repoUrl: "https://github.com/Pablogb29/HackTheBox",
     visibility: "public",
     category: "personal",

@@ -687,19 +687,49 @@ function buildWriteupLookupMap(tree) {
     let normalizedName = null;
     let priority = 999; // Lower = higher priority
     
-    // Priority 1-3: DIFFICULTY/<MachineName>/README.md
-    const difficultyReadmePattern = /^(easy|medium|hard|insane)\/([^/]+)\/readme\.md$/i;
-    const difficultyReadmeMatch = path.match(difficultyReadmePattern);
-    if (difficultyReadmeMatch) {
-      const difficulty = difficultyReadmeMatch[1].toUpperCase();
-      const machineName = difficultyReadmeMatch[2];
+    // Skip nested asset folders (e.g. Machines/EASY/BoardLight/screenshots/README.md)
+    if (pathLower.includes("/screenshots/")) {
+      return;
+    }
+
+    const priorityMap = { EASY: 1, MEDIUM: 2, HARD: 3, INSANE: 4 };
+
+    // Priority 1-4: Machines/DIFFICULTY/<MachineName>/README.md (current repo layout)
+    const machinesReadmePattern =
+      /^machines\/(easy|medium|hard|insane)\/([^/]+)\/readme\.md$/i;
+    const machinesReadmeMatch = path.match(machinesReadmePattern);
+    if (machinesReadmeMatch) {
+      const difficulty = machinesReadmeMatch[1].toUpperCase();
+      const machineName = machinesReadmeMatch[2];
       normalizedName = normalizeMachineName(machineName);
-      // Priority: EASY=1, MEDIUM=2, HARD=3, INSANE=4
-      const priorityMap = { EASY: 1, MEDIUM: 2, HARD: 3, INSANE: 4 };
       priority = priorityMap[difficulty] || 5;
     }
-    
-    // Priority 4-6: DIFFICULTY/<MachineName>.md
+
+    // Priority 5-8: Machines/DIFFICULTY/<MachineName>.md
+    if (!normalizedName) {
+      const machinesMdPattern = /^machines\/(easy|medium|hard|insane)\/([^/]+)\.md$/i;
+      const machinesMdMatch = path.match(machinesMdPattern);
+      if (machinesMdMatch) {
+        const difficulty = machinesMdMatch[1].toUpperCase();
+        const machineName = machinesMdMatch[2];
+        normalizedName = normalizeMachineName(machineName);
+        priority = (priorityMap[difficulty] || 5) + 4;
+      }
+    }
+
+    // Legacy: DIFFICULTY/<MachineName>/README.md
+    if (!normalizedName) {
+      const difficultyReadmePattern = /^(easy|medium|hard|insane)\/([^/]+)\/readme\.md$/i;
+      const difficultyReadmeMatch = path.match(difficultyReadmePattern);
+      if (difficultyReadmeMatch) {
+        const difficulty = difficultyReadmeMatch[1].toUpperCase();
+        const machineName = difficultyReadmeMatch[2];
+        normalizedName = normalizeMachineName(machineName);
+        priority = (priorityMap[difficulty] || 5) + 8;
+      }
+    }
+
+    // Legacy: DIFFICULTY/<MachineName>.md
     if (!normalizedName) {
       const difficultyMdPattern = /^(easy|medium|hard|insane)\/([^/]+)\.md$/i;
       const difficultyMdMatch = path.match(difficultyMdPattern);
@@ -707,17 +737,16 @@ function buildWriteupLookupMap(tree) {
         const difficulty = difficultyMdMatch[1].toUpperCase();
         const machineName = difficultyMdMatch[2];
         normalizedName = normalizeMachineName(machineName);
-        const priorityMap = { EASY: 4, MEDIUM: 5, HARD: 6, INSANE: 7 };
-        priority = priorityMap[difficulty] || 8;
+        priority = (priorityMap[difficulty] || 5) + 12;
       }
     }
-    
-    // Priority 7: <MachineName>/README.md (fallback)
+
+    // Fallback: <MachineName>/README.md
     if (!normalizedName && pathLower.endsWith("/readme.md")) {
       const parts = path.split("/");
       if (parts.length === 2) {
         normalizedName = normalizeMachineName(parts[0]);
-        priority = 7;
+        priority = 20;
       }
     }
     

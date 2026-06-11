@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "CTF Machines",
   description:
-    "Hack The Box machines solved by Pablo Gutiérrez. 33+ machines with OSCP-oriented writeups covering Windows, Linux, Active Directory, and web exploitation.",
+    "Hack The Box machines solved by Pablo Gutiérrez. 73 machines with OSCP-oriented writeups covering Windows, Linux, Active Directory, and web exploitation.",
   openGraph: {
     title: "CTF Machines – Pablo Gutiérrez",
     description:

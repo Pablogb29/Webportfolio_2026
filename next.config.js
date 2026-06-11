@@ -6,6 +6,7 @@ const nextConfig = {
     remotePatterns: [],
   },
   trailingSlash: false,
+  output: "standalone",
 };
 
 module.exports = nextConfig;
