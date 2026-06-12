@@ -76,6 +76,49 @@
         "Web Exploitation"
       ],
       "attackPaths": []
+    },
+    "829": {
+      "tags": [
+        "Web Application",
+        "Remote Code Execution",
+        "Mass Assignment",
+        "Privilege Escalation",
+        "SSH",
+        "Ruby",
+        "Password Cracking",
+        "Linux",
+        "MinIO",
+        "S3",
+        "CamaleonCMS",
+        "Reconnaissance"
+      ],
+      "skills": [
+        "Web Exploitation",
+        "Linux PrivEsc",
+        "Crypto",
+        "Network"
+      ],
+      "attackPaths": []
+    },
+    "841": {
+      "tags": [
+        "Linux",
+        "Remote Code Execution",
+        "Deserialization",
+        "Python",
+        "Privilege Escalation",
+        "MariaDB",
+        "Password Cracking",
+        "SSH",
+        "Jetty",
+        "Mirth Connect"
+      ],
+      "skills": [
+        "Web Exploitation",
+        "Linux PrivEsc",
+        "Crypto"
+      ],
+      "attackPaths": []
     }
   }
 }

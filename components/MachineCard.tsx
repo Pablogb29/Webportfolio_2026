@@ -41,6 +41,12 @@ export default function MachineCard({ machine, index = 0 }: MachineCardProps) {
     (machine.skills?.length ?? 0) === 0 &&
     machine.isActive;
 
+  const showRetiredMetadataPending =
+    (machine.tags?.length ?? 0) === 0 &&
+    (machine.attackPaths?.length ?? 0) === 0 &&
+    (machine.skills?.length ?? 0) === 0 &&
+    machine.isRetired;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -88,7 +94,7 @@ export default function MachineCard({ machine, index = 0 }: MachineCardProps) {
         </div>
 
         {/* Tags, Attack Paths, and Skills */}
-        {(hasAnyMeta || showNoTagsMessage) && (
+        {(hasAnyMeta || showNoTagsMessage || showRetiredMetadataPending) && (
           <div className="mb-4">
             {/* Attack Paths */}
             {machine.attackPaths && machine.attackPaths.length > 0 && (
@@ -161,8 +167,21 @@ export default function MachineCard({ machine, index = 0 }: MachineCardProps) {
                 </div>
                 <p className="text-xs text-gray-light/60">
                   Hack The Box tags and full metadata are pending for this Active machine. You can
-                  confirm the solve on my Hack The Box profile or via the GitHub write-up; the write-up
-                  will be available in May.
+                  confirm the solve on my Hack The Box profile; the full write-up will be published
+                  once the machine is retired.
+                </p>
+              </div>
+            )}
+
+            {showRetiredMetadataPending && (
+              <div className="mb-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <Tag size={14} className="text-purple-accent" />
+                  <span className="text-xs text-purple-accent/80 font-mono">TAGS</span>
+                </div>
+                <p className="text-xs text-gray-light/60">
+                  HTB no longer exposes tags for this retired machine. The GitHub entry confirms the
+                  solve; a full step-by-step write-up is in progress.
                 </p>
               </div>
             )}

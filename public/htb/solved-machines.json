@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-11T17:22:43.985Z",
+  "lastUpdated": "2026-06-12T07:56:15.981Z",
   "total": 73,
   "machines": [
     {
@@ -252,9 +252,24 @@
       "difficulty": "Medium",
       "solveDate": null,
       "htbUrl": "https://app.hackthebox.com/machines/841",
-      "tags": [],
+      "tags": [
+        "Linux",
+        "Remote Code Execution",
+        "Deserialization",
+        "Python",
+        "Privilege Escalation",
+        "MariaDB",
+        "Password Cracking",
+        "SSH",
+        "Jetty",
+        "Mirth Connect"
+      ],
       "attackPaths": [],
-      "skills": [],
+      "skills": [
+        "Web Exploitation",
+        "Linux PrivEsc",
+        "Crypto"
+      ],
       "difficultyRatings": {
         "counterCake": 351,
         "counterVeryEasy": 327,
@@ -280,9 +295,27 @@
       "difficulty": "Easy",
       "solveDate": null,
       "htbUrl": "https://app.hackthebox.com/machines/829",
-      "tags": [],
+      "tags": [
+        "Web Application",
+        "Remote Code Execution",
+        "Mass Assignment",
+        "Privilege Escalation",
+        "SSH",
+        "Ruby",
+        "Password Cracking",
+        "Linux",
+        "MinIO",
+        "S3",
+        "CamaleonCMS",
+        "Reconnaissance"
+      ],
       "attackPaths": [],
-      "skills": [],
+      "skills": [
+        "Web Exploitation",
+        "Linux PrivEsc",
+        "Crypto",
+        "Network"
+      ],
       "difficultyRatings": {
         "counterCake": 1543,
         "counterVeryEasy": 2293,
