@@ -161,6 +161,7 @@ export default function CTFPage() {
                 <button
                   onClick={() => setCurrentPage(currentPage - 1)}
                   disabled={!hasPreviousPage}
+                  aria-label="Previous page"
                   className={`px-3 sm:px-4 py-2 rounded-lg border transition-colors text-sm sm:text-base ${
                     hasPreviousPage
                       ? "bg-container-alt border-accent/20 text-gray-light hover:border-accent/40"
@@ -177,6 +178,7 @@ export default function CTFPage() {
                 <button
                   onClick={() => setCurrentPage(currentPage + 1)}
                   disabled={!hasNextPage}
+                  aria-label="Next page"
                   className={`px-3 sm:px-4 py-2 rounded-lg border transition-colors text-sm sm:text-base ${
                     hasNextPage
                       ? "bg-container-alt border-accent/20 text-gray-light hover:border-accent/40"

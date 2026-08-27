@@ -4,6 +4,7 @@ import "./globals.css";
 import ScrollMorphNav from "@/components/ScrollMorphNav";
 import Footer from "@/components/Footer";
 import { PopoverProvider } from "@/contexts/PopoverContext";
+import { htbCopy } from "@/lib/htb-stats";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,8 +24,7 @@ export const metadata: Metadata = {
     default: "Pablo Gutiérrez – Cybersecurity Engineer",
     template: "%s | Pablo Gutiérrez",
   },
-  description:
-    "Cybersecurity Engineer actively transitioning to Pentester/Red Team. AD security, IAM automation, AWS security design, HTB practice (73 machines), and OSCP preparation.",
+  description: htbCopy.siteDescription,
   keywords: [
     "Cybersecurity",
     "IAM",
@@ -44,14 +44,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     siteName: "Pablo Gutiérrez – Cybersecurity Portfolio",
     title: "Pablo Gutiérrez – Cybersecurity Engineer",
-    description:
-      "Cybersecurity Engineer actively transitioning to Pentester/Red Team. AD security, IAM automation, and OSCP preparation.",
+    description: htbCopy.siteDescription,
   },
   twitter: {
     card: "summary",
     title: "Pablo Gutiérrez – Cybersecurity Engineer",
-    description:
-      "Cybersecurity Engineer actively transitioning to Pentester/Red Team.",
+    description: htbCopy.siteDescription,
   },
   robots: {
     index: true,

@@ -26,8 +26,8 @@ interface FiltersBarProps {
 }
 
 const sortOptions: { value: MachineSortOption; label: string }[] = [
-  { value: "solveDateDesc", label: "Solve Date (Newest)" },
-  { value: "solveDateAsc", label: "Solve Date (Oldest)" },
+  { value: "solveDateDesc", label: "Newest" },
+  { value: "solveDateAsc", label: "Oldest" },
   { value: "difficultyDesc", label: "Difficulty (Hardest)" },
   { value: "difficultyAsc", label: "Difficulty (Easiest)" },
   { value: "pointsDesc", label: "Points (Highest)" },
@@ -329,8 +329,8 @@ export default function FiltersBar({
           {availableTags.length > 0 && (
             <div>
               <label className="block text-xs sm:text-sm font-semibold text-gray-light mb-2 sm:mb-3">Tags</label>
-              <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto">
-                {availableTags.slice(0, 50).map((tag) => {
+              <div className="flex flex-wrap gap-2 max-h-32 overflow-y-auto">
+                {availableTags.slice(0, 12).map((tag) => {
                   const isSelected = filters.tags?.some(
                     (t) => t.toLowerCase() === tag.toLowerCase()
                   );
@@ -356,8 +356,8 @@ export default function FiltersBar({
           {availableSkills.length > 0 && (
             <div>
               <label className="block text-xs sm:text-sm font-semibold text-gray-light mb-2 sm:mb-3">Skills</label>
-              <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto">
-                {availableSkills.slice(0, 50).map((skill) => {
+              <div className="flex flex-wrap gap-2 max-h-32 overflow-y-auto">
+                {availableSkills.slice(0, 12).map((skill) => {
                   const isSelected = filters.skills?.some(
                     (s) => s.toLowerCase() === skill.toLowerCase()
                   );

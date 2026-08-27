@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
+import { htbCopy } from "@/lib/htb-stats";
 
 export const metadata: Metadata = {
   title: "CTF Machines",
-  description:
-    "Hack The Box machines solved by Pablo Gutiérrez. 73 machines with OSCP-oriented writeups covering Windows, Linux, Active Directory, and web exploitation.",
+  description: htbCopy.ctfDescription,
   openGraph: {
     title: "CTF Machines – Pablo Gutiérrez",
-    description:
-      "Hack The Box machines solved with OSCP-oriented writeups.",
+    description: htbCopy.ctfDescription,
   },
 };
 

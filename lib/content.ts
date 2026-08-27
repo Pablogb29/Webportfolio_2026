@@ -1,3 +1,5 @@
+import { htbCopy } from "./htb-stats";
+
 export interface SocialLink {
   name: string;
   url: string;
@@ -291,8 +293,7 @@ export const projects: Project[] = [
   },
   {
     title: "HackTheBox WriteUps",
-    description:
-      "Repository containing documented Hack The Box machine write-ups. Professional approach, OSCP-oriented, and focused on real-world penetration testing. Contains 30 Easy machines and 3 Medium machines with step-by-step explanations, tool usage, and mitigation strategies.",
+    description: htbCopy.projectDescription,
     stack: [
       "Bash",
       "PowerShell",
@@ -300,8 +301,7 @@ export const projects: Project[] = [
       "Nmap",
       "Various Security Tools",
     ],
-    result:
-      "73 machines completed (61 Easy, 12 Medium) with comprehensive OSCP-oriented write-ups",
+    result: htbCopy.projectResult,
     repoUrl: "https://github.com/Pablogb29/HackTheBox",
     visibility: "public",
     category: "personal",

@@ -84,7 +84,7 @@ export interface MachineSolved {
   // Dates
   releaseDate?: string; // ISO date string
   retiredDate?: string; // ISO date string or null
-  solveDate: string; // ISO date string - when user solved it
+  solveDate?: string | null; // ISO date string when known; HTB often omits this
   
   // Status
   status: "Active" | "Retired";

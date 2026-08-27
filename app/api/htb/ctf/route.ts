@@ -66,7 +66,7 @@ function transformMachines(machines: Array<{
     difficulty: machine.difficulty as MachineSolved["difficulty"],
     difficultyNumeric: getDifficultyNumeric(machine.difficulty),
     os: machine.os as MachineSolved["os"],
-    solveDate: machine.solveDate || new Date().toISOString(),
+    solveDate: machine.solveDate || null,
     status,
     isActive,
     isRetired,
@@ -122,10 +122,13 @@ function calculateStats(machines: MachineSolved[]) {
     // Count by status
     stats.byStatus[machine.status] = (stats.byStatus[machine.status] || 0) + 1;
     
-    // Count by year
+    // Count by year only when a real solve date exists
     if (machine.solveDate) {
-      const year = new Date(machine.solveDate).getFullYear().toString();
-      stats.byYear[year] = (stats.byYear[year] || 0) + 1;
+      const parsed = new Date(machine.solveDate);
+      if (!Number.isNaN(parsed.getTime())) {
+        const year = parsed.getFullYear().toString();
+        stats.byYear[year] = (stats.byYear[year] || 0) + 1;
+      }
     }
     
     // Collect tags

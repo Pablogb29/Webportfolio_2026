@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Terminal, ExternalLink, Shield } from "lucide-react";
+import { htbCopy, htbStats } from "@/lib/htb-stats";
 
 interface HTBMachine {
   name: string;
@@ -14,7 +15,7 @@ interface HTBMachine {
 
 const htbMachines: HTBMachine[] = [
   {
-    name: "73 Machines Completed",
+    name: `${htbStats.total} Machines Solved`,
     category: "Linux",
     difficulty: "Easy",
     skills: ["SMB Enumeration", "Kerberoasting", "SUID Exploitation", "Linux Capabilities", "IDOR", "GPP Attacks"],
@@ -22,7 +23,7 @@ const htbMachines: HTBMachine[] = [
     htbUrl: "https://app.hackthebox.com",
   },
   {
-    name: "61 Easy Machines",
+    name: `${htbStats.easy} Easy Machines`,
     category: "Windows",
     difficulty: "Easy",
     skills: ["Network Scanning", "Web Enumeration", "SMB Exploitation", "Privilege Escalation"],
@@ -30,7 +31,7 @@ const htbMachines: HTBMachine[] = [
     htbUrl: "https://app.hackthebox.com",
   },
   {
-    name: "12 Medium Machines",
+    name: `${htbStats.medium} Medium · ${htbStats.hard} Hard`,
     category: "Windows",
     difficulty: "Medium",
     skills: ["Active Directory Attacks", "Impacket", "BloodHound", "RBCD", "ACL Abuse"],
@@ -66,7 +67,7 @@ export default function LabsPage() {
           </h1>
           <div className="w-20 sm:w-24 h-1 bg-cyber-purple mx-auto mb-3 sm:mb-4" />
           <p className="text-gray-light/80 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0">
-            I maintain an active practice in offensive security through Hack The Box labs, having completed 73 machines with a focus on Windows and Linux environments. All write-ups follow an OSCP-oriented style, documenting methodologies, tool usage, and mitigation strategies without exposing flags or detailed exploitation steps.
+            {htbCopy.labsIntro}
           </p>
         </motion.div>
 
@@ -78,20 +79,20 @@ export default function LabsPage() {
           className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-12"
         >
           <div className="bg-container-alt rounded-lg p-4 sm:p-6 border border-accent/20 text-center">
-            <div className="text-2xl sm:text-3xl font-bold text-purple-accent mb-1 sm:mb-2">73</div>
+            <div className="text-2xl sm:text-3xl font-bold text-purple-accent mb-1 sm:mb-2">{htbStats.total}</div>
             <div className="text-gray-light/80 text-xs sm:text-sm">Machines Solved</div>
           </div>
           <div className="bg-container-alt rounded-lg p-4 sm:p-6 border border-accent/20 text-center">
-            <div className="text-2xl sm:text-3xl font-bold text-accent mb-1 sm:mb-2">50</div>
+            <div className="text-2xl sm:text-3xl font-bold text-accent mb-1 sm:mb-2">{htbStats.easy}</div>
             <div className="text-gray-light/80 text-xs sm:text-sm">Easy</div>
           </div>
           <div className="bg-container-alt rounded-lg p-4 sm:p-6 border border-accent/20 text-center">
-            <div className="text-2xl sm:text-3xl font-bold text-purple-accent mb-1 sm:mb-2">9</div>
+            <div className="text-2xl sm:text-3xl font-bold text-purple-accent mb-1 sm:mb-2">{htbStats.medium}</div>
             <div className="text-gray-light/80 text-xs sm:text-sm">Medium</div>
           </div>
           <div className="bg-container-alt rounded-lg p-4 sm:p-6 border border-accent/20 text-center">
-            <div className="text-2xl sm:text-3xl font-bold text-green-400 mb-1 sm:mb-2">OSCP</div>
-            <div className="text-gray-light/80 text-xs sm:text-sm">Oriented</div>
+            <div className="text-2xl sm:text-3xl font-bold text-green-400 mb-1 sm:mb-2">{htbStats.hard}</div>
+            <div className="text-gray-light/80 text-xs sm:text-sm">Hard</div>
           </div>
         </motion.div>
 

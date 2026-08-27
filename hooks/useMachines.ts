@@ -11,6 +11,12 @@ interface UseMachinesOptions {
   pageSize?: number;
 }
 
+function recencyValue(machine: MachineSolved): number {
+  if (!machine.solveDate) return 0;
+  const time = new Date(machine.solveDate).getTime();
+  return Number.isNaN(time) ? 0 : time;
+}
+
 export function useMachines(options: UseMachinesOptions = {}) {
   const { filters = {}, sortBy = "solveDateDesc", pageSize = 12 } = options;
   
@@ -124,16 +130,16 @@ export function useMachines(options: UseMachinesOptions = {}) {
     switch (sortBy) {
       case "solveDateDesc":
         sorted.sort((a, b) => {
-          const dateA = new Date(a.solveDate).getTime();
-          const dateB = new Date(b.solveDate).getTime();
-          return dateB - dateA;
+          const dateDiff = recencyValue(b) - recencyValue(a);
+          if (dateDiff !== 0) return dateDiff;
+          return b.id - a.id;
         });
         break;
       case "solveDateAsc":
         sorted.sort((a, b) => {
-          const dateA = new Date(a.solveDate).getTime();
-          const dateB = new Date(b.solveDate).getTime();
-          return dateA - dateB;
+          const dateDiff = recencyValue(a) - recencyValue(b);
+          if (dateDiff !== 0) return dateDiff;
+          return a.id - b.id;
         });
         break;
       case "difficultyDesc":
