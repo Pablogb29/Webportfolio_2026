@@ -35,9 +35,8 @@ export default function ContactPage() {
     <div className="min-h-screen pt-16 sm:pt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
           className="text-center mb-8 sm:mb-12"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-light mb-3 sm:mb-4 px-2">
@@ -107,7 +106,7 @@ export default function ContactPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-accent font-mono mt-0.5">▸</span>
-                  <span>EU-level cybersecurity roles (CERT-EU, ENISA)</span>
+                  <span>EU institutions and agencies — CAST Permanent ICT (EPSO/CAST/P/17/2017)</span>
                 </li>
               </ul>
             </div>

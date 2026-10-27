@@ -62,9 +62,9 @@ Build the strongest possible cybersecurity portfolio for Pablo using the current
 
 The current portfolio already establishes these core signals:
 - Cybersecurity and IAM engineering background.
-- Blue Team to Red Team transition.
+- Offensive security and penetration testing focus.
 - Pentesting focus with Active Directory depth.
-- HTB practice and OSCP-oriented preparation.
+- HTB practice, completed CJCA and CPTS certifications, and CWES/COAE goals for Q1 2027.
 - Security automation in Python, PowerShell, and Bash.
 - Professional projects, certifications, case studies, and contact pathways.
 

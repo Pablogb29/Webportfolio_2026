@@ -4,6 +4,16 @@ import { motion } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
 import { useRouter, usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { htbStats } from "@/lib/htb-stats";
+
+const proofItems = [
+  "CJCA certified",
+  "CPTS certified",
+  "CAST Permanent ICT",
+  "HTB Holo · S11",
+  `${htbStats.total} HTB machines`,
+  "CWES + COAE · Q1 2027",
+];
 
 export default function Hero() {
   const router = useRouter();
@@ -52,42 +62,49 @@ export default function Hero() {
       <div className="w-full max-w-[62.5rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-center justify-center text-center space-y-4 sm:space-y-6">
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold px-2"
             >
               <span className="text-gray-light">Pablo Guti&eacute;rrez</span>
+              <span className="mt-2 block text-sm sm:text-base md:text-lg font-mono font-medium tracking-widest text-purple-accent/80">
+                M0k4
+              </span>
               <br />
-              <span className="text-cyber-purple">Cybersecurity Engineer</span>
+              <span className="text-cyber-purple">Offensive Security</span>
               <br />
               <span className="text-accent text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mt-2 block">
-                Transitioning to Pentester
+                Ethical Hacking &amp; Penetration Testing
               </span>
             </motion.h1>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-light font-mono px-4"
+              initial={{ opacity: 1, y: 0 }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-light font-mono px-4"
             >
-              Blue Team &rarr; Red Team &bull; OSCP Preparation &bull; HTB Practice &bull; Active Directory Security
+              Active Directory &bull; Web Exploitation &bull; AI Security &bull; HTB Practice
             </motion.div>
 
+            <ul className="flex flex-wrap items-center justify-center gap-2 px-4">
+              {proofItems.map((item) => (
+                <li
+                  key={item}
+                  className="px-3 py-1 text-xs sm:text-sm font-medium rounded-full border border-cyber-purple/30 bg-cyber-purple/10 text-gray-light"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
+              initial={{ opacity: 1, y: 0 }}
               className="text-gray-light/80 text-xs sm:text-sm md:text-base px-4 sm:px-6 max-w-3xl"
             >
-              Currently a Cybersecurity &amp; IAM Engineer specializing in Blue Team operations, actively transitioning to offensive security. Preparing for OSCP certification while maintaining rigorous practice through Hack The Box and developing security automation tools. My extensive IAM background provides a unique perspective on defensive postures&mdash;understanding access controls, user management, and data protection&mdash;which strengthens my offensive security capabilities.
+              I build and test attack paths across Active Directory, web applications, and lab environments. CJCA and CPTS certified, with {htbStats.total} Hack The Box machines solved and published write-ups. Currently a Cybersecurity Engineer at Indra | Minsait Cyber; CWES and COAE are planned for Q1 2027.
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
+              initial={{ opacity: 1, y: 0 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4 sm:pt-8 w-full sm:w-auto px-4"
             >
               <button

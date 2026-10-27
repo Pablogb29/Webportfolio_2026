@@ -41,10 +41,10 @@ const difficultySummary = [
 
 export const htbCopy = {
   difficultySummary,
-  aboutPractice: `Hack The Box (${htbStats.total} machines solved, ${htbStats.writeups} with OSCP-oriented write-ups)`,
-  labsIntro: `I maintain an active practice in offensive security through Hack The Box labs, having completed ${htbStats.total} machines (${difficultySummary}) with a focus on Windows and Linux environments. ${htbStats.writeups} OSCP-oriented write-ups document methodologies, tool usage, and mitigation strategies without exposing flags or detailed exploitation steps.`,
-  projectDescription: `Repository of OSCP-oriented Hack The Box write-ups: methodology, tooling, and mitigations, without exposing flags. Documents ${htbStats.writeups} machines. Overall HTB progress is ${htbStats.total} solved (${difficultySummary}).`,
-  projectResult: `${htbStats.total} machines solved on Hack The Box (${difficultySummary}), with ${htbStats.writeups} published OSCP-oriented write-ups`,
-  siteDescription: `Cybersecurity Engineer actively transitioning to Pentester/Red Team. AD security, IAM automation, AWS security design, HTB practice (${htbStats.total} machines), and OSCP preparation.`,
-  ctfDescription: `Hack The Box machines solved by Pablo Gutiérrez. ${htbStats.total} machines (${difficultySummary}), ${htbStats.writeups} with OSCP-oriented writeups covering Windows, Linux, Active Directory, and web exploitation.`,
+  aboutPractice: `Hack The Box (${htbStats.total} machines solved, ${htbStats.writeups} documented in write-ups)`,
+  labsIntro: `I maintain an active practice in offensive security through Hack The Box labs, having completed ${htbStats.total} machines (${difficultySummary}) with a focus on Windows and Linux environments. ${htbStats.writeups} write-ups document methodologies, tool usage, and mitigation strategies without exposing flags or detailed exploitation steps.`,
+  projectDescription: `Repository of Hack The Box write-ups covering methodology, tooling, and mitigations without exposing flags. Documents ${htbStats.writeups} machines. Overall HTB progress is ${htbStats.total} solved (${difficultySummary}).`,
+  projectResult: `${htbStats.total} machines solved on Hack The Box (${difficultySummary}), with ${htbStats.writeups} published write-ups`,
+  siteDescription: `Offensive security portfolio of Pablo Gutiérrez: CJCA and CPTS certified, Active Directory attack paths, web security, AI red teaming, and ${htbStats.total} Hack The Box machines solved.`,
+  ctfDescription: `Hack The Box machines solved by Pablo Gutiérrez. ${htbStats.total} machines (${difficultySummary}), ${htbStats.writeups} write-ups covering Windows, Linux, Active Directory, and web exploitation.`,
 };

@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Calendar, Award, BookOpen, FileText, ArrowRight, CheckCircle2, Shield, Target, Info } from "lucide-react";
+import { GraduationCap, Calendar, Award, BookOpen, FileText, ArrowRight, CheckCircle2, Shield, Target, Info, Landmark } from "lucide-react";
 import { useState, useEffect } from "react";
-import { education, certifications } from "@/lib/content";
+import { education, certifications, euCast } from "@/lib/content";
 import type { Certification } from "@/lib/content";
 
 // Certification Icon Component
-function CertificationIcon({ type, className }: { type: "htb" | "oscp"; className?: string }) {
+function CertificationIcon({ type, className }: { type: Certification["icon"]; className?: string }) {
   if (type === "htb") {
     return (
       <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,8 +23,8 @@ function CertificationIcon({ type, className }: { type: "htb" | "oscp"; classNam
 function CertificationCard({ cert, index, total }: { cert: Certification; index: number; total: number }) {
   const [shouldReduceMotion, setShouldReduceMotion] = useState(false);
   const isActive = cert.goal === "current";
-  const isCompleted = cert.status?.includes("Completed") || cert.status?.includes("Obtained");
-  const isPlanned = cert.status?.includes("Planned");
+  const isCompleted = cert.goal === "completed" || cert.status?.includes("Completed") || cert.status?.includes("Obtained");
+  const isPlanned = cert.status?.includes("Planned") || cert.status?.includes("Preparing");
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -35,6 +35,7 @@ function CertificationCard({ cert, index, total }: { cert: Certification; index:
   }, []);
 
   const goalLabels = {
+    completed: "Achieved",
     current: "Current Goal",
     next: "Next Goal",
     final: "Final Goal",
@@ -116,12 +117,15 @@ function CertificationCard({ cert, index, total }: { cert: Certification; index:
 
             {/* Goal Badge */}
             <div className="flex items-center justify-center gap-1.5 mb-3">
+              {cert.goal === "completed" && <CheckCircle2 className="text-green-400" size={12} />}
               {cert.goal === "current" && <Target className="text-accent" size={12} />}
               {cert.goal === "next" && <ArrowRight className="text-purple-accent" size={12} />}
               {cert.goal === "final" && <Award className="text-cyber-purple" size={12} />}
               <span
                 className={`text-xs font-semibold ${
-                  cert.goal === "current"
+                  cert.goal === "completed"
+                    ? "text-green-400"
+                    : cert.goal === "current"
                     ? "text-accent"
                     : cert.goal === "next"
                     ? "text-purple-accent"
@@ -144,6 +148,20 @@ function CertificationCard({ cert, index, total }: { cert: Certification; index:
             >
               {cert.status}
             </span>
+
+            {cert.certificatePdf && (
+              <div className="pt-2">
+                <a
+                  href={cert.certificatePdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold text-green-400 border border-green-500/30 rounded hover:bg-green-500/10 hover:border-green-500/50 transition-all duration-300"
+                >
+                  <FileText size={14} />
+                  Open Certificate
+                </a>
+              </div>
+            )}
 
           </div>
         </div>
@@ -185,7 +203,8 @@ function CertificationCard({ cert, index, total }: { cert: Certification; index:
 // Main Certification Path Component
 function CertificationPath({ certifications }: { certifications: Certification[] }) {
   const [shouldReduceMotion, setShouldReduceMotion] = useState(false);
-  const activeIndex = certifications.findIndex((c) => c.goal === "current");
+  const completedCount = certifications.filter((c) => c.goal === "completed").length;
+  const progressWidth = `${(completedCount / certifications.length) * 100}%`;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -215,12 +234,12 @@ function CertificationPath({ certifications }: { certifications: Certification[]
           {/* Background line (muted for future) */}
           <div className="absolute inset-0 bg-gradient-to-r from-cyber-purple/10 via-cyber-purple/10 to-cyber-purple/10 rounded-full" />
           
-          {/* Progress line (glowing up to current cert) */}
-          {activeIndex >= 0 && (
+          {/* Progress line through completed certifications */}
+          {completedCount > 0 && (
             <motion.div
               className="absolute left-0 h-full bg-gradient-to-r from-accent via-cyber-purple to-transparent rounded-full"
               initial={{ width: 0 }}
-              whileInView={{ width: `${((activeIndex + 1) / certifications.length) * 100}%` }}
+              whileInView={{ width: progressWidth }}
               viewport={{ once: true }}
               transition={{
                 duration: shouldReduceMotion ? 0.3 : 1.5,
@@ -233,13 +252,13 @@ function CertificationPath({ certifications }: { certifications: Certification[]
           )}
 
           {/* Animated flow effect */}
-          {activeIndex >= 0 && !shouldReduceMotion && (
+          {completedCount > 0 && !shouldReduceMotion && (
             <motion.div
               className="absolute h-full w-20 bg-gradient-to-r from-transparent via-accent/50 to-transparent rounded-full"
               animate={{
                 x: [
                   0,
-                  `${((activeIndex + 1) / certifications.length) * 100}%`,
+                  progressWidth,
                 ],
               }}
               transition={{
@@ -254,11 +273,11 @@ function CertificationPath({ certifications }: { certifications: Certification[]
           )}
 
           {/* Dashed line for future */}
-          {activeIndex < certifications.length - 1 && (
+          {completedCount < certifications.length && (
             <div
               className="absolute h-full border-t-2 border-dashed border-cyber-purple/20"
               style={{
-                left: `${((activeIndex + 1) / certifications.length) * 100}%`,
+                left: progressWidth,
                 right: 0,
               }}
             />
@@ -350,6 +369,18 @@ export default function Education() {
                               Open Thesis
                             </a>
                           )}
+                          {edu.diplomaPdfs?.map((diploma) => (
+                            <a
+                              key={diploma.url}
+                              href={diploma.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold text-purple-accent border border-purple-accent/30 rounded hover:bg-purple-accent/10 hover:border-purple-accent/50 transition-all duration-300"
+                            >
+                              <Award size={14} />
+                              {diploma.label}
+                            </a>
+                          ))}
                         </div>
                       </div>
                     </div>
@@ -378,6 +409,43 @@ export default function Education() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 1, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-container-alt rounded-lg p-4 sm:p-6 md:p-8 border border-accent/20 mb-8 sm:mb-12"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+            <div className="flex items-start gap-3">
+              <Landmark className="text-cyber-purple mt-0.5 w-5 h-5 flex-shrink-0" size={20} />
+              <div>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-light">
+                  {euCast.title}
+                </h3>
+                <p className="text-sm text-purple-accent mt-1">{euCast.issuer}</p>
+                <p className="text-xs sm:text-sm text-gray-light/70 font-mono mt-1">
+                  {euCast.procedure} · {euCast.profile}
+                </p>
+                <p className="text-sm text-gray-light/90 mt-3 max-w-3xl">{euCast.summary}</p>
+              </div>
+            </div>
+            <div className="flex flex-col items-start sm:items-end gap-3 sm:ml-6 flex-shrink-0">
+              <span className="inline-block px-3 py-1.5 text-xs font-semibold rounded-lg border bg-green-500/10 text-green-400 border-green-500/40">
+                {euCast.status}
+              </span>
+              <a
+                href={euCast.evidenceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold text-accent border border-accent/30 rounded hover:bg-accent/10 hover:border-accent/50 transition-all duration-300"
+              >
+                <FileText size={14} />
+                {euCast.evidenceLabel}
+              </a>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Certifications Path */}
         <CertificationPath certifications={certifications} />

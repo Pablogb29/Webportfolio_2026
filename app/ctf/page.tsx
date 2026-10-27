@@ -78,9 +78,10 @@ export default function CTFPage() {
             </div>
             <div className="bg-container-alt rounded-lg p-4 sm:p-6 border border-accent/20 text-center">
               <div className="text-2xl sm:text-3xl font-bold text-orange-400 mb-1 sm:mb-2">
-                {(stats.byDifficulty.Hard || 0) + (stats.byDifficulty.Insane || 0)}
+                {stats.byDifficulty.Hard || 0}
+                <span className="text-red-400"> · {stats.byDifficulty.Insane || 0}</span>
               </div>
-              <div className="text-gray-light/80 text-xs sm:text-sm">Hard+</div>
+              <div className="text-gray-light/80 text-xs sm:text-sm">Hard · Insane</div>
             </div>
           </motion.div>
         )}

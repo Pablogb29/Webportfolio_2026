@@ -26,7 +26,7 @@ export default function Error({
           Something went wrong!
         </h1>
         <p className="text-gray-light/80 mb-8">
-          {error.message || "An unexpected error occurred. Please try again."}
+          An unexpected error occurred. Please try again.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button

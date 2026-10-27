@@ -2,13 +2,13 @@
 
 ## Positioning Statement
 
-Pablo is a cybersecurity engineer with practical IAM and automation experience who is deliberately transitioning toward penetration testing, bringing a defensive systems perspective that strengthens offensive work.
+Pablo presents his offensive security and penetration testing work through hands-on certifications, Active Directory labs, Hack The Box practice, and documented projects. His cybersecurity engineering role adds practical IAM and automation experience.
 
 ## Core Brand Pillars
 
 - Technical credibility: show real tools, workflows, environments, and outputs.
 - Operational maturity: communicate with restraint, precision, and structure.
-- Dual perspective: show why Blue Team experience improves Red Team judgment.
+- Systems perspective: show how IAM and security engineering experience informs attack path analysis.
 - Growth trajectory: present current depth and future direction without overselling.
 
 ## Differentiators To Emphasize
@@ -30,18 +30,18 @@ Pablo is a cybersecurity engineer with practical IAM and automation experience w
 ## Messaging Priorities
 
 1. Clarify current role and target direction.
-2. Show why the transition to pentesting is credible.
+2. Show penetration testing capability through verifiable work.
 3. Prove depth through projects, labs, case studies, and certifications.
 4. Make it easy to contact Pablo for the right opportunities.
 
 ## Phrases To Favor
 
 - "Cybersecurity engineer"
-- "Transitioning into penetration testing"
+- "Penetration testing and attack path analysis"
 - "Active Directory security"
 - "Security automation"
 - "IAM and access governance"
-- "OSCP-oriented practice"
+- "CJCA and CPTS certified"
 - "Documented, reproducible work"
 
 ## Phrases To Avoid

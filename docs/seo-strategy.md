@@ -7,7 +7,7 @@
 - Active Directory security projects
 - IAM automation engineer
 - Hack The Box writeups
-- OSCP-oriented portfolio or labs
+- CPTS certified penetration testing portfolio
 
 ## SEO Principles
 
@@ -26,7 +26,7 @@
 
 ## Homepage Metadata Focus
 
-Emphasize cybersecurity engineering, penetration testing trajectory, Active Directory focus, IAM/security automation, and documented practical work.
+Emphasize CPTS and CJCA credentials, penetration testing, Active Directory attack paths, IAM/security automation, and documented practical work.
 
 ## Content SEO Rules
 

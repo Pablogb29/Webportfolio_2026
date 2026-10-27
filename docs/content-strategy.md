@@ -7,7 +7,7 @@ Use the current portfolio, CV, and linked public work as the factual baseline. E
 ## Content Goals
 
 - Explain the professional profile quickly.
-- Make the Blue Team to Red Team transition believable.
+- Demonstrate offensive security capability through certifications, labs, and writeups.
 - Turn dense experience into readable evidence.
 - Elevate projects from blurbs into proof-rich case studies.
 - Make labs and certifications reinforce the story instead of feeling separate.
@@ -16,7 +16,7 @@ Use the current portfolio, CV, and linked public work as the factual baseline. E
 
 1. Identity and positioning
 2. Immediate proof and trust signals
-3. Transition narrative and specialization
+3. Offensive security specialization
 4. Experience and capability map
 5. Featured projects and case studies
 6. Labs, writeups, and certification path

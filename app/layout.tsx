@@ -18,37 +18,42 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.pabloinfosec.com"),
   title: {
-    default: "Pablo Gutiérrez – Cybersecurity Engineer",
+    default: "Pablo Gutiérrez – Offensive Security & Penetration Testing",
     template: "%s | Pablo Gutiérrez",
   },
   description: htbCopy.siteDescription,
   keywords: [
     "Cybersecurity",
     "IAM",
-    "Blue Team",
     "Red Team",
     "Pentester",
     "Offensive Security",
     "Active Directory",
     "Penetration Testing",
-    "OSCP",
     "CPTS",
+    "CWES",
+    "COAE",
     "Security Automation",
     "Hack The Box",
+    "CAST Permanent",
+    "EPSO",
+    "CJCA",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Pablo Gutiérrez – Cybersecurity Portfolio",
-    title: "Pablo Gutiérrez – Cybersecurity Engineer",
+    title: "Pablo Gutiérrez – Offensive Security & Penetration Testing",
     description: htbCopy.siteDescription,
   },
   twitter: {
     card: "summary",
-    title: "Pablo Gutiérrez – Cybersecurity Engineer",
+    title: "Pablo Gutiérrez – Offensive Security & Penetration Testing",
     description: htbCopy.siteDescription,
   },
   robots: {

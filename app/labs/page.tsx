@@ -31,9 +31,9 @@ const htbMachines: HTBMachine[] = [
     htbUrl: "https://app.hackthebox.com",
   },
   {
-    name: `${htbStats.medium} Medium · ${htbStats.hard} Hard`,
+    name: `${htbStats.hard} Hard · ${htbStats.insane} Insane`,
     category: "Windows",
-    difficulty: "Medium",
+    difficulty: "Insane",
     skills: ["Active Directory Attacks", "Impacket", "BloodHound", "RBCD", "ACL Abuse"],
     writeupUrl: "https://github.com/Pablogb29/HackTheBox",
     htbUrl: "https://app.hackthebox.com",
@@ -91,8 +91,10 @@ export default function LabsPage() {
             <div className="text-gray-light/80 text-xs sm:text-sm">Medium</div>
           </div>
           <div className="bg-container-alt rounded-lg p-4 sm:p-6 border border-accent/20 text-center">
-            <div className="text-2xl sm:text-3xl font-bold text-green-400 mb-1 sm:mb-2">{htbStats.hard}</div>
-            <div className="text-gray-light/80 text-xs sm:text-sm">Hard</div>
+            <div className="text-2xl sm:text-3xl font-bold text-green-400 mb-1 sm:mb-2">
+              {htbStats.hard} · {htbStats.insane}
+            </div>
+            <div className="text-gray-light/80 text-xs sm:text-sm">Hard · Insane</div>
           </div>
         </motion.div>
 

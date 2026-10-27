@@ -109,6 +109,11 @@ export const experiences: ExperienceItem[] = [
   },
 ];
 
+export interface EducationDiploma {
+  label: string;
+  url: string;
+}
+
 export interface EducationItem {
   degree: string;
   institution: string;
@@ -117,6 +122,7 @@ export interface EducationItem {
   eqfLevel: string;
   thesis?: string;
   thesisPdf?: string;
+  diplomaPdfs?: EducationDiploma[];
   keySubjects: string[];
 }
 
@@ -130,6 +136,9 @@ export const education: EducationItem[] = [
     thesis:
       "Design and Implementation of an AI-Based Automated System for Job Offer Management and Prioritization",
     thesisPdf: "/thesis/ai-thesis.pdf",
+    diplomaPdfs: [
+      { label: "Open Diploma", url: "/diplomas/ai-iunit-diploma.pdf" },
+    ],
     keySubjects: [
       "Development of LLMs to analyse responses from cybersecurity tools to ensure a short path to finding vulnerabilities",
       "Machine Learning, Deep Learning and LLM-based systems applied to automation and data analysis",
@@ -145,6 +154,10 @@ export const education: EducationItem[] = [
     eqfLevel: "EQF level 7",
     thesis: "Building and Breaking an Active Directory Environment",
     thesisPdf: "/thesis/cybersecurity-thesis.pdf",
+    diplomaPdfs: [
+      { label: "Deloitte Diploma", url: "/diplomas/cyber-deloitte-diploma.pdf" },
+      { label: "IMF Diploma", url: "/diplomas/cyber-imf-diploma.pdf" },
+    ],
     keySubjects: [
       "Ethical hacking, technical security audits and malware analysis",
       "Digital forensics and security incident management",
@@ -162,6 +175,9 @@ export const education: EducationItem[] = [
     eqfLevel: "EQF level 6",
     thesis: "Neuronal Network for Random Number Generation",
     thesisPdf: "/thesis/telecommunication-thesis.pdf",
+    diplomaPdfs: [
+      { label: "Open Diploma", url: "/diplomas/uab-telecom-diploma.pdf" },
+    ],
     keySubjects: [
       "Electronics, telecommunications, networking and digital systems",
       "Design, implementation and validation of technical engineering projects",
@@ -177,42 +193,67 @@ export interface Certification {
   status: string;
   issuer: string;
   description: string;
-  goal: "current" | "next" | "final";
-  icon: "htb" | "oscp";
+  goal: "completed" | "current" | "next" | "final";
+  icon: "htb" | "shield";
+  certificatePdf?: string;
 }
 
 export const certifications: Certification[] = [
   {
     name: "CJCA",
-    fullName: "Certified Junior Cybersecurity Analyst",
-    status: "Exam: 27 Mar 2026",
+    fullName: "Certified Junior Cybersecurity Associate",
+    status: "Completed",
     issuer: "Hack The Box",
     description:
-      "Foundation certification validating core cybersecurity analysis skills and practical knowledge. Exam scheduled for 27 March 2026.",
-    goal: "current",
+      "Foundation certification validating core cybersecurity analysis skills and practical knowledge.",
+    goal: "completed",
     icon: "htb",
+    certificatePdf: "/certificates/htb-cjca-certificate.pdf",
   },
   {
     name: "CPTS",
     fullName: "Certified Penetration Testing Specialist",
-    status: "Planned for 2026",
+    status: "Completed",
     issuer: "Hack The Box",
     description:
-      "Advanced pentesting certification focused on real-world attack paths and comprehensive security assessments.",
+      "Hands-on penetration testing certification covering attack paths, exploitation, and professional security assessment reporting.",
+    goal: "completed",
+    icon: "htb",
+    certificatePdf: "/certificates/htb-cpts-certificate.pdf",
+  },
+  {
+    name: "CWES",
+    fullName: "Certified Web Exploitation Specialist",
+    status: "Planned for Q1 2027",
+    issuer: "Hack The Box",
+    description:
+      "Planned web application and API penetration testing certification, focused on finding, chaining, and reporting vulnerabilities.",
     goal: "next",
     icon: "htb",
   },
   {
-    name: "OSCP",
-    fullName: "Offensive Security Certified Professional",
-    status: "Planned for 2026",
-    issuer: "Offensive Security",
+    name: "COAE",
+    fullName: "Certified Offensive AI Expert",
+    status: "Planned for Q1 2027",
+    issuer: "Hack The Box",
     description:
-      "Industry-leading penetration testing certification emphasizing hands-on exploitation and reporting skills.",
+      "Planned AI red teaming certification focused on assessing and exploiting vulnerabilities in AI and machine learning systems.",
     goal: "final",
-    icon: "oscp",
+    icon: "htb",
   },
 ];
+
+export const euCast = {
+  title: "CAST Permanent — ICT",
+  procedure: "EPSO/CAST/P/17/2017",
+  profile: "Information and Communication Technologies",
+  status: "Successful — Aug 2026",
+  issuer: "EPSO (European Personnel Selection Office)",
+  summary:
+    "Passed the EPSO reasoning tests for CAST Permanent ICT. This qualifies me for the next phase of recruitment by EU institutions and agencies for Information and Communication Technologies contract staff.",
+  evidenceUrl: "/certificates/epso-cast-p17-2017-redacted.png",
+  evidenceLabel: "Open EPSO result letter",
+};
 
 export interface Project {
   title: string;
@@ -324,7 +365,7 @@ export const projects: Project[] = [
     stack: ["Next.js", "TailwindCSS", "TypeScript", "Framer Motion"],
     result:
       "Modern, responsive portfolio website with enhanced animations and API integrations",
-    repoUrl: "https://github.com/Pablogb29/webportfolio_2026",
+    repoUrl: "https://github.com/Pablogb29/Webportfolio_2026",
     visibility: "public",
     category: "personal",
   },

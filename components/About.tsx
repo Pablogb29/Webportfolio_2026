@@ -5,9 +5,9 @@ import { Terminal } from "lucide-react";
 import { htbCopy } from "@/lib/htb-stats";
 
 const coreAreas = [
-  "Security Engineering & IAM",
-  "Offensive Security & Penetration Testing",
-  "Active Directory Attack & Defense",
+  "Penetration Testing & Attack Path Analysis",
+  "Active Directory Exploitation",
+  "Web Application Security & AI Red Teaming",
   "Security Automation (Python, Bash, PowerShell)",
 ];
 
@@ -40,10 +40,10 @@ export default function About() {
               With a foundation in <span className="text-purple-accent font-semibold">Telecommunications Engineering</span> and two Master&apos;s degrees in Cybersecurity and AI, I currently work as a Cybersecurity Engineer at Indra | Minsait Cyber, where I manage identity lifecycle, automate access governance, and build security tooling for large-scale data platforms.
             </p>
             <p className="text-gray-light/90 leading-relaxed">
-              I am actively transitioning toward <span className="text-purple-accent font-semibold">offensive security</span>. My Master&apos;s thesis involved designing, building, and comprehensively auditing a full Active Directory lab environment from scratch, deepening my expertise in attack methodologies like Kerberoasting, AS-REP roasting, and various privilege escalation vectors.
+              My offensive security work centers on <span className="text-purple-accent font-semibold">penetration testing and attack path analysis</span>. For my Master&apos;s thesis, I designed, built, and audited a full Active Directory lab, applying techniques including Kerberoasting, AS-REP roasting, and privilege escalation.
             </p>
             <p className="text-gray-light/90 leading-relaxed">
-              I maintain consistent hands-on practice through {htbCopy.aboutPractice} and am working toward CJCA, CPTS, and OSCP certifications. My Blue Team experience in IAM and compliance gives me a practical understanding of the defensive postures that offensive testers need to navigate.
+              I maintain hands-on practice through {htbCopy.aboutPractice}. I hold the CJCA and CPTS certifications, with CWES and COAE planned for Q1 2027. My IAM and security engineering work gives me direct experience with access control, misconfigurations, and the systems that penetration testers assess. In August 2026 I passed the EPSO CAST Permanent reasoning tests for ICT roles at EU institutions.
             </p>
           </motion.div>
 
