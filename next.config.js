@@ -1,3 +1,5 @@
+const path = require("path");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -8,6 +10,7 @@ const nextConfig = {
   },
   trailingSlash: false,
   output: "standalone",
+  outputFileTracingRoot: path.resolve(__dirname),
   async redirects() {
     return [
       {
